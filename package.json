@@ -1,22 +1,98 @@
 {
-  "name": "juno-gtag-test",
-  "version": "1.0.0",
+  "name": "junocollege.com",
   "private": true,
-  "description": "juno-gtag-test",
-  "author": "Adrian Pearman",
-  "keywords": [
-    "gatsby"
-  ],
+  "description": "Juno College of Technology",
+  "version": "0.1.0",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
     "build": "gatsby build",
+    "develop": "env-cmd -f .env gatsby develop",
+    "clean": "rm -rf public && rm -rf .cache",
+    "format": "prettier --write '{,{src,documentation}/**/}*.{js,jsx,md}'",
+    "check": "npx npm-check-updates -u",
+    "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.3",
+    "@loadable/component": "^5.15.3",
+    "@parcel/namer-default": "^2.8.3",
+    "@stripe/stripe-js": "^1.52.0",
+    "axios": "^1.3.4",
+    "contentful": "^9.3.5",
+    "contentful-management": "^10.31.3",
+    "csv-parse": "^5.3.6",
+    "dotenv": "^16.0.3",
     "gatsby": "^5.8.0",
+    "gatsby-plugin-catch-links": "^5.8.0",
+    "gatsby-plugin-google-gtag": "^5.8.0",
+    "gatsby-plugin-google-tagmanager": "^5.8.0",
+    "gatsby-plugin-image": "^3.8.0",
+    "gatsby-plugin-manifest": "^5.8.0",
+    "gatsby-plugin-netlify": "^5.1.0",
+    "gatsby-plugin-offline": "^6.8.0",
+    "gatsby-plugin-react-helmet-async": "^1.2.3",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-robots-txt": "^1.8.0",
+    "gatsby-plugin-sass": "^6.8.0",
+    "gatsby-plugin-segment-js": "^5.0.0",
+    "gatsby-plugin-sharp": "^5.8.0",
+    "gatsby-plugin-sitemap": "^6.8.0",
+    "gatsby-source-contentful": "^8.8.0",
+    "gatsby-source-filesystem": "^5.8.0",
+    "gatsby-transformer-remark": "^6.8.0",
+    "gatsby-transformer-sharp": "^5.8.0",
+    "intersection-observer": "^0.12.2",
+    "lodash.throttle": "^4.1.1",
+    "luxon": "^3.3.0",
+    "prop-types": "^15.8.1",
+    "qs": "^6.11.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-calendly": "^4.1.1",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^18.2.0",
+    "react-gtm-module": "^2.0.11",
+    "react-helmet-async": "^1.3.0",
+    "react-intersection-observer": "^9.4.3",
+    "react-scroll": "^1.8.9",
+    "react-share": "^4.4.1",
+    "sass": "^1.60.0",
+    "stripe": "^11.16.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "babel-preset-gatsby": "^3.8.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^13.2.0",
+    "netlify-plugin-inline-functions-env": "^1.0.9",
+    "prettier": "^2.8.7",
+    "react-test-renderer": "^18.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HackerYou/juno-website"
+  },
+  "bugs": {
+    "url": "https://github.com/HackerYou/juno-website/issues"
+  },
+  "lint-staged": {
+    "*.{js,jsx,md}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint"
+    ]
   }
 }

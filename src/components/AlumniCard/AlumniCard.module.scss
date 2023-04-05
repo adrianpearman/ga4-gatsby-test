@@ -1,0 +1,180 @@
+/* Alumni card module styles
+========================================================================== */
+.card {
+  grid-column: 1;
+  background: $white;
+  min-height: 26rem;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include respond-to('mobile') {
+    grid-column: 1 / span 2;
+  }
+  @include respond-to('mobile-small') {
+    display: block;
+  }
+}
+.card:nth-child(even) {
+  grid-column: 2;
+  @include respond-to('mobile') {
+    grid-column: 1 / span 2;
+  }
+}
+
+.headshot {
+  margin-right: 1.6rem;
+}
+
+.alumni-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  @include respond-to('mobile') {
+    padding: 0.5rem 0;
+    grid-column: 7 / -2;
+  }
+}
+.nameplate {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 2rem;
+  h3 {
+    font-family: $font-heading-light;
+    font-weight: 100;
+    font-size: 3.2rem;
+    line-height: 3rem;
+    color: $juno-violet-grey;
+    letter-spacing: -0.013rem;
+    margin-bottom: 0.5rem;
+  }
+  .name {
+    flex-shrink: 1;
+  }
+  @include respond-to('mobile-small') {
+    flex-wrap: wrap;
+    .name {
+      margin-top: 1.5rem;
+    }
+  }
+}
+.alumni-info span {
+  display: block;
+}
+.quote {
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 1.43;
+  letter-spacing: normal;
+  margin-top: 1.5rem;
+  padding-right: 2rem;
+  &::before {
+    content: '“';
+  }
+  &::after {
+    content: '”';
+  }
+  @include respond-to('mobile-small') {
+    padding-right: 0;
+  }
+}
+.before-juno, 
+.currently {
+  margin-top: 2rem;
+  max-width: 45%;
+  @include respond-to('mobile') {
+    width: 100%;
+    max-width: none;
+  }
+}
+.before-juno {
+  padding-right: 2.5rem;
+  margin-right: 2.5rem;
+  border-right: 1px solid $juno-sea-glass;
+  @include respond-to('tablet') {
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  @include respond-to('mobile') {
+    padding-right: 0;
+    margin-right: 0;
+    border-right: none;
+  }
+}
+.alumni-info h4 {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: $juno-mauve-blue;
+  text-transform: uppercase;
+}
+.alumni-info p,
+.alumni-info a {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+}
+.alumni-info .season {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: $font-body-medium;
+  color: $juno-mauve-blue;
+}
+.alumni-info .student-bio {
+  margin: 1.5rem 0 0;
+  padding-right: 4rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  @include respond-to('mobile-small') {
+    padding-right: 0;
+  }
+}
+.social {
+  @include respond-to('mobile-small') {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    li {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.avail-for-hire-link {
+  margin-top: 1.5rem;
+}
+
+.social svg {
+  fill: $juno-coral;
+  transition: fill $default-duration ease;
+}
+.social span svg {
+  opacity: 0.3;
+}
+.social a:hover svg,
+.social a:focus svg {
+  fill: $juno-link-red;
+}
+
+.student-story {
+  color: $juno-dark-violet;
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  padding: 1rem 3rem 1rem 2rem;
+  background: url('../../assets/images/alumni/highlight-readstudentstory.svg');
+  background-size: 100% 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  top: calc(100% - 2rem);
+  left: 0;
+}

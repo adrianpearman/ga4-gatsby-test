@@ -1,0 +1,231 @@
+// Employer's page CSS styles
+// ===========================================
+@mixin h3-general-styles {
+  font-size: 4.8rem;
+  font-family: $font-heading-regular;
+  line-height: 1.13;
+  letter-spacing: normal;
+  @include respond-to('mobile') {
+    font-size: 4.4rem;
+  }
+}
+
+// Testimonials & hiring partners styles
+.carousel-section {
+  margin: 17rem 0 0rem 0 !important;
+  padding: 0;
+  @include respond-to('mobile') {
+    margin: 12rem 0 0rem !important;
+  }
+}
+
+.logos-section {
+  h3 {
+    grid-column: 4 / -1;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  padding: 6rem 0 10rem 0;
+  ul {
+    grid-column: 4 / -2;
+
+    li {
+      min-width: 12rem;
+    }
+  }
+  div {
+    grid-column: 2 / -3;
+  }
+}
+
+//Relevant Blog Posts styles
+.relevant-blog-posts {
+  background-color: tint($juno-yellow-peach, 60%) !important;
+  padding: 10rem 0 8rem;
+  position: relative;
+  @include pageRipEffectBottom('rip-case-study.svg');
+  
+  .section-heading {
+    grid-column: 4 / -4;
+    @include h3-general-styles;
+    position: absolute;
+    top: -3rem;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  .blog-previews {
+    grid-column: 4 / -4;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 2rem;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    @include respond-to('mobile') {
+      grid-template-columns: 1fr;
+    }
+  }
+  .preview-card {
+    background-color: $juno-evergreen;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-image {
+    height: 260px;
+    flex-shrink: 0;
+  }
+  .card-info {
+    padding: 2rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    @include pageRipEffectTop('rip-blogcard-evergreen.svg');
+  }
+  .blog-title,
+  .partner-name,
+  .read-more {
+    color: $white;
+    display: inline-block;
+  }
+  .blog-title {
+    margin-bottom: 2rem;
+    a {
+    color: inherit;
+    font-size: 3.4rem;
+    font-family: $font-heading-regular;
+    line-height: 1.06;
+    letter-spacing: normal;
+    font-weight: 500;
+    }
+  }
+  .partner-name {
+    font-size: 2rem;
+    font-family: $font-body-medium;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: normal;
+    margin-top: 1.25rem;
+    a {
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: $juno-yellow-peach;
+    }
+  }
+  .read-more {
+    position: relative;
+    font-size: 1.6rem;
+    font-family: $font-body-medium;
+    color: $juno-yellow-peach;
+    svg {
+      position: absolute;
+      top: -9px;
+      width: 35px;
+      height: 35px;
+      polyline,
+      line {
+        stroke-width: 3px;
+        stroke: $juno-yellow-peach;
+      }
+      &:hover {
+        polyline,
+        line {
+          stroke: $juno-yellow-peach;
+        }
+      }
+    }
+  }
+  .load-more-button {
+    grid-column: 4 / -4;
+    justify-self: end;
+    margin-top: 2rem;
+    overflow-anchor: none;
+    padding: 1rem 2rem;
+    position: relative;
+    right: -2rem;
+    
+    cursor: pointer;
+    background-color: transparent;
+    color: $juno-red;
+    font-family: $font-body-medium;
+    font-size: 2.2rem;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: right;
+  }
+}
+
+
+// Skills Your Team Needs styles
+.skills-need {
+  padding: 14rem 0 8rem !important;
+  @include respond-to('mobile') {
+    padding: 8rem 0 6rem !important;
+  }
+}
+
+// Custom Placements styles
+.custom-placements {
+  padding: 16rem 0 10rem 0 !important;
+  @include respond-to('mobile') {
+    padding: 11rem 0 7rem 0 !important;
+  }
+
+  h2 {
+    color: $juno-red;
+  }
+}
+
+// Meet our Grads styles
+.meet-grads {
+  background-color: $juno-violet-grey !important;
+  background-image: url(../assets/images/bg-dots/bg-squaredot-halfdiagonal-opaque.svg);
+  background-position: bottom -12px right -365px;
+  background-repeat: no-repeat;
+  padding: 9rem 0;
+  @include respond-to('tablet') {
+    background-position: bottom -12px right -600px;
+  }
+  @include respond-to('mobile') {
+    background-image: none;
+  }
+
+  h3, p {
+    grid-column: 4 / span 20;
+    color: $white;
+  }
+  h3 {
+    @include h3-general-styles();
+    font-size: 5.8rem;
+    line-height: 1.07;
+    @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    font-size: 4.4rem;
+  }
+  }
+  p {
+    font-size: 2.2rem;
+    line-height: 1.45;
+    margin: 1rem 0 2.5rem 0;
+    @include respond-to('tablet') {
+      grid-column: 4 / span 17;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  .section-button {
+    grid-column: 4 / -2;
+    width: 200px;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+}

@@ -1,0 +1,393 @@
+.hero {
+  padding: 10rem 0 6rem;
+  position: relative;
+  @include respond-to('mobile') {
+    padding: 8rem 0 0;
+  }
+}
+.text-wrapper {
+  grid-column: 4 / -10;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+
+  .h1Heading {
+    font-size: 1.2rem;
+    font-family: $font-body-medium;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 1.5rem;
+  }
+
+  .main-visual-heading {
+    font-family: $font-heading-regular;
+    font-size: 5.8rem;
+    line-height: 1.06;
+    letter-spacing: 0px;
+    margin-bottom: 1.5rem;
+    @include respond-to('mobile') {
+      font-size: 4.8rem;
+      line-height: 1.04;
+    }
+
+    &.large-heading {
+      font-size: 6.8rem;
+      letter-spacing: -1px;
+      @include respond-to('tablet') {
+        font-size: 5.4rem;
+        line-height: 1.04;
+      }
+      @include respond-to('mobile') {
+        font-size: 4.8rem;
+      }
+    }
+  }
+
+  .subheading {
+    font-size: 2.4rem;
+    line-height: 1.33;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+    @include respond-to('mobile') {
+      font-size: 1.8rem;
+    }
+
+    &.allCaps {
+      font-size: 1.2rem;
+      font-family: $font-body-medium; 
+      letter-spacing: 0.86px;
+      text-transform: uppercase;
+      line-height: 2.17;
+      margin-top: -5px;
+    }
+  }
+
+  .intro-paragraph p {
+    font-size: 1.8rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    @include respond-to('tablet') {
+      font-size: 1.6rem;
+      line-height: 1.76;
+    }
+    a {
+      font-size: inherit;
+    }
+  }
+
+  .buttons-wrapper > a:first-of-type,
+  .buttons-wrapper > button:first-of-type {
+    margin-inline-end: 1rem;
+    min-width: 141px;
+  }
+  .buttons-wrapper a,
+  .buttons-wrapper button {
+    margin-bottom: 1rem;
+  }
+}
+
+// Side content styling
+.hero.with-side-image {
+  margin-bottom: 9rem;
+  &::after {
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
+  .text-wrapper {
+    grid-column: 4 / span 18;
+    @include respond-to('tablet') {
+      grid-column: 2 / span 15;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+}
+.side-image {
+  grid-column: span 12 / -4;
+  width: 100%;
+  position: absolute !important;
+  top: 80px;
+  z-index: 20;
+  @include respond-to('tablet') {
+    grid-column: span 8 / -2;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    position: relative !important;
+    top: 40px;
+    max-width: 350px;
+    justify-self: center;
+  }
+}
+
+.hero.with-stamp .text-wrapper {
+  grid-column: 4 / span 26;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.stamp {
+  grid-row: 1 / span 2;
+  grid-column: 30 / span 4;
+  width: 13rem;
+  height: 13rem;
+  @include respond-to('tablet') {
+    grid-row: auto;
+    position: absolute;
+    bottom: -110px;
+    right: 5%;
+    z-index: 20;
+  }
+}
+
+.hero.with-toc .text-wrapper {
+  grid-column: 4 / span 19;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.table-of-contents {
+  grid-column: span 11 / -4;
+  grid-row: 1 / span 3;
+  margin-top: 2px;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+    grid-row: auto;
+    margin-top: 2rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    margin-top: 4rem;
+  }
+
+  h3 {
+    font-family: $font-body-medium;
+    font-size: 1.2rem;
+    line-height: 26px;
+    letter-spacing: 0.86px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    li {
+      margin-bottom: 2rem;
+      @include respond-to('mobile') {
+        margin-bottom: 1.2rem;
+      }
+      a {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+// decorative table of contents, used on the Why Choose Juno page
+.hero.with-decorative-toc .text-wrapper {
+  grid-column: 4 / span 17;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.table-of-contents.decorative {
+  grid-column: span 17 / -1;
+  grid-row: 1 / span 3;
+  margin-top: 2px;
+  @include respond-to('tablet') {
+    grid-column: 4 / -1;
+    grid-row: auto;
+    margin-top: 1rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -1;
+    margin-top: 4rem;
+  }
+
+  h3 {
+    display: none;
+  }
+
+  ul {
+    margin-top: 3rem;
+    overflow-x: hidden;
+    @include respond-to('tablet') {
+      margin-top: 0;
+    }
+    li {
+      position: relative;
+      margin-bottom: 5px;
+      transition: background-color $default-duration, left $slowest-duration;
+      &:first-of-type {
+        background-color: $juno-tumeric;
+        left: 0;
+        padding-right: 1rem;
+        transition-delay: 0s, .55s;
+        &:hover,
+        &:focus {
+          background-color: $juno-yellow-peach;
+        }
+      }
+      &:nth-of-type(2) {
+        background-color: $juno-blue-sky-2;
+        left: 25px;
+        padding-right: calc(1rem + 25px);
+        transition-delay: 0s, .65s;
+        &:hover,
+        &:focus {
+          background-color: tint($juno-blue-sky-2, 50%);
+        }
+      }
+      &:nth-of-type(3) {
+        background-color: $juno-custard;
+        left: 50px;
+        padding-right: calc(1rem + 50px);
+        transition-delay: 0s, .75s;
+        &:hover,
+        &:focus {
+          background-color: $juno-sand;
+        }
+      }
+      &:last-of-type {
+        background-color: $juno-pale-mint;
+        left: 75px;
+        padding-right: calc(1rem + 75px);
+        transition-delay: 0s, .85s;
+        &:hover,
+        &:focus {
+          background-color: $juno-sea-glass;
+        }
+      }
+      
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 1.5rem 0 1.5rem 2rem;
+        color: $juno-dark-violet;
+        font-family: $font-body-medium;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.table-of-contents.table-of-contents.decorative.slide-out {
+  ul li {
+    left: 100%;
+  }
+}
+
+.hero.extra-wide .text-wrapper {
+  grid-column-start: 2;
+}
+
+// calendly embed
+.calendly-embed {
+  grid-column: 4 / -14;
+  align-items: flex-start !important;
+
+  @include respond-to('tablet') {
+    grid-column: 4 / -7;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    margin-bottom: 4rem;
+  }
+  @include respond-to('mobile-small') {
+    margin-bottom: 5rem;
+  }
+}
+
+// color variants
+.hero {
+  &.default-color {
+    background-color: tint($juno-blue-sky, 40%) !important;
+    @include pageRipEffectBottom('cp-hero-rip.svg', $height: 8.8rem, $nested: true);
+  }
+
+  &.juno-sea-glass {
+    background-color: $juno-sea-glass !important;
+    @include pageRipEffectBottom('bootcamp-hero-colorblock-seaglass-rip.svg', $nested: true);
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-sea-glass 0%);
+      }
+    }
+  }
+
+  &.juno-yellow-peach {
+    background-color: $juno-yellow-peach !important;
+    @include pageRipEffectBottom('corporate-rip-hero.svg', $nested: true);
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-yellow-peach 0%);
+      }
+    }
+  }
+
+  &.juno-sand {
+    background-color: $juno-sand !important;
+    @include pageRipEffectBottom('bootcamp-hero-colorblock-sand-rip.svg', $nested: true);
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-sand 0%);
+      }
+    }
+  }
+
+  &.juno-light-sand {
+    background-color: $juno-light-sand !important;
+    @include pageRipEffectBottom('rip-faq-landing.svg', $nested: true);
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-light-sand 0%);
+      }
+    }
+  }
+
+  &.juno-blue-sky {
+    background-color: $juno-blue-sky !important;
+    @include pageRipEffectBottom('rip-hire-web-developer-sky-blue.svg', $nested: true);
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-blue-sky 0%);
+      }
+    }
+  }
+
+  &.juno-red {
+    background-color: $juno-red !important;
+    @include pageRipEffectBottom('rip-reviews-landing.svg', $nested: true);
+
+    &.with-side-image {
+      @include respond-to('mobile') {
+        background: linear-gradient(0deg, $white 25%, $juno-red 0%);
+      }
+    }
+  }
+
+  &.white-no-rip {
+    background-color: $white;
+  }
+}

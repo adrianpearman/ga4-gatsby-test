@@ -1,0 +1,343 @@
+// ================ DESKTOP STYLES ============== //
+.juno-logo {
+  margin-right: 5.5rem;
+  width: 175px;
+  position: relative;
+  z-index: -1;
+}
+.mobile-small-logo {
+  display: none;
+}
+
+.side-menu-button {
+  display: none;
+}
+
+.nav {
+  width: 100%;
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 40;
+  grid-column: 2 / -2;
+}
+
+.nav-menu {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+  z-index: 40;
+}
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  padding-right: calc(2rem + 15px);
+  font-size: 1.5rem;
+  font-family: $font-body-medium;
+  background-color: transparent;
+  transition: background-color $default-duration ease;
+  cursor: default;
+  position: relative;
+  z-index: 30;
+  @include respond-to('max-width: 1070px') {
+    padding: 0;
+    padding-right: calc(1rem + 12px);
+  }
+
+  &:hover,
+  &:focus-within,
+  &.opened {
+    background-color: tint($juno-blue-sky, 70%);
+    z-index: 40;
+  }
+  &:hover .menu-toggle-icon,
+  &.opened .menu-toggle-icon {
+    transform: rotateX(180deg);
+    transition: transform $slowest-duration ease;
+  }
+}
+.free-events {
+  padding: 0;
+  padding-right: 0;
+  a {
+    color: $juno-violet-grey;
+    text-decoration: solid underline transparent;
+    padding: 1rem 2rem;
+    &:hover,
+    &:focus {
+      text-decoration: solid underline transparent;
+    }
+  }
+}
+.menu-item-heading {
+  background-color: transparent;
+  padding: 2rem 0 2rem 2rem;
+  color: $juno-violet-grey;
+}
+.apply-now {
+  margin: auto 0 auto auto;
+  padding: 0;
+  &:hover,
+  &:focus-within {
+    background-color: transparent;
+  }
+}
+
+.menu-toggle-icon {
+  width: 11px;
+  position: absolute;
+  top: 31px;
+  right: 19px;
+  transform: rotateX(0deg);
+  transition: transform $slowest-duration ease;
+  @include respond-to('max-width: 1070px') {
+      right: 7px;
+    }
+
+  polyline {
+    stroke: $juno-violet-grey;
+  }
+}
+.fade-out-site {
+  visibility: hidden;
+  display: none;
+}
+
+// ========== SUBMENU TRANSITION STYLES ========== //
+.menu-item:hover,
+.menu-item.opened {
+  z-index: 40;
+  div {
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility $default-duration, opacity $default-duration, top 0.5s;
+  }
+}
+// ============================================== //
+// ============================================== //
+
+// ============ TABLET/MOBILE STYLES ============ //
+@include respond-to('tablet') {
+  .menu-item:hover,
+  .menu-item.opened {
+    div {
+      top: 0;
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+  }
+  .side-menu-button {
+    display: block;
+    width: 60px;
+    position: fixed;
+    right: 20px;
+    top: 7px;
+    background: none;
+    cursor: pointer;
+    z-index: 100;
+    padding: 0;
+    transition: top $default-duration, right $default-duration;
+  }
+  .side-menu-button.scrolled-down {
+    top: 0;
+    right: 0;
+    transition: top $default-duration, right $default-duration;
+    .side-menu-icon {
+      background-color: $juno-violet-grey;
+      border-radius: 2px;
+      transition: background-color $slow-duration;
+      line {
+        stroke: $white;
+      }
+    }
+  }
+  .side-menu-icon{
+    background-color: transparent;
+    transition: background-color $slow-duration;
+    line {
+      stroke: $juno-violet-grey;
+    }
+  }
+  .fade-out-site {
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    opacity: 0;
+    transition: visibility $default-duration, opacity $default-duration;
+    &.visible {
+      left: 0;
+      visibility: visible;
+      opacity: 0.85;
+      transition: visibility $default-duration, opacity $default-duration;
+    }
+  }
+  
+
+  .nav-menu {
+    background-color: tint($juno-blue-sky, 70%);
+    overflow-y: scroll;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    padding: 8rem 0 0;
+    width: 85%;
+    position: fixed;
+    right: -44.7%;
+    top: 0;
+    bottom: 0;
+    transition: right $default-duration, visibility 0s, opacity 0.5s;
+    z-index: 20;
+  }
+  .menu-item {
+    position: relative;
+    padding-right: 0;
+    &:hover .menu-item-heading,
+    &:focus-within .menu-item-heading {
+      background-color: $juno-blue-sky;
+      transition: background-color $fast-duration;
+    }
+    &:hover .menu-toggle-icon,
+    &.opened .menu-toggle-icon{
+      transform: unset;
+      transition: unset;
+    }
+  }
+  .menu-item-heading {
+    padding: 1.7rem 4rem;
+    font-size: 2.6rem;
+    cursor: pointer;
+  }
+  .menu-item-heading {
+    background: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color $fast-duration, color $fast-duration;
+    position: relative;
+    z-index: 20;
+  }
+  .menu-item-heading.clicked {
+    background-color: $juno-blue-sky;
+  }
+  .menu-toggle-icon {
+    width: unset;
+    position: absolute;
+    z-index: 20;
+    right: 4rem;
+    top: 23px;
+    transition: transform $slowest-duration ease !important;
+    cursor: pointer;
+    polyline {
+      stroke: $juno-violet-grey;
+    }
+  }
+  .menu-toggle-icon-clicked {
+    transform: rotateX(180deg) !important;
+    transition: transform $slowest-duration ease !important;
+  }
+  .free-events a {
+    padding: 2rem 4rem;
+    color: $juno-violet-grey;
+    font-size: 2.6rem;
+    background-color: transparent;
+    transition: text-decoration $slow-duration, background-color $slow-duration;
+    &:hover,
+    &:focus {
+      text-decoration: solid underline 2px;
+      background-color: $juno-blue-sky;
+      transition: text-decoration $slow-duration, background-color $slow-duration;
+    }
+  }
+  .side-menu-opened {
+    right: -18px;
+    visibility: visible;
+    opacity: 1;
+    transition: right $default-duration, opacity $default-duration;
+  }
+  .apply-now {
+    position: relative;
+    background-color: tint($juno-blue-sky, 70%);
+    transition: text-decoration $slow-duration, background-color $slow-duration;
+    &:hover,
+    &:focus-within {
+      background-color: $juno-blue-sky;
+      transition: text-decoration $slow-duration, background-color $slow-duration;
+    }
+    button,
+    a {
+      font-size: 2.6rem;
+      color: $juno-link-red;
+      background-color: transparent;
+      border: none;
+      padding: 1.7rem 4rem;
+      margin: 0;
+      height: auto;
+      width: 100%;
+      text-align: left;
+      justify-content: flex-start;
+      font-size: 2.6rem;
+      text-decoration: underline 2px transparent;
+      transition: text-decoration $slow-duration, color $slow-duration;
+      &:hover,
+      &:focus {
+        color: $juno-link-red;
+        background-color: transparent;
+        text-decoration: underline 2px solid;
+        transition: text-decoration $slow-duration, color $slow-duration;
+      }
+    }
+  }
+}
+
+@include respond-to('mobile-small') {
+  .nav {
+    position: static;
+  }
+  .nav-menu {
+    width: auto;
+    right: -18px;
+    left: 0;
+  }
+  .menu-item-heading,
+  .apply-now,
+  .free-events a {
+    padding-left: 2.3rem;
+  }
+  .apply-now button,
+  .apply-now a {
+    padding-left: 0;
+  }
+  .menu-toggle-icon {
+    right: 3.5rem;
+  }
+  .fade-out-site,
+  .fade-out-site.visible {
+    display: none;
+  }
+  .side-menu-button {
+    right: 0;
+  }
+  .mobile-small-logo {
+    display: block;
+    position: absolute;
+    left: 2.3rem;
+    top: 1.8rem;
+    width: 175px;
+  }
+}
+// ============================================== //

@@ -1,0 +1,120 @@
+/* Bootcamp details page - Prerequisites component styles
+========================================================================== */
+
+.prereq {
+  padding: 8rem 0;
+  background-color: tint($juno-blue-sky-2, 85%);
+  @include respond-to('mobile') {
+    padding: 8rem 0 4rem;
+  }
+}
+
+.content {
+  grid-column: 4 / 26;
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+
+.content .title {
+  font-size: 5rem;
+  font-family: $font-heading-regular;
+  line-height: 1.08;
+  margin-bottom: 2rem;
+  @include respond-to('mobile') {
+    font-size: 4.4rem;
+    line-height: 1.14;
+  }
+}
+.content p:first-of-type {
+  color: $juno-dark-violet;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  letter-spacing: -0.06rem;
+  margin-bottom: 2rem;
+  @include respond-to('mobile') {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+.content li,
+.content p:last-of-type {
+  color: $juno-dark-violet;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.025rem;
+}
+.content li {
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+  @include respond-to('tablet') {
+    margin-bottom: 0;
+  }
+}
+.content ul {
+  margin-bottom: 2rem;
+}
+.content a {
+  font-size: inherit;
+}
+
+.sidebar {
+  grid-column: -12 / -4;
+  align-self: start;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+    margin-bottom: 4rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.sidebar-icon {
+  width: 6.4rem;
+  margin: 1rem 0;
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.sidebar-icon img {
+  width: 100%;
+}
+.sidebar h4 {
+  font-size: 2.4rem;
+  font-family: $font-body-medium;
+  color: $juno-dark-violet;
+  line-height: 1.33;
+  margin-bottom: 2rem;
+  @include respond-to('tablet') {
+    font-size: 2.2rem;
+  }
+}
+.sidebar ul {
+  display: block;
+  @include respond-to('tablet') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 6%;
+    align-content: center;
+  }
+  @include respond-to('mobile-small') {
+    display: block;
+  }
+}
+.sidebar li {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 0.8rem 0;
+}
+.sidebar li:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

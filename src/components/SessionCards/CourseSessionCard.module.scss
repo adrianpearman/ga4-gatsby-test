@@ -1,0 +1,175 @@
+.single-session {
+  grid-column: 8 / -2;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-column-gap: 1.2%;
+  min-height: 150px;
+  background: white;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.full-width {
+  grid-column: 2 / -2;
+  grid-template-columns: repeat(36, 1fr);
+}
+// Not sure what this class is doing, but leaving in for now just in case
+.program-info {
+  display: none;
+}
+.mobile-details-preview .session-details {
+  padding-bottom: 0;
+}
+.mobile-details-preview .session-details::after {
+  background: none;
+}
+.session-days {
+  grid-column: 1 / span 8;
+  grid-row: 1 / span 2;
+  background: $juno-violet-grey;
+  padding: 4rem 4rem 2rem 4rem;
+  position: relative;
+}
+.time-commitment {
+  color: tint($juno-periwinkle, 25%);
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.class-days {
+  color: white;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.25px;
+  @include respond-to('mobile') {
+    margin-right: 5rem;
+  }
+}
+.session-days a,
+.session-days .register-button {
+  color: $juno-custard;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 1rem 0;
+}
+.session-details {
+  grid-column: 10 / 21;
+  grid-row: 1;
+  padding: 4rem 0 3.5rem 7rem;
+}
+.session-details p {
+  color: $juno-violet-grey;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  margin-bottom: 11px;
+  position: relative;
+}
+.session-details .accelerated-link {
+  color: $juno-mauve-blue;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+}
+.session-details .accelerated-link a,
+.session-details .accelerated-link .register-button {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+}
+.session-details p::before {
+  position: absolute;
+  bottom: -5px;
+  right: 101%;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.session-details p.class-dates::before {
+  content: url(../../assets/images/course-details/icon-details-duration.svg);
+}
+.session-details p.class-times::before {
+  content: url(../../assets/images/course-details/icon-details-time.svg);
+}
+.session-details p.class-address::before {
+  content: url(../../assets/images/course-details/icon-details-place.svg);
+}
+.accelerated-link {
+  grid-column: 12 / -1;
+  align-self: end;
+  color: $juno-mauve-blue;
+}
+.accelerated-link,
+.accelerated-link a,
+.accelerated-link .register-button {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+}
+.session-instructor {
+  grid-column: span 9 / -1;
+  display: flex;
+  padding: 4rem 3rem 3rem 3rem;
+}
+.session-instructor-headshot {
+  margin-right: 1rem;
+}
+.session-instructor-details p:first-of-type {
+  color: $juno-violet-grey;
+}
+.session-instructor-details p:last-of-type {
+  color: $juno-violet-grey;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+}
+
+.banner {
+  background-color: $juno-custard;
+  line-height: 5rem;
+  width: 200px;
+  right: -47px;
+  top: 29px;
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  transform: rotate(45deg);
+  z-index: 5;
+}
+.banner-sold-out {
+  background-color: $juno-custard;
+}
+.banner-almost-full{
+  background-color: #aef9ff;
+}
+
+@include respond-to('tablet') {
+  .single-session {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .session-days {
+    width: 100%;
+  }
+  .session-details, .session-instructor {
+    width: 45%;
+  }
+}
+@include respond-to('mobile') {
+  .session-details, .session-instructor {
+    width: 100%;
+  }
+  .session-instructor {
+    padding-top: 0;
+  }
+}
+
+.purchase-button {
+  margin: 1.5rem 0 1rem;
+}

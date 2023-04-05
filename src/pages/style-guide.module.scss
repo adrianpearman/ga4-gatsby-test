@@ -1,0 +1,100 @@
+/* Style guide base module styles
+========================================================================== */
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.wrapper p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link {
+  padding: 2rem;
+}
+
+.nav-link:hover {
+  background: tint($juno-blue-sky-2, 75%);
+}
+
+.header h1 {
+  white-space: nowrap;
+  margin-right: 2rem;
+  letter-spacing: 0.01rem;
+  font-size: 5rem;
+  color: $juno-violet-grey;
+}
+
+.blog-links {
+  margin-left: 2rem;
+  li {
+    list-style-type: disc;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    a {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content p {
+  color: $juno-violet-grey;
+}
+.content h2,
+.content h3 {
+  letter-spacing: 0.01rem;
+}
+.content h2 {
+  font-size: 3rem;
+}
+.content h3,
+.content p {
+  font-family: $font-body-regular;
+}
+.content h3 {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
+}
+.content h4 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-family: $font-body-medium;
+}
+.content p {
+  margin: 2rem 0;
+}
+.content section {
+  padding: 5rem 0;
+}
+
+.code-inline {
+  background: $juno-almond-2;
+  padding: 0.2rem 0.7rem 0.4rem;
+  border-radius: 0.5rem;
+}
+.code-example {
+  margin-top: 0;
+  padding: 0.5rem 3rem;
+  line-height: 1.4;
+  background: $juno-dark-violet;
+  color: $white;
+}
+.link-doc {
+  font-size: 1.8rem;
+}

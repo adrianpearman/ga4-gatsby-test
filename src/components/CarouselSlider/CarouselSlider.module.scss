@@ -1,0 +1,175 @@
+.full-carousel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.all-cards {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 0;
+}
+
+.full-carousel.offset .all-cards {
+  transition: all $slow-duration;
+
+  .current-card {
+    opacity: 0.5;
+  }
+
+  @include respond-to('mobile') {
+    // transition: none will not work here because the prev/next button function is located on the onTransitionEnd handler. So a transition needs to happen in order for the event to fire.
+    transition: all 0.01s;
+  }
+}
+.full-carousel.offset.next .all-cards {
+  .next-card {
+    opacity: 1;
+  }
+  @include respond-to('mobile') {
+    left: -0.1px !important;
+  }
+}
+.full-carousel.offset.prev .all-cards {
+  .previous-card {
+    opacity: 1;
+  }
+
+  @include respond-to('mobile') {
+    left: 0.1px !important;
+  }
+}
+
+.card {
+  flex: 0 0 auto;
+  opacity: 1;
+  transition: opacity $slow-duration;
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+  &:not(.current-card) {
+    opacity: 0.5;
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
+}
+
+.button-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  @include respond-to('mobile') {
+    width: 100% !important;
+    top: 0;
+    height: 8rem;
+  }
+}
+
+.previous-button,
+.next-button {
+  align-self: flex-start;
+  background: none;
+  cursor: pointer;
+  padding: 2rem;
+  position: absolute;
+  top: 40%;
+  z-index: 20;
+  .icon polyline {
+    stroke-width: 3px;
+    stroke: $juno-dark-violet;
+    transition: stroke $slow-duration;
+  }
+  &:hover .icon polyline, 
+  &:focus .icon polyline {
+    stroke: $juno-red;
+    transition: stroke $slow-duration;
+  }
+  @include respond-to('tablet') {
+    .icon {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  @include respond-to('mobile') {
+    top: 0;
+  }
+}
+.previous-button {
+  .icon {
+    transform: rotate(90deg);
+  }
+  left: -2.8rem;
+}
+.next-button {
+  .icon {
+    transform: rotate(-90deg);
+  }
+  right: -2.8rem;
+}
+
+// Card Specific Styles
+// offset.prev & offset.next widths based on card width, needs to be fixed for the sliding effect to look seamless (widths can be found in the card scss module)
+.testimonial-standard,
+.testimonial-short {
+  &.full-carousel {
+    padding-top: 5rem;
+    @include respond-to('mobile') {
+      padding-top: 14rem;
+    }
+  }
+
+  &.full-carousel.offset.next .all-cards {
+    left: calc(-720px - 14vw);
+    @include respond-to('tablet') {
+      left: calc(-580px - 14vw);
+    }
+  }
+  &.full-carousel.offset.prev .all-cards {
+    left: calc(720px + 14vw);
+    @include respond-to('tablet') {
+      left: calc(580px + 14vw);
+    }
+  }
+  
+  .button-container {
+    top: 8rem;
+    width: 870px;
+    @include respond-to('tablet') {
+      width: 710px;
+    }
+    @include respond-to('mobile') {
+      top: 0;
+    }
+  }
+}
+.testimonial-short .button-container {
+  top: 2.5rem;
+  @include respond-to('mobile') {
+    top: 0;
+  }
+}
+
+.project,
+.content-block {
+  &.full-carousel {
+    padding-bottom: 8rem;
+    @include respond-to('mobile') {
+      padding-top: 10rem;
+    }
+  }
+
+  &.full-carousel.offset.next .all-cards {
+    left: calc(-500px - 12vw);
+  }
+  &.full-carousel.offset.prev .all-cards {
+    left: calc(500px + 12vw);
+  }
+  
+  .button-container {
+    width: 655px;
+  }
+}

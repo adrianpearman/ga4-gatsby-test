@@ -1,0 +1,435 @@
+/* Scholarship page module styles
+========================================================================== */
+
+.section-description > p:first-child {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: .03rem;
+    margin-bottom: 5rem;
+  }
+
+/* Scholarship page global module styles
+========================================================================== */
+.scholarships h2 {
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: 0.01rem;
+  margin-bottom: 2rem;
+  color: $juno-violet-grey;
+}
+.scholarships h3 {
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.0065rem;
+  color: $juno-violet-grey;
+  margin-bottom: 3rem;
+}
+.scholarships p + h3 {
+  margin-top: 4rem;
+}
+.scholarships h5 {
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: 0.03rem;
+  margin-bottom: 5rem;
+  font-family: $font-body-regular;
+}
+.scholarships p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.024rem;
+  margin-bottom: 1.5rem;
+}
+.scholarships a {
+  font-size: 1.6rem;
+}
+.scholarships ul {
+  padding-left: 1.6rem;
+  margin-bottom: 4rem;
+}
+.scholarships li::before {
+  content: '\2022';
+  color: $juno-red;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.scholarships li {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  margin-bottom: 1.1rem;
+  color: $juno-dark-violet;
+}
+
+.scholarships {
+  overflow: hidden;
+}
+
+/* Sidebar Global Styles
+========================================================================== */
+.sidebar {
+  margin-bottom: 5rem;
+  background: $white;
+  position: relative;
+  @include pageRipEffectBottom('rip-scholarships-sidebar-box1.svg');
+}
+.sidebar-header-image {
+  position: relative;
+  width: 100%;
+}
+.sidebar-info-container {
+  padding: 3rem;
+}
+.sidebar .sidebar-title {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.0055rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.sidebar p {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: $juno-violet-grey;
+  margin-bottom: 3rem;
+}
+.sidebar .sidebar-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.sidebar .sidebar-links li::before {
+  content: '';
+}
+.sidebar .sidebar-links li:not(:last-child) {
+  margin-bottom: 0;
+}
+.sidebar .sidebar-links li a {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  color: $juno-link-red;
+}
+.sidebar .offset-image,
+.by-the-numbers .offset-image {
+  margin-bottom: -75px;
+  margin-top: 2rem;
+  z-index: 1;
+  width: 100%;
+  @include respond-to('tablet') {
+    max-width: 45rem;
+    margin: 1rem auto -75px;
+  }
+}
+.image-stack-container {
+  margin: 4rem 0 0;
+  min-height: 14rem;
+  max-width: 40rem;
+  @include respond-to('tablet') {
+    margin: 6rem auto 2rem;
+  }
+}
+
+/* Hero
+========================================================================== */
+.hero {
+  background-color: $white !important;
+  padding: 8rem 0 0;
+  position: relative;
+  background: linear-gradient(
+    to top,
+    tint($juno-almond-2, 80%) 0%,
+    tint($juno-almond-2, 80%) 30%,
+    $white 10%,
+    $white 100%
+  );
+  @include respond-to('tablet') {
+    background: linear-gradient(
+      to top,
+      tint($juno-almond-2, 80%) 0%,
+      tint($juno-almond-2, 80%) 15%,
+      $white 5%,
+      $white 100%
+    );
+  }
+  @include respond-to('mobile') {
+    background: linear-gradient(
+      to top,
+      tint($juno-almond-2, 80%) 0%,
+      tint($juno-almond-2, 80%) 5rem,
+      $white 5rem,
+      $white 100%
+    );
+  }
+}
+
+.hero-info {
+  grid-column: 2 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.hero-info h1 {
+  margin-bottom: 2rem;
+  max-width: 600px;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: 0.074rem;
+  color: $juno-mauve-blue;
+  @include respond-to('tablet') {
+    font-size: 5rem;
+    line-height: 5.4rem;
+    letter-spacing: 0.05rem;
+    max-width: 100%;
+  }
+}
+.hero-info p,
+.hero-info a {
+  max-width: 700px;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.027rem;
+}
+
+.hero-links {
+  grid-column: 27 / -2;
+  list-style: none;
+  padding-left: 0 !important;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.hero .hero-links li::before {
+  content: '';
+}
+.hero .hero-links li:first-child {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: tint($juno-mauve-blue, 25%);
+}
+.hero .hero-links li a {
+  color: $juno-link-red;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.003rem;
+  font-family: $font-body-medium;
+}
+
+.hero-image {
+  grid-column: 1 / -2;
+  mask-image: url(../assets/images/scholarship/rip-scholarships-landingphoto-mask.svg);
+  mask-repeat: no-repeat;
+  margin: 8rem 0 0;
+}
+
+/* ISA section
+========================================================================== */
+.isa {
+  grid-template-rows: auto auto auto auto 1fr;
+  align-items: start;
+  background-color: tint($juno-almond-2, 80%);
+  padding: 8rem 0;
+}
+.isa-intro {
+  grid-column: 4 / 24;
+  grid-row: 2 / span 2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: 2 / span 1;
+    margin-bottom: 4rem;
+  }
+}
+.isa-content {
+  grid-column: 4 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: 4 / span 1;
+    margin-bottom: 4rem;
+  }
+}
+.isa-right {
+  grid-column: 27 / -2;
+  grid-row-start: 2;
+  margin-bottom: 9rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: 5 / span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.isa-detail-link {
+  margin-bottom: 3.5rem;
+}
+
+// 120+ & $1M+ number divs in .isa section description
+.section-description > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5.5rem;
+  @include respond-to('tablet') {
+    flex-direction: column;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 314px;
+    margin-right: 4rem;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    p:first-child {
+      font-size: 8rem;
+      line-height: 8rem;
+      letter-spacing: 0.16rem;
+      color: $juno-red;
+      font-family: $font-heading-light;
+      font-variant-numeric: lining-nums;
+      margin-bottom: 2rem;
+    }
+    p:last-child {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+.by-the-numbers {
+  grid-column: 27 / -2;
+  grid-row: 3 / span 1;
+  margin-bottom: 5rem;
+  background: $white;
+  position: relative;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: 3 / span 1;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Need-Based Scholarships
+========================================================================== */
+
+.need-scholarships {
+  padding: 10rem 0;
+  @include respond-to('tablet') {
+    padding: 6rem 0 4rem;
+  }
+
+  .section-description > div {
+    margin-bottom: 3rem;
+  }
+}
+.need-scholarships-left {
+  grid-column: 4 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.need-scholarships-right {
+  grid-column: 27 / -2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    margin-top: 4rem;
+  }
+}
+.need-scholarships .sidebar {
+  background: tint($juno-blue-sky, 60%);
+  @include pageRipEffectBottom('rip-scholarships-sidebar-box2.svg');
+  align-self: start;
+}
+
+/* Other Scholarships
+========================================================================== */
+
+.other-scholarships {
+  background: tint($juno-almond-2, 80%);
+  padding: 10rem 0;
+  @include respond-to('tablet') {
+    padding: 6rem 0 4rem;
+  }
+}
+.other-scholarships-left {
+  grid-column: 4 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.other-scholarships-right {
+  grid-column: 27 / -2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    margin-top: 2rem;
+  }
+}
+.other-scholarships .sidebar {
+  background: $white;
+  align-self: start;
+}
+
+/* Canada-Ontario Job Grant (COJG)
+========================================================================== */
+
+.grant {
+  padding: 10rem 0;
+  @include respond-to('tablet') {
+    padding: 6rem 0;
+  }
+}
+.grant h5 a {
+  font-size: 2rem;
+}
+.grant-left {
+  grid-column: 4 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.grant-right {
+  grid-column: 27 / -2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.grant .sidebar {
+  background: tint($juno-blue-sky, 60%);
+  @include pageRipEffectBottom('rip-scholarships-sidebar-box2.svg');
+}
+.grant .sidebar .sidebar-links {
+  margin-bottom: 3rem;
+}
+
+/* Financing
+========================================================================== */
+
+.faqs {
+  background: tint($juno-almond-2, 80%);
+  margin: 0 !important;
+@include respond-to('mobile') {
+  padding-bottom: 5rem;
+}
+}
+
+
+/* Book a Student Success Consultant Meeting
+========================================================================== */
+
+.student-success-section {
+  padding: 8rem 0 0;
+  background: tint($juno-almond-2, 80%);
+  overflow: unset;
+}
+
+.success-banner {
+  grid-column: 1 / -1;
+}

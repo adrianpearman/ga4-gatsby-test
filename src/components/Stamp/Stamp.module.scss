@@ -1,0 +1,41 @@
+/* Stamp component styles
+========================================================================== */
+
+.stamp {
+  width: 9rem;
+  height: 9rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.outer-image,
+.inner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -moz-mix-blend-mode: multiply;
+  -o-mix-blend-mode: multiply;
+  mix-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.outer-image {
+  animation: rotate-stamp 25s linear infinite;
+}
+
+@keyframes rotate-stamp {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .outer-image {
+    animation: none;
+  }
+}

@@ -1,0 +1,208 @@
+.isa-wrapper {
+  background: #ebf3f1 !important;
+  background-image: url('../assets/images/isa-calculator/bg.svg') !important;
+  background-size: cover !important;
+}
+
+.isa {
+  grid-column: 2 / -2;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  @include respond-to('tablet') {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  @include respond-to('mobile') {
+    align-items: flex-start;
+  }
+}
+
+.info {
+  width: 50%;
+  max-width: 500px;
+  padding-right: 2rem;
+  align-self: flex-start;
+  @include respond-to('tablet') {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 6rem;
+    padding-right: 0;
+    text-align: center;
+  }
+  @include respond-to('mobile') {
+    text-align: left;
+  }
+  h1 {
+    @include seoHeadingTypography;
+  }
+  h2 {
+    font-size: 7.2rem;
+    font-family: $font-heading-regular;
+    margin-bottom: 1rem;
+    line-height: 1;
+    color: #221c38;
+    display: flex;
+    flex-direction: column;
+    @include respond-to('mobile') {
+      font-size: 5rem;
+    }
+    @include respond-to('mobile-small') {
+      font-size: 4.4rem;
+      padding-right: 2rem;
+    }
+    span {
+      display: table;
+      margin: 0;
+    }
+  }
+  p {
+    font-family: $font-body-regular;
+    font-size: 1.9rem;
+    line-height: 1.47;
+    margin-bottom: 2rem;
+    letter-spacing: normal;
+    color: #221c38;
+  }
+}
+
+.calculator {
+  width: 50%;
+  max-width: 543px;
+  background-color: #211c38;
+  padding: 3.5rem;
+  position: relative;
+  @include pageRipEffectBottom('rip-isa-calculator.svg');
+  @include respond-to('tablet') {
+    width: 100%;
+  }
+  @include respond-to('mobile') {
+    padding: 5%;
+  }
+  @include respond-to('mobile-small') {
+    padding: 5%;
+  }
+  table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  thead {
+    background: #4a455c !important;
+    color: $white;
+  }
+  th {
+    height: 4.4rem;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    @include respond-to('mobile') {
+      font-size: 1.1rem;
+      padding: 0 1.1rem;
+    }
+  }
+  td {
+    width: 200px;
+    background: #fbf7f4;
+    height: 4.4rem;
+    font-family: $font-body-regular;
+    font-size: 1.4rem;
+    line-height: 1.14;
+    text-align: center;
+    color: #211c38;
+    overflow-x: auto;
+    padding: 0 1rem;
+  }
+  td:last-child {
+    color: #d64c31;
+  }
+  .error {
+    color: #fbf7f4;
+    margin-top: 1rem;
+  }
+}
+
+.calculator form {
+  display: flex;
+  padding: 0 0.2rem;
+  padding-top: 2rem;
+  @include respond-to('tablet') {
+    flex-direction: column;
+  }
+  input {
+    width: 50%;
+    font-size: 1.4rem;
+    padding: 1.4rem 2rem;
+    font-family: $font-body-medium;
+    @include respond-to('tablet') {
+      width: 100%;
+    }
+  }
+  .amount::placeholder {
+    font-style: italic;
+    font-family: $font-body-regular;
+    color: tint($juno-dark-violet, 50%);
+  }
+  .submit {
+    background: $juno-red;
+    border: none;
+    color: $white;
+    transition: color $default-duration ease, background $default-duration ease;
+    cursor: pointer;
+  }
+  .submit:hover,
+  .submit:focus {
+    color: $juno-red;
+    background: $juno-custard;
+    transition: color $default-duration ease, background $default-duration ease;
+  }
+}
+
+.faq {
+  grid-column: 2 / -2;
+  padding-bottom: 8.5rem;
+  h2 {
+    text-align: center;
+    padding: 10rem 0;
+    height: 42px;
+    font-family: $font-heading-regular;
+    color: #221c38;
+    @include respond-to('mobile-small') {
+      padding-top: 4rem;
+    }
+  }
+  h3 {
+    padding: 2rem 3rem;
+    font-family: $font-heading-regular;
+    font-size: 2rem;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #221c38;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    background: $white;
+    width: calc(50% - 1rem);
+    margin-bottom: 2rem;
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+  }
+  li:nth-child(odd) {
+    margin-right: 2rem;
+    @include respond-to('mobile') {
+      margin-right: 0;
+    }
+  }
+  ul li h3 {
+    background: #edd7c8;
+  }
+  ul li p {
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+  }
+}

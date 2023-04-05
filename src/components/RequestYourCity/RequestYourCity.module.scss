@@ -1,0 +1,37 @@
+.request-your-city {
+  position: relative;
+  max-height: 500px;
+}
+
+.newsletter-wrapper {
+  background: $juno-red;
+  position: absolute;
+  width: 365px;
+  max-width: 100%;
+  top: 45%;
+  right: 3.5%;
+  @include respond-to('mobile') {
+    width: 100%;
+    right: 0;
+    top: 100%;
+  }
+}
+.desktop-image,
+.tablet-image,
+.request-your-city img {
+  width: 100%;
+  min-height: 100%;
+  max-height: 500px;
+}
+.desktop-image {
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.tablet-image {
+  display: none;
+  @include respond-to('mobile') {
+    display: block;
+    max-height: 25rem;
+  }
+}

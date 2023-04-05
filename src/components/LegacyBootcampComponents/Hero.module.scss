@@ -1,0 +1,249 @@
+/* Bootcamp Hero Styles
+========================================================================== */
+
+/* Bootcamp Hero
+========================================================================== */
+.hero-content {
+  grid-column: 1 / 26;
+  grid-row: 1 / 2;
+  max-width: 81rem;
+  align-self: center;
+  position: relative;
+  padding: 5rem 4rem 3rem 15rem; 
+  margin: 8rem 0 10rem 0;
+  z-index: 1;
+  
+  p, .header, .seo-heading, .icon-text {
+    color: $juno-dark-violet;
+  }
+  .seo-heading {
+    @include seoHeadingTypography;
+  }
+  .header {
+    font-family: $font-heading-regular;
+  }
+  .icon-text {
+    text-transform: uppercase;
+    font-family: $font-body-medium;
+  }
+  @include pageRipEffectBottom('course-details-rip-1.svg', $height: 4.8rem, $nested: true);
+}
+
+.hero-content-juno-blue-sky {
+  background: $juno-blue-sky;
+}
+.hero-content-juno-sea-glass {
+  background: $juno-sea-glass;
+  &::after {
+    background-image: url(../../assets/images/rips/course-details-rip-2.svg);
+  }
+}
+.hero-content-juno-yellow-peach {
+  background: $juno-yellow-peach;
+  &::after {
+    background-image: url(../../assets/images/rips/course-details-rip-6.svg);
+  }
+}
+.hero-content-juno-periwinkle-tint {
+  background: tint($juno-periwinkle, 70%);
+  &::after {
+    background-image: url(../../assets/images/rips/course-details-rip-4.svg);
+  }
+}
+.hero-content-juno-sand {
+  background: $juno-sand;
+  &::after {
+    background-image: url(../../assets/images/rips/course-details-rip-5.svg);
+  }
+}
+.hero-content-backup {
+  background: $juno-pale-mint-2;
+  &::after {
+    background-image: url(../../assets/images/rips/course-details-rip-7.svg);
+  }
+}
+.hero-bootcamp {
+  p, .header, .seo-heading, .icon-text {
+    color: $white;
+  }
+  .header {
+    font-family: $font-heading-light;
+  }
+  grid-column: 1 / 28;
+  max-width: 86.5rem;
+  padding: 5rem 4rem 3rem 10rem;
+  margin: 10rem 0;
+  background: $juno-violet-grey;
+  &::after {
+    background-image: url(../../assets/images/bootcamp/hero-rip-bootcamp.svg);
+  }
+}
+
+.hero-content p {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  letter-spacing: 0;
+  margin-bottom: 2rem;
+}
+.header {
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.1px;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+.hero-content .icon-text {
+  font-size: 1.2rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.hero-content .icon-text img {
+  display: inline-block;
+  margin-inline-end: 0.5rem;
+  margin-bottom: -0.25rem;
+}
+.hero-content .icon-text span:first-of-type {
+  margin-inline-end: 2rem;
+}
+.hero-image {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+  position: relative;
+}
+.hero-image > * {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.hero-image img {
+  height: 100%;
+}
+.hero-button-container > a:first-of-type {
+  margin-inline-end: 1rem;
+}
+.hero-button-container a {
+  margin-bottom: 1rem;
+}
+
+@include respond-to('tablet') {
+  .hero-content {
+    margin: 0 0 6rem;
+    grid-column: 1 / 16;
+    padding-left: 8%;
+  }
+  .hero-content .header {
+    font-size: 6rem;
+    line-height: 6.2rem;
+    letter-spacing: -0.05px;
+    padding: 1.5rem 0;
+    margin-bottom: 0;
+  }
+  .hero-bootcamp .header {
+    font-size: 4.8rem;
+    line-height: 5rem;
+  }
+  .hero-image {
+  grid-column: 1 / -1;
+  }
+}
+
+@include respond-to('mobile') {
+  .hero-content {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    margin: 0;
+    padding: 4rem 5% 0;
+  }
+  .hero-image {
+    grid-row: 2 / 3;
+    min-height: 30rem;
+  }
+  .hero-content .header {
+    font-size: 4.8rem;
+  }
+}
+
+// Hero Nav styles, doesn't appear on Bootcamp course page
+.hero-nav {
+  grid-column: 2 / -1;
+  background-color: #fdf9f7;
+  padding: 2.7rem 2rem 0 8rem;
+  position: relative;
+  margin-bottom: 3rem;
+  @include pageRipEffectBottom('course-details-sub-nav.svg', $height: 5.8rem, $nested: true)
+}
+.hero-nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hero-nav li {
+  max-width: 20rem;
+}
+.hero-nav li:not(:last-of-type) {
+  margin-inline-end: 9rem;
+}
+.hero-nav a {
+  display: flex;
+  align-items: center;
+  color: $juno-violet-grey;
+  font-family: $font-body-medium;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  letter-spacing: 0.05rem;
+  text-decoration: none;
+}
+.hero-nav a:focus,
+.hero-nav a:hover {
+  color: $juno-burnt-orange;
+}
+.nav-icon {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.nav-icon img {
+  width: 4.8rem;
+  height: 4.6rem;
+  object-position: center;
+  object-fit: contain;
+}
+
+@include respond-to('tablet') {
+  .hero-nav {
+    grid-column: 1 / -1;
+    padding-left: 5%;
+  }
+  .hero-nav li:not(:last-of-type) {
+    margin-inline-end: 4rem;
+  }
+  .nav-icon img {
+    width: 4rem;
+    height: 3.8rem;
+  }
+}
+
+@include respond-to('mobile') {
+  .hero-nav {
+    grid-row: 3 / 4;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+  }
+  .hero-nav ul {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .hero-nav li:not(:last-of-type) {
+    margin-inline-end: 0;
+  }
+  .hero-nav li {
+    margin: 2rem 0 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}

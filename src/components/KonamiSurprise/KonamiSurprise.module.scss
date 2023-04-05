@@ -1,0 +1,28 @@
+.popup {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-wrapper {
+  width: 50%;
+  position: relative;
+  @include respond-to('tablet') {
+    width: 90%;
+  }
+}
+.reset-button {
+  background-color: transparent;
+  width: 6%;
+  height: 11%;
+  position: absolute;
+  top: 2.6%;
+  right: 3.7%;
+  cursor: pointer;
+}

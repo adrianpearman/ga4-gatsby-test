@@ -1,0 +1,79 @@
+when creating a new gatsby project, it gives the option to add gtag information
+akjsadkjahdkjashd
+
+upgrade react from 17 to 18 
+    - review react based dependancies and see what will work by default and what will need to refactored
+    - validate syntax within components and pages
+
+upgrade graphql 
+with upgrade, ensure we can still pull same data
+review linter and prettier with changes 
+
+
+
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
+    "@loadable/component": "^5.15.2",
+    "@parcel/namer-default": "^2.6.2",
+    "@stripe/stripe-js": "^1.25.0",
+    "axios": "^0.26.1",
+    "contentful": "^9.1.18",
+    "contentful-management": "^10.6.3",
+    "csv-parse": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "gatsby": "^4.16.0",
+    "gatsby-plugin-catch-links": "^4.10.0",
+    "gatsby-plugin-google-tagmanager": "^4.11.1",
+    "gatsby-plugin-image": "^2.10.0",
+    "gatsby-plugin-loadable-components-ssr": "^4.2.0",
+    "gatsby-plugin-manifest": "^4.10.1",
+    "gatsby-plugin-netlify": "^5.0.0",
+    "gatsby-plugin-offline": "^5.10.1",
+    "gatsby-plugin-react-helmet-async": "^1.2.1",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-robots-txt": "^1.7.0",
+    "gatsby-plugin-sass": "^5.10.1",
+    "gatsby-plugin-segment-js": "^3.7.1",
+    "gatsby-plugin-sharp": "^4.10.1",
+    "gatsby-plugin-sitemap": "^5.10.1",
+    "gatsby-source-contentful": "^7.8.1",
+    "gatsby-source-filesystem": "^4.10.0",
+    "gatsby-transformer-remark": "^5.10.1",
+    "gatsby-transformer-sharp": "^4.10.0",
+    "intersection-observer": "^0.12.0",
+    "lodash.throttle": "^4.1.1",
+    "luxon": "^2.3.1",
+    "prop-types": "^15.8.1",
+    "qs": "^6.10.3",
+    "react": "^17.0.2",
+    "react-calendly": "^4.0.1",
+    "react-confetti": "^6.0.1",
+    "react-dom": "^17.0.2",
+    "react-gtm-module": "^2.0.11",
+    "react-helmet-async": "^1.2.3",
+    "react-intersection-observer": "^8.33.1",
+    "react-scroll": "^1.8.6",
+    "react-share": "^4.4.0",
+    "sass": "^1.49.9",
+    "stripe": "^8.210.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.17.0",
+    "babel-preset-gatsby": "^2.10.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "lint-staged": "^13.0.1",
+    "netlify-plugin-inline-functions-env": "^1.0.9",
+    "prettier": "^2.6.0",
+    "react-test-renderer": "^17.0.1"
+  },

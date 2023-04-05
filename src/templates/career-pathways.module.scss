@@ -1,0 +1,594 @@
+.section-heading {
+  font-size: 5rem;
+  font-family: $font-heading-regular;
+  line-height: 1.08;
+  text-align: center;
+  color: $juno-dark-violet;
+  @include respond-to('tablet') {
+    font-size: 4.4rem;
+    line-height: 1.14;
+  }
+}
+
+.section-description {
+  text-align: center;
+  padding-top: 1.5rem;
+  line-height: 1.75;
+  color: $juno-dark-violet;
+}
+
+.daily-life-section {
+  padding: 23rem 0 0 !important;
+  @include respond-to('tablet') {
+    padding: 18rem 0 0 !important;
+  }
+  @include respond-to('mobile') {
+    padding: 16rem 0 0 !important;
+  }
+
+  aside ul {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    li {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0 2rem;
+      span {
+        font-size: 3.6rem;
+        font-family: $font-heading-light;
+        font-variant-numeric: lining-nums;
+        line-height: normal;
+        margin-bottom: 5px;
+      }
+      &:nth-of-type(2) {
+        border-top: 1px solid shade($white, 40%);
+        border-bottom: 1px solid shade($white, 40%);
+      }
+    }
+  }
+}
+
+.logos-section {
+  padding-top: 4rem;
+  @include respond-to('tablet') {
+    padding-top: 8rem;
+  }
+  h3,
+  ul,
+  div {
+    grid-column: 4 / -4;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4 !important;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2 !important;
+    }
+  }
+  ul {
+    li {
+      min-width: 9rem;
+      width: calc((100% / 8) - 3rem);
+      @include respond-to('tablet') {
+        width: calc((100% / 4) - 1rem);
+      }
+      @include respond-to('mobile') {
+        width: 100%;
+        min-width: auto;
+        max-width: 15rem;
+      }
+    }
+  }
+}
+
+.pathway-section {
+  padding: 10rem 0 3rem;
+  background-color: tint($juno-sand, 30%) !important;
+  overflow: hidden;
+  &.no-upcoming-pathways {
+    background-color: $juno-light-sand;
+  }
+
+  .section-heading {
+    grid-column: 4 / -4;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  .section-description {
+    grid-column: 11 / -11;
+    margin-bottom: 5rem;
+    @include respond-to('tablet') {
+      grid-column: 6 / -6;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  .pathway-steps {
+    grid-column: 6 / -6;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  .step {
+    display: flex;
+    margin-bottom: 4rem;
+    @include respond-to('mobile') {
+      flex-direction: column;
+    }
+
+    .headings,
+    .details {
+      padding: 3rem;
+    }
+
+    .headings {
+      background-color: $juno-evergreen;
+      width: calc((100% / 5) * 2);
+      position: relative;
+      @include respond-to('mobile') {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 4.4rem;
+        font-family: $font-heading-light;
+        line-height: normal;
+        font-variant-numeric: lining-nums;
+        letter-spacing: normal;
+        color: $juno-yellow-peach;
+      }
+      h4 {
+        font-size: 2.8rem;
+        font-family: $font-body-regular;
+        line-height: 1.29;
+        letter-spacing: normal;
+        color: $white;
+        margin: 0 0 1rem;
+      }
+      a {
+        color: $juno-light-sand;
+      }
+
+      .yellow-rocket {
+        position: absolute;
+        right: 50px;
+        top: 33px;
+      }
+    }
+
+    .details {
+      background-color: $white;
+      color: $juno-violet-grey;
+      width: calc((100% / 5) * 3);
+      @include respond-to('mobile') {
+        width: 100%;
+      }
+
+      ul {
+        margin-top: 2rem;
+        padding-left: 2.4rem;
+
+        li {
+          margin-bottom: 1.5rem;
+          position: relative;
+          line-height: normal;
+          &::before {
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            left: -23px;
+            top: 1px;
+          }
+          &:first-of-type:before {
+            content: url(../assets/images/bullets/calendar-icon-mauve-blue.svg);
+          }
+          &:nth-of-type(2):before {
+            content: url(../assets/images/bullets/dollar-icon.svg);
+          }
+        }
+      }
+    }
+    // custom styles for the last card in the list
+    &:last-of-type {
+      .headings {
+        background-color: shade($juno-evergreen, 50%);
+        padding-right: 4rem;
+        h4 {
+          padding-right: 4rem;
+        }
+      }
+      .details ul li::before {
+        content: url(../assets/images/bullets/dollar-icon.svg);
+      }
+    }
+  }
+  .calendly-embed {
+    margin: 4rem 0 10rem;
+    @include respond-to('tablet') {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.next-pathway-section {
+  padding: 17rem 0 14rem;
+  position: relative;
+  // page rip for the .pathway-section, placed here because the overflow: hidden; necessary for the rocket animation was also hiding the rip image
+  @include pageRipEffectBottom('pathway-steps-bottom-rip.svg', $height: 10.6rem, $position: 'before');
+  &::before {
+    top: 0;
+  }
+
+  .section-heading {
+    grid-column: 2 / -2;
+    font-size: 2.8rem;
+    font-family: $font-body-medium;
+    line-height: 1.21;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .highlight {
+      font-size: 7rem;
+      font-family: $font-heading-regular;
+      font-variant-numeric: lining-nums;
+      line-height: 1.2;
+      padding: 0 8rem;
+      @include respond-to('mobile') {
+        font-size: 4.8rem;
+        padding: 0 5rem;
+      }
+    }
+  }
+  .highlight {
+    background-image: url(../assets/images/brush-strokes/yellow-peach-brush-stroke.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .career-pathway {
+    grid-column: 2 / -2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $juno-pale-mint;
+    @include respond-to('tablet') {
+      max-width: 505px;
+      justify-self: center;
+      border: 1px solid $juno-pale-mint;
+      flex-wrap: wrap;
+      padding: 2rem 2rem;
+      margin-bottom: 3.5rem;
+      &.headings {
+        display: none;
+      }
+    }
+
+    li {
+      width: calc((100% / 4) - (15px + 3rem));
+      text-align: center;
+      padding: 3.5rem 2rem;
+      @include respond-to('tablet') {
+        width: 100%;
+        padding: 1.5rem 0;
+      }
+    }
+    .arrow {
+      width: 15px;
+      padding: 2.5rem 0;
+      margin: 0 1.5rem;
+      @include respond-to('tablet') {
+        display: none;
+      }
+    }
+    &.extra-wide {
+      grid-column: 1 / -1;
+      width: 93%;
+      margin: 0 auto;
+      @include respond-to('tablet') {
+        grid-column: 2 / -2;
+        width: 93%;
+        margin-bottom: 3.5rem;
+      }
+      .pathway-heading h3 {
+        font-size: 2rem;
+        @include respond-to('tablet') {
+          font-size: 2.3rem;
+        }
+      }
+      li {
+        flex-shrink: 1;
+      }
+      .arrow {
+        flex-shrink: 0;
+      }
+    }
+    .javascript {
+      max-width: 160px;
+      @include respond-to('tablet') {
+        max-width: 100%;
+      }
+    }
+    // desktop pathway heading styles to center nicely with varying title lengths
+    &.headings {
+      align-items: stretch;
+
+      li {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 2rem;
+
+        h3 {
+          width: 100%;
+        }
+      }
+      .arrow {
+        align-self: center;
+      }
+    }
+    .pathway-heading {
+      h3 {
+        font-size: 2.3rem;
+        font-family: $font-body-medium;
+        line-height: 1.25;
+        color: $juno-violet-grey;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include respond-to('mobile-small') {
+        font-size: 1.8rem;
+      }
+      .step-number {
+        font-size: 3.4rem;
+        line-height: 1.08;
+        font-variant-numeric: lining-nums;
+        font-family: $font-heading-light;
+        color: $juno-violet-grey;
+        background-color: $juno-sand;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .red-rocket {
+        margin-bottom: 2rem;
+        position: relative;
+        bottom: -5px;
+        @include respond-to('tablet') {
+          width: 50px;
+        }
+      }
+      & + .arrow {
+        padding-top: 6rem;
+      }
+    }
+
+    .pathway-item {
+      p {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include respond-to('tablet') {
+          display: block;
+          margin-left: 7rem;
+          text-align: left;
+          span {
+            display: inline-block;
+          }
+          .highlight {
+            background-image: none;
+          }
+        }
+        @include respond-to('mobile') {
+        }
+        @include respond-to('mobile-small') {
+          font-size: 1.4rem;
+        }
+      }
+
+      .mobile-heading {
+        display: none;
+        @include respond-to('tablet') {
+          display: flex;
+          flex-direction: row;
+          text-align: left;
+          min-height: 58px;
+          margin-bottom: 3px;
+          @include respond-to('mobile') {
+            min-height: auto;
+          }
+          .step-number,
+          .red-rocket {
+            flex-shrink: 0;
+            margin-right: 2rem;
+            margin-bottom: 0;
+            position: static;
+          }
+        }
+      }
+
+      .deadline {
+        color: $juno-red;
+        margin-top: 2.5px;
+      }
+    }
+  }
+
+  .need-help-text {
+    grid-column: 2 / -2;
+    justify-self: center;
+    margin: 6rem 0 2rem;
+    text-align: center;
+    @include respond-to('tablet') {
+      margin-top: 0;
+    }
+  }
+}
+
+.meet-grads-section {
+  padding: 5rem 0 10rem;
+  background-color: $juno-sea-glass !important;
+  position: relative;
+  @include pageRipEffectTop('bootcamp-hero-colorblock-seaglass-rip.svg');
+  &::before {
+    transform: rotate(180deg);
+  }
+  .section-heading,
+  .section-description {
+    grid-column: 2 / -2;
+  }
+  .grad-stories {
+    grid-column: 4 / -4;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 9rem;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  .story-card {
+    background-color: $white;
+    width: calc(100% / 3 - 3rem);
+    min-width: 340px;
+    margin: 0 1.5rem 7rem;
+    padding: 5.5rem 3rem 3rem;
+    text-align: center;
+    position: relative;
+    @include respond-to('tablet') {
+      width: calc(100% / 2 - 3rem);
+    }
+    @include respond-to('tablet') {
+      width: 100%;
+      min-width: 270px;
+      margin: 0 0 8rem;
+      padding: 5.5rem 1.5rem 2rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    .headshot {
+      position: absolute;
+      top: calc(-90px / 2);
+      left: calc(50% - (90px / 2));
+    }
+    h3 {
+      font-size: 3rem;
+      font-family: $font-heading-regular;
+      line-height: 1.13;
+      letter-spacing: normal;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 1.47;
+      margin: 5px 0 1rem;
+    }
+    a {
+      font-size: 1.3rem;
+      font-family: $font-body-medium;
+      line-height: 1.38;
+      letter-spacing: 0.41px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+div.success-banner {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.calendly-embed {
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+
+// yellow rocket animation
+@keyframes rumble {
+  0% {
+    right: 50px;
+    top: 31px;
+  }
+  25% {
+    right: 51px;
+    top: 30px;
+  }
+  50% {
+    right: 50px;
+    top: 31px;
+  }
+  75% {
+    right: 49px;
+    top: 33px;
+  }
+  100% {
+    right: 50px;
+    top: 31px;
+  }
+}
+
+@keyframes take-off {
+  0% {
+    transform: none;
+    animation-timing-function: ease-in;
+  }
+  15% {
+    transform: scale(2.4, 0.4) rotate(-25deg);
+    top: 46px;
+    right: 58px;
+  }
+  30% {
+    transform: scale(1) rotate(25deg);
+    right: 16px;
+    top: 20px;
+  }
+  100% {
+    transform: scale(1) rotate(25deg);
+    right: -850px;
+    top: -425px;
+  }
+}
+
+.engines-go {
+  animation-name: rumble;
+  animation-duration: 0.09s;
+  animation-iteration-count: 15;
+  animation-fill-mode: forwards;
+}
+
+.lift-off {
+  animation-name: take-off;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .engines-go {
+    animation-name: none;
+  }
+  .lift-off {
+    animation-name: none;
+  }
+}

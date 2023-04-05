@@ -1,0 +1,108 @@
+/* About page - hero component styles
+========================================================================== */
+
+.hero {
+  background-color: tint($juno-blue-sky-2, 50%) !important;
+  padding: 0 0 4rem;
+  @include respond-to('mobile') {
+    padding-bottom: 2rem;
+  }
+}
+
+.title-block {
+  grid-column: 1 / -1;
+  padding: 4rem 5%;
+  background-color: $juno-mauve-blue;
+  position: relative;
+  @include respond-to('mobile') {
+    padding: 3rem 5% 2rem;
+  }
+  @include pageRipEffectBottom('company-landing-rip.svg', $nested: true);
+}
+
+.hero .title-block h1.section-title {
+  color: $juno-sand;
+  font-size: 5.8rem;
+  line-height: 6.2rem;
+  letter-spacing: -0.01rem;
+  width: 70%;
+  @include respond-to('mobile') {
+    font-family: $font-heading-regular;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.05rem;
+    width: 100%;
+  }
+}
+.hero .title-block h6.sur-title {
+  color: $white;
+  text-transform: none;
+  font-family: $font-body-medium;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  margin-bottom: 4rem;
+}
+
+.stamp-wrapper {
+  grid-column: -9 / -6;
+  margin: 2rem 0 2rem -0.5rem;
+  @include respond-to('mobile') {
+    grid-column: 11 / -2;
+    grid-row-start: 5;
+    align-self: end;
+    justify-self: end;
+    margin: 0 0 -4.4rem -0.5rem;
+  }
+}
+
+.intro-copy {
+  grid-column: 2 / 26;
+  @include respond-to('tablet') {
+    grid-column: 2 / 17;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    grid-row-start: 2;
+    margin-top: 8rem;
+  }
+}
+.intro-copy p {
+  color: $juno-dark-violet;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.015rem;
+  margin-bottom: 2rem;
+}
+
+.hero-sidebar {
+  grid-column: -9 / -2;
+  grid-row: 3;
+  @include respond-to('mobile') {
+    grid-column: 2 / 11;
+    grid-row-start: 5;
+    margin-top: 6rem;
+  }
+}
+.hero-sidebar p {
+  color: $juno-violet-grey;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+}
+.hero-sidebar p a {
+  font-size: inherit;
+}
+
+.button {
+  justify-self: start;
+  grid-column: 2 / 26;
+  @include respond-to('tablet') {
+    grid-column: 2 / 17;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    grid-row-start: 3;
+  }
+}

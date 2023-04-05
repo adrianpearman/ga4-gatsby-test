@@ -1,0 +1,68 @@
+/* Slide indicator component styles
+========================================================================== */
+
+.apply-steps-wrapper {
+  color: $juno-red;
+  margin: 4rem 0 5rem;
+  @include respond-to('mobile') {
+    margin: 3rem 2rem 4rem;
+  }
+}
+
+.two {
+  --number-of-steps: 2;
+}
+.six {
+  --number-of-steps: 6
+}
+
+.apply-steps-inner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid $white;
+  z-index: 10;
+}
+.inner-step::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: calc((100% - (2.8rem * (var(--number-of-steps) + 1))) / var(--number-of-steps));
+  transform: translateX(calc(-50% - 1.4rem));
+  top: calc(1.4rem - 1px);
+  z-index: -1;
+  background-color: $white;
+}
+
+.number {
+  color: $white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.current-step {
+  background-color: $juno-red;
+  border: 2px solid $juno-red;
+}
+.current-step::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: calc((100% - (2.8rem * (var(--number-of-steps) + 1))) / var(--number-of-steps));
+  transform: translateX(calc(-50% - 1.4rem));
+  top: calc(1.4rem - 1px);
+  z-index: -1;
+  background-color: $juno-red;
+}

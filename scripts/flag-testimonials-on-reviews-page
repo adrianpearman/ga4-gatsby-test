@@ -1,0 +1,53 @@
+/* eslint-disable no-await-in-loop */
+const { createClient } = require('contentful-management');
+const dotenv = require('dotenv');
+
+const result = dotenv.config({ path: '.env' });
+if (result.error) {
+  throw result.error;
+}
+
+const client = createClient({
+  accessToken: process.env.CONTENTFUL_MANAGEMENT_ACCESS_TOKEN
+});
+
+async function getContentfulData() {
+  const contentfulData = {};
+  try {
+    const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID);
+    const environment = await space.getEnvironment('master');
+
+    contentfulData.space = space;
+    contentfulData.environment = environment;
+  } catch (error) {
+    console.error(error);
+  }
+
+  return contentfulData;
+}
+
+async function addReviewsPageFlag() {
+  const { environment } = await getContentfulData();
+
+  const allPages = await environment.getEntries({
+    content_type: 'pageSection'
+  });
+
+  const [quotesSection] = allPages.items.filter(
+    (page) => page.fields.style['en-US'] === 'reviews-quotes'
+  );
+
+  const allReviewQuotesIds = quotesSection.fields.content['en-US'].map((quote) => quote.sys.id);
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const quoteId of allReviewQuotesIds) {
+    const matchingEntry = await environment.getEntry(quoteId);
+    matchingEntry.fields.showOnReviewsPage = { 'en-US': true };
+
+    console.log(matchingEntry);
+    const updatedEntry = await matchingEntry.update();
+    await updatedEntry.publish();
+  }
+}
+
+addReviewsPageFlag();

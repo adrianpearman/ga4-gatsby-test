@@ -1,0 +1,87 @@
+.section-heading {
+  font-family: $font-heading-regular;
+  font-size: 5rem;
+  line-height: 54px;
+  letter-spacing: 0px;
+  @include respond-to('mobile') {
+    font-size: 4.8rem;
+  }
+}
+
+.section-description {
+  font-size: 2rem;
+  line-height: 30px;
+  letter-spacing: 0px;
+  @include respond-to('mobile') {
+    font-size: 1.8rem;
+  }
+}
+
+.section {
+  background-color: tint($juno-almond-2, 80%) !important;
+  padding: 10rem 0;
+  @include respond-to('mobile') {
+    padding: 8rem 0;
+  }
+
+  h2 {
+    grid-column: 4 / -4;
+    text-align: center;
+    @include respond-to('mobile') {
+      font-size: 4.4rem;
+      grid-column: 2 / -2;
+      text-align: left;
+    }
+  }
+  div {
+    grid-column: 4 / -4;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+    p {
+      text-align: center;
+      margin: 1.5rem 0 3rem 0;
+      @include respond-to('mobile') {
+        text-align: left;
+      }
+    }
+    &.three-columns ul {
+      column-count: 3;
+      @include respond-to('tablet') {
+        column-count: 2;
+      }
+      @include respond-to('mobile') {
+        column-count: 1;
+      }
+    }
+    &.two-columns ul {
+      column-count: 2;
+      width: 80%;
+      margin: 0 auto;
+      @include respond-to('tablet') {
+        width: 100%;
+      }
+      @include respond-to('mobile') {
+        column-count: 1;
+      }
+    }
+
+    li {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.6rem;
+      line-height: 1.38;
+      padding: 0 0 0 4rem;
+      margin: .7rem 0;
+      position: relative;
+
+      &::before {
+        content: url('../../assets/images/web-development-course/checkmark.svg');
+        transform: scale(.8);
+        position: absolute;
+        left: -0.2rem;
+        top: -0.8rem;
+      }
+    }
+  }
+}

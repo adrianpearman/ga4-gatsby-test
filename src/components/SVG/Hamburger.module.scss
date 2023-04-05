@@ -1,0 +1,32 @@
+.line-1,
+.line-2,
+.line-3 {
+  fill: none;
+  stroke: $white;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+  transform-origin: center;
+  opacity: 1;
+  transition: stroke $slow-duration, transform $slow-duration, opacity $default-duration;
+}
+
+.transform {
+  background-color: transparent !important;
+  .line-1,
+  .line-2,
+  .line-3 {
+    stroke: $juno-blue-sky-2 !important;
+  }
+  .line-1 {
+    transform: rotate(45deg) translate(1px, 8px);
+    transition: stroke $slow-duration, transform $slow-duration;
+  }
+  .line-2 {
+    opacity: 0;
+    transform: opacity $default-duration;
+  }
+  .line-3 {
+    transform: rotate(-45deg) translate(-0.2px, -6px);
+    transition: stroke $slow-duration, transform $slow-duration;
+  }
+}

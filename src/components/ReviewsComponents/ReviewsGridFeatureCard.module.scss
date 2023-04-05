@@ -1,0 +1,160 @@
+/* Reviews page - feature review card component styles
+========================================================================== */
+
+.review-card-feature {
+  grid-column: 1 / -1;
+  padding: 6rem 0;
+  margin: 0 -5.6% 6rem -5.6%;
+  @include respond-to('mobile') {
+    padding: 0;
+  }
+}
+.review-card-feature::after {
+  background-image: none !important;
+  height: 0 !important;
+}
+
+.review-content {
+  grid-column: 2 / -2;
+  background-color: $white;
+  padding: 7.5rem;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-column-gap: 3.5%;
+  @include respond-to('mobile') {
+    background-color: transparent;
+    padding: 5rem 0;
+  }
+}
+.headshot-container {
+  grid-column: 1 / 1;
+  @include respond-to('mobile') {
+    grid-column: 1 / -1;
+    margin-bottom: 4rem;
+  }
+}
+.student-journey {
+  position: relative;
+  width: 17rem;
+  height: 5rem;
+  bottom: 14rem;
+  padding-left: 2rem;
+  display: flex;
+  align-items: center;
+  background-image: url(../../assets/images/reviews/highlight-readstudentstory.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  z-index: 5;
+  @include respond-to('mobile') {
+    bottom: 7rem;
+    margin-bottom: -6rem;
+  }
+}
+.student-journey a {
+  color: $juno-dark-violet;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+.stars {
+  position: relative;
+  height: 5rem;
+  width: 95%;
+  margin-top: 1rem;
+  @include respond-to('tablet') {
+    width: 85%;
+    margin: 1rem 0 0 auto;
+  }
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.quotation {
+  grid-column: 2 / 2;
+  align-self: center;
+  &.no-headshot {
+    grid-column: 1 / -1;
+  }
+  @include respond-to('mobile') {
+    grid-column: 1 / -1;
+    margin: 0 0 2rem;
+  }
+}
+.quotation p {
+  position: relative;
+  color: $juno-violet-grey;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.15px;
+}
+.quotation p:first-of-type::before {
+  content: url(../../assets/images/reviews/quote-mark1-tumeric.svg);
+  display: block;
+
+}
+.quotation p:last-of-type::after {
+  content: '”';
+}
+.quotation p a {
+  font-size: inherit;
+}
+.reviewer-container {
+  grid-column: 2 / 2;
+  margin-top: 2rem;
+  &.no-headshot {
+    grid-column: 1 / -1;
+  }
+  @include respond-to('mobile') {
+    grid-column: 1 / -1;
+  }
+}
+.reviewer-name {
+  margin-bottom: 2rem;
+}
+.reviewer-name p.name {
+  color: $juno-violet-grey;
+  font-family: $font-heading-regular;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  letter-spacing: -0.05rem;
+}
+.reviewer-career {
+  display: flex;
+  @include respond-to('mobile') {
+    grid-column: 1 / -1;
+    flex-direction: column;
+  }
+}
+.reviewer-career > div:not(:last-of-type) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  @include respond-to('mobile') {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.reviewer-courses {
+  margin-right: 2rem;
+  padding-right: 2rem;
+  flex-shrink: 1;
+  @include respond-to('mobile') {
+    margin-right: 0;
+    padding-right: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.reviewer-career-details p,
+.reviewer-courses p {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+h6.course-subhead {
+  color: $juno-violet-grey;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}

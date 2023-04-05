@@ -1,0 +1,33 @@
+/* Style guide colors module styles
+========================================================================== */
+.colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  grid-gap: 1rem;
+  h3 {
+    grid-column: 1 / -1;
+  }
+}
+.color-block {
+  border: 1px solid $style-guide-border-grey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column
+}
+.color-sample {
+  height: 10rem;
+}
+.color-label {
+  background: $white;
+  padding: 0.3rem;
+  border-top: 1px solid $style-guide-border-grey;
+  width: 100%;
+}
+.color-label code {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  &:nth-of-type(3) {
+    border-top: 1px solid $style-guide-border-grey;
+  }
+}

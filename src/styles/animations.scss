@@ -1,0 +1,132 @@
+/* styles for css animated transitions */
+/* This is for the stacked and skewed student outcomes/course syllabus images */
+
+.stack-image-start-1 {
+  transform: rotateX(55deg) rotateZ(-50deg) translateZ(-1rem);
+}
+.stack-image-1 {
+  animation-name: shift-down-1;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  transform: rotateX(55deg) rotateZ(-50deg) translateZ(-1rem);
+}
+@keyframes shift-down-1 {
+  from {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-1rem);
+  }
+  to {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-4rem);
+  }
+}
+.stack-image-start-2 {
+  transform: rotateX(55deg) rotateZ(-50deg) translateZ(-2rem);
+}
+.stack-image-2 {
+  animation-name: shift-down-2;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0;
+  transform: rotateX(55deg) rotateZ(-50deg) translateZ(-2rem);
+
+}
+@keyframes shift-down-2 {
+  from {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-2rem);
+  }
+  to {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-image-1,
+  .stack-image-start-1 {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-4rem);
+    animation: none;
+  }
+  .stack-image-2,
+  .stack-image-start-2 {
+    transform: rotateX(55deg) rotateZ(-50deg) translateZ(-8rem);
+    animation: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+.fading-in {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.2);
+  animation-name: fade-in;
+  animation-duration: $slow-duration;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+}
+.fading-out {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  animation-name: fade-out;
+  animation-duration: $slow-duration;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-delay: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes fade-in-no-scale {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  @keyframes fade-out-no-scale {
+    0% {
+      visibility: visible;
+      opacity: 1;
+    }
+    100% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  .fading-in {
+    animation-name: fade-in-no-scale;
+    animation-duration: $default-duration;
+  }
+  .fading-out {
+    animation-name: fade-out-no-scale;
+    animation-duration: $default-duration;
+  }
+}

@@ -1,0 +1,113 @@
+/* Meet the Team component styles
+========================================================================== */
+
+.team {
+  background-color: tint($juno-almond-2, 60%) !important;
+  padding: 4rem 0;
+  position: relative;
+  @include pageRipEffectTop('rip-company-meettheteam.svg', 4rem, $nested: true)
+}
+
+.team h2.section-title {
+  grid-column: 2 / 19;
+  color: $juno-violet-grey;
+  font-family: $font-heading-light;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.01rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+
+.intro-text {
+  grid-column: 20 / -2;
+  margin-top: 2rem;
+  color: $juno-dark-violet;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.015rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+
+  a {
+    font-size: inherit;
+  }
+}
+
+.filters {
+  grid-column: 2 / -2;
+  margin: 4rem 0 2rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.filter-count {
+  color: tint($juno-dark-violet, 25%);
+  font-size: 1rem;
+  letter-spacing: 0.01rem;
+  line-height: 1.8rem;
+  margin-left: 0.4rem;
+  vertical-align: super;
+}
+
+.staff-container {
+  grid-column: 2 / -2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-column-gap: 6.527778%;
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4.3%;
+  }
+  @include respond-to('mobile') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.careers {
+  background-color: $juno-red;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 100%;
+  @include respond-to('mobile') {
+    flex-direction: row;
+  }
+}
+.careers-you {
+  margin: 2rem;
+  flex-grow: 1;
+  min-height: 25rem;
+  background-color: tint($juno-almond-2, 60%);
+  border: 2px dashed $juno-dark-violet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include respond-to('mobile') {
+    max-width: 180px;
+    min-width: 120px;
+    min-height: 20rem;
+    flex-shrink: 0;
+  }
+}
+.careers-links {
+  padding: 3rem 3rem 0 3rem;
+  min-height: 24rem;
+  @include respond-to('mobile') {
+    flex-shrink: 1;
+    padding: 3rem 1rem 3rem 0;
+  }
+}
+.careers h3 {
+  color: $white;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  letter-spacing: -0.05px;
+  font-family: $font-heading-regular;
+  margin-bottom: 2rem;
+}
+.careers a {
+  color: $white;
+}

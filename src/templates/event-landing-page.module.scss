@@ -1,0 +1,448 @@
+/* Coding Workshop styles
+========================================================================== */
+
+/* Hero styles
+================================================ */
+.hero {
+  padding: 10rem 0;
+  background: $juno-sea-glass !important;
+  position: relative;
+  @include pageRipEffectBottom('workshops-hero-rip.svg');
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+}
+
+.hero h1 {
+  grid-column: 4 / span 20;
+  font-size: 5.4rem;
+  line-height: 1.15;
+  letter-spacing: normal;
+  margin-bottom: 2rem;
+  z-index: 2;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    font-size: 4.4rem;
+  }
+}
+.hero p {
+  grid-column: 4 / span 18;
+  margin-bottom: 2rem;
+  z-index: 2;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+
+.hero .session {
+  grid-row: 1 / span 3;
+  grid-column: 25 / -5;
+  background: $juno-violet-grey;
+  padding: 3.4rem;
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: initial;
+  }
+}
+.hero.data .session {
+  grid-row: 1 / span 3;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: initial;
+  }
+}
+.hero.data p {
+  padding-top: 1rem;
+}
+.hero .session h2 {
+  font-size: 3.6rem;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: $juno-custard;
+  font-family: $font-body-regular;
+  margin-bottom: 1rem;
+}
+.hero .session p {
+  color: $white;
+  line-height: 2.7;
+  letter-spacing: normal;
+}
+.hero .session ul li {
+  color: $white;
+  font-size: 1.8rem;
+  line-height: 1.44;
+  letter-spacing: normal;
+}
+.hero .session p:first-of-type {
+  margin-bottom: 0;
+  margin-bottom: 0.5rem;
+}
+.hero .session p:last-of-type {
+  font-size: 1.5rem;
+}
+.hero .session .session-link {
+  color: $white;
+  margin-top: 2rem;
+  background: transparent;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.hero .hero-computer {
+  position: absolute !important;
+  width: 685px;
+  right: 0;
+  top: -2rem;
+  z-index: 1;
+  img {
+    left: 200px !important;
+  }
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+
+// Needed to space out whichever section follows the .hero section because it can change
+.hero + section {
+  padding-top: 20rem;
+  @include respond-to('mobile') {
+    padding-top: 10rem;
+  }
+}
+
+/* Quotes styles
+================================================ */
+
+.quotes {
+  padding: 10rem;
+  background: tint($juno-custard-2, 30%);
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+}
+
+.quote {
+  grid-column: 6 / -6;
+  padding: 4.5rem 5rem;
+  background: #fbf7f4;
+  position: relative;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.quote p {
+  margin-bottom: 1rem;
+  line-height: 1.63;
+  letter-spacing: normal;
+}
+.quote h2 {
+  grid-column: 2 / -2;
+  font-family: $font-heading-regular;
+  font-size: 2.4rem;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: $juno-violet-grey;
+}
+
+.quote .carousel-buttons {
+  position: absolute;
+  top: -2.7rem;
+  right: 0;
+  button {
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    &:focus {
+      outline: 1px dotted $juno-red;
+      z-index: 10;
+    }
+  }
+}
+
+/* Learn styles
+================================================ */
+
+.learn {
+  padding: 10rem 0;
+  background: #f1f5f7 !important;
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+}
+
+.learn h2 {
+  grid-column: 2 / -2;
+  font-size: 4.8rem;
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-align: center;
+  color: $juno-violet-grey;
+  font-family: $font-heading-regular;
+  margin-bottom: 4rem;
+}
+.learnings {
+  grid-column: 4 / -4;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.learnings li {
+  display: flex;
+  width: calc(50% - 2rem);
+  margin-bottom: 4rem;
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+}
+.learnings li:nth-child(odd) {
+  margin-right: 4rem;
+  @include respond-to('mobile') {
+    margin-right: 0;
+  }
+}
+.learnings li img {
+  margin-right: 2rem;
+  align-self: flex-start;
+}
+.learnings li h3 {
+  font-size: 2.2rem;
+  line-height: 1.27;
+  letter-spacing: normal;
+  color: $juno-red;
+  margin-bottom: 0.5rem;
+}
+.learnings li p {
+  line-height: 1.63;
+  letter-spacing: normal;
+}
+
+/* Upcoming Sessions styles
+================================================ */
+
+.sessions {
+  padding: 10rem 0;
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+  &.data {
+    padding: 18rem 0;
+    @include respond-to('mobile') {
+      padding: 12rem 0;
+    }
+  }
+}
+.sessions h2 {
+  grid-column: 2 / -2;
+  font-family: $font-heading-regular;
+  font-size: 4.8rem;
+  line-height: 1.08;
+  letter-spacing: normal;
+  text-align: center;
+  color: $juno-violet-grey;
+  margin-bottom: 4rem;
+}
+
+.upcoming-sessions {
+  grid-column: 4 / -4;
+  display: flex;
+  justify-content: center;
+  flex-basis: 300px;
+  flex-wrap: wrap;
+  margin-bottom: 6rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    flex-direction: column;
+  }
+}
+.upcoming-sessions .session {
+  background: #f5dfd0;
+  position: relative;
+  min-width: 300px;
+  padding: 3.4rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  @include respond-to('mobile') {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.upcoming-sessions .session:not(:last-child) {
+  margin-right: 3rem;
+  @include respond-to('mobile') {
+    margin-right: 0;
+  }
+}
+.upcoming-sessions .session h3 {
+  font-size: 3.6rem;
+  font-family: $font-body-regular;
+  line-height: 1.11;
+  letter-spacing: normal;
+  color: $juno-violet-grey;
+  margin-bottom: 0.5rem;
+}
+.upcoming-sessions .session ul {
+  padding: 1rem 0;
+}
+.upcoming-sessions .session ul li {
+  font-size: 1.8rem;
+  line-height: 0.9;
+  letter-spacing: normal;
+  margin-bottom: 1rem;
+  color: $juno-violet-grey;
+}
+.upcoming-sessions .session img {
+  position: absolute;
+  top: calc(100% - 3px);
+  left: 0;
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.upcoming-sessions .session .almost-full {
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: calc(100% - 80px);
+}
+
+.sessions h3 {
+  grid-column: 2 / -2;
+  font-size: 2.2rem;
+  line-height: 1.27;
+  letter-spacing: normal;
+  text-align: center;
+  color: $juno-red;
+}
+.sessions .upcoming-session-link {
+  grid-column: 2 /-2;
+  font-size: 1.6rem;
+  line-height: 1.63;
+  letter-spacing: normal;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: $juno-violet-grey;
+}
+
+/* Form styles
+================================================ */
+.form-modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(74, 69, 92, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  background: #deebe7;
+  padding: 5.8rem 6.4rem;
+  max-width: 688px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include respond-to('mobile') {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+  h1 {
+    font-size: 4.8rem;
+    line-height: 1.08;
+    letter-spacing: normal;
+    margin-bottom: 0.5rem;
+    @include respond-to('mobile') {
+      font-size: 3.6rem;
+    }
+  }
+  p:first-of-type {
+    line-height: 1.63;
+    letter-spacing: normal;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+  }
+  .subscribe {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+    font-family: $font-body-medium;
+    margin-bottom: 1rem;
+
+    input {
+      width: initial;
+      margin-right: 1rem;
+    }
+    @include respond-to('mobile') {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  input {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    border: none;
+  }
+  select {
+    padding: 1.4rem 2rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    font-size: 1.4rem;
+    font-family: $font-body-medium;
+    color: #757575;
+  }
+  .down-caret {
+    position: absolute;
+    bottom: 17.7rem;
+    right: 8rem;
+    @include respond-to('mobile') {
+      bottom: 15.8rem;
+      right: 4rem;
+    }
+    @include respond-to('mobile-small') {
+      bottom: 16rem;
+    }
+    @media (max-width: 375px) {
+      bottom: 17.5rem;
+    }
+    @include respond-to('mobile-xsmall') {
+      bottom: 17.5rem;
+    }
+  }
+  .modal-close {
+    background: transparent;
+    border: none;
+    color: $juno-mauve;
+    font-size: 3rem;
+    position: absolute;
+    top: 3.2rem;
+    right: 3.2rem;
+    @include respond-to('mobile') {
+      top: 2rem;
+      right: 1rem;
+    }
+  }
+}

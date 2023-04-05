@@ -1,0 +1,100 @@
+/* Sidebar navigation component styles
+========================================================================== */
+
+.side-nav {
+  position: sticky;
+  grid-column: 1 / 6;
+  grid-row: 2 / span 1;
+  align-self: start;
+  top: 0;
+  background: $juno-violet-grey;
+  padding: 2rem;
+  z-index: 80;
+  @include respond-to('tablet') {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+    margin-bottom: 4rem;
+    padding: 3rem 5% 2rem;
+  }
+}
+.side-nav::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  height: 3rem;
+  background: url(../../assets/images/faq/rip-navSidefixed-FAQs.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.side-nav li {
+  margin-bottom: 1rem;
+}
+
+.side-link {
+  color: $white;
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  @include respond-to('tablet') {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: -0.03rem;
+  }
+}
+.side-link:hover {
+  color: $juno-custard;
+}
+
+.side-nav li {
+  margin-bottom: 1rem;
+}
+
+.side-link-active {
+  color: $juno-custard;
+  @include respond-to('tablet') {
+    color: $white;
+  }
+}
+.side-link-active::before {
+  content: '_';
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+
+.jump-to {
+  display: none;
+  @include respond-to('tablet') {
+    display: block;
+    font-family: $font-body-medium;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: tint($juno-mauve-blue, 25%);
+    margin-bottom: 1rem;
+  }
+}
+
+.brand-icon {
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+  @include respond-to('tablet') {
+    display: none;
+  }
+  g {
+    isolation: isolate;
+    mix-blend-mode: multiply;
+  }
+  path,
+  polygon,
+  rect {
+    fill: $white;
+  }
+}

@@ -1,0 +1,178 @@
+.career-support h3,
+.section-heading {
+  font-size: 5rem;
+  font-family: $font-heading-regular;
+  line-height: 1.08;
+  text-align: center;
+  @include respond-to('tablet') {
+    font-size: 4.4rem;
+    line-height: 1.14;
+  }
+}
+.section-description {
+  text-align: center;
+  padding-top: 1.5rem;
+  line-height: 1.75;
+}
+.section-subheading {
+  font-size: 2.4rem;
+  line-height: 1.33;
+  font-family: $font-body-medium;
+  padding-bottom: 1.5rem;
+  @include respond-to('tablet') {
+    font-size: 2.2rem;
+  }
+}
+
+.career-pathway {
+  padding: 10rem 0;
+  @include respond-to('mobile') {
+    padding: 8rem 0;
+  }
+  .section-heading,
+  .tagline,
+  .pathway-button {
+    grid-column: 4 / -4;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  .tagline {
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 1rem 0 0;
+    @include respond-to('tablet') {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+  }
+  .pathway-button {
+    display: flex;
+    justify-content: center;
+  }
+}
+.full-pathway {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-column: 2 / -2;
+  margin: 6rem 0;
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pathway-step {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: calc((100% / 5) - (3rem + 20px));
+    margin: 0 1.5rem;
+    position: relative;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.highlight {
+      .step-number {
+        background-color: $juno-red;
+      }
+      @include respond-to('tablet') {
+        background-color: $juno-yellow-peach;
+      }
+    }
+    @include respond-to('tablet') {
+      flex-direction: column;
+      padding: 4rem 6rem;
+      align-items: center;
+      margin: 2.5rem auto;
+      background-color: $juno-sea-glass;
+      width: 500px;
+      &:first-child {
+        margin-top: 2rem;
+        margin-left: auto;
+      }
+      &:last-child {
+        margin-bottom: 1rem;
+        margin-right: auto;
+      }
+    }
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+    .section-subheading {
+      font-size: 2.28rem;
+      line-height: 1.25;
+      width: 100%;
+      padding: 0;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      @include respond-to('mobile') {
+        font-size: 2.4rem;
+      }
+    }
+  }
+  .step-number {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: $juno-pale-mint-2;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 1.5rem;
+    @include respond-to('tablet') {
+      align-items: center;
+    }
+    p {
+      color: $white;
+      font-size: 3.42rem;
+      font-family: $font-heading-regular;
+      line-height: 1.08;
+      text-align: center;
+      padding-bottom: 5px;
+      font-variant-numeric: lining-nums;
+      padding-right: 1px;
+      @include respond-to('tablet') {
+        font-size: 3.6rem;
+      }
+    }
+    @include respond-to('tablet') {
+      width: 58px;
+      height: 58px;
+    }
+  }
+  .rocket {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 1.5rem;
+  }
+  .description {
+    text-align: center;
+    font-size: 1.52rem;
+    line-height: 1.38;
+    width: 100%;
+    @include respond-to('mobile') {
+      font-size: 1.6rem;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+  .arrow {
+    min-width: 19px;
+    display: flex;
+    align-items: center;
+    @include respond-to('tablet') {
+      transform: rotate(90deg);
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/* Layout module styles
+========================================================================== */
+
+.wrapper {
+  background-color: $white;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.skip-link {
+  padding: 1rem 3rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: $font-body-medium;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top $default-duration ease;
+  z-index: 999;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+.updatesBanner {
+  background: $juno-red !important;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid $juno-red;
+  position: relative;
+  p {
+    padding: 1.3rem 2rem;
+    font-family: $font-body-medium;
+    color: $white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.2rem;
+  }
+  a {
+    color: white;
+  }
+  @media (max-width: 875px) {
+    background: $juno-dark-violet !important;
+  }
+}
+.updatesBanner:hover a, 
+.updatesBanner:focus-within a {
+  text-decoration: underline;
+}
+.updatesBanner:focus-within {
+  z-index: 5;
+}
+
+main {
+  background-color: $white;
+  position: relative;
+  z-index: 9;
+}

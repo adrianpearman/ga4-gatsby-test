@@ -1,0 +1,517 @@
+.grid-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 4% repeat(36, 1.527778%) 4%;
+  grid-column-gap: 1%;
+  @include respond-to('tablet') {
+    max-width: 1024px;
+    grid-template-columns: 4% repeat(24, 2.79591%) 4%;
+    grid-column-gap: 1%;
+  }
+  @include respond-to('mobile') {
+    max-width: 640px;
+    grid-template-columns: 3% repeat(12, 5.666%) 3%;
+    grid-column-gap: 2%;
+  }
+}
+
+.cost {
+  position: relative;
+  padding: 4rem 0 7.25rem;
+}
+.cost h2 {
+  grid-column: 8 / -1;
+  color: $juno-dark-violet;
+  font-family: 'LyonDisplay Light';
+  font-size: 7.4rem;
+  line-height: 8rem;
+  letter-spacing: -0.1px;
+  padding: 3.5rem 0;
+  position: relative;
+  z-index: 2;
+  @include respond-to('tablet') {
+    margin-bottom: 4rem;
+  }
+}
+.cost h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(../assets/images/course-details/highlight-datescosts.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 1em;
+}
+.course-details-surtitle {
+  color: $juno-red;
+  font-size: 1.2rem;
+  font-family: $font-body-medium;
+  line-height: 1.8rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+
+}
+.part-time-details {
+  grid-column: 8 / span 12;
+}
+.accelerated-details {
+  grid-column: 21 / span 12;
+}
+
+.course-description {
+  padding: 0 0 3rem;
+  p:first-of-type {
+  color: $juno-violet-grey;
+  font-family: $font-body-medium;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.25px;
+  margin-bottom: 1rem;
+  }
+}
+.course-description p,
+.price-container p {
+  color: $juno-dark-violet;
+  font-family: $font-body-regular;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.15px;
+}
+.course-description p a,
+.price-container p a {
+  font-size: inherit;
+}
+.price-description p {
+  margin-bottom: 2rem;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+.sessions {
+  background: linear-gradient(to right, white 5%, tint($juno-blue-sky-2, 60%) 5%);
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  @include pageRipEffectTop('rip-course-datescosts.svg', 5rem, 5%);
+}
+.sessions-none {
+  grid-column: 8 / -2;
+  margin-top: -3rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    margin-top: -1rem;
+  }
+}
+.pricing-subhead {
+  grid-column: 8 / -2;
+  margin: 4rem 0 2rem;
+  color: $juno-violet-grey;
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.25px;
+}
+.price-container {
+  background: $white;
+  padding: 4rem 3rem;
+  grid-column: 8 / span 18;
+}
+.price-container p.course-price {
+  font-size: 5.4rem;
+  line-height: 5.4rem;
+  letter-spacing: 0.054px;
+  margin-bottom: 2rem;
+  font-family: $font-heading-light;
+  font-variant-numeric: lining-nums;
+  color: $juno-violet-grey;
+
+  span {
+    color: $juno-red;
+  }
+}
+.price-container p.course-price a {
+  font-size: inherit;
+}
+.link-container {
+  grid-column: 28 / -2;
+}
+.link-container h4.link-subhead {
+  color: $juno-violet-grey;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.01rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.link-container a {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.syllabus {
+  padding: 6rem 0 11rem;
+  background: $white;
+}
+.syllabus-topics {
+  grid-column: 8 / span 18;
+  a {
+    font-size: inherit;
+  }
+}
+.syllabus h2 {
+  grid-column: 8 / -2;
+  color: $juno-violet-grey;
+  font-size: 6rem;
+  line-height: 6rem;
+  letter-spacing: -0.25x;
+  padding: 3rem 0;
+}
+.syllabus-topics > p {
+  color: $juno-dark-violet;
+  font-size: 1.9rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.15px;
+  margin-bottom: 2rem;
+}
+.syllabus-topics ul {
+  list-style: initial;
+  padding-left: 50px;
+}
+.syllabus-topics li {
+  margin-bottom: 10px;
+}
+.syllabus-topics ul p {
+  color: $juno-violet-grey;
+  font-size: 1.9rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.25px;
+}
+.syllabus-topics ul p span {
+  box-shadow: inset 0 -1rem 0 0 tint($juno-custard, 60%);
+}
+.syllabus aside {
+  grid-column: 28 / -3;
+  background: tint($juno-custard, 70%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  max-width: 28rem;
+}
+.syllabus-package-text {
+  padding: 3.5rem 3rem 13rem 3rem;
+  @include respond-to('tablet') {
+    padding: 1.5rem 3rem 2.5rem 3rem;
+  }
+}
+.syllabus aside h4 {
+  color: $juno-violet-grey;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.25px;
+  padding-bottom: 2.5rem;
+}
+.syllabus aside p {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  padding-bottom: 3rem;
+}
+.syllabus-photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -25%;
+  transform: scaleX(1.2);
+  @include respond-to('tablet') {
+    position: static;
+    width: 40%;
+    margin-left: 5.8rem;
+    margin-top: 1rem;
+  }
+  @include respond-to('mobile') {
+    width: 60%;
+  }
+}
+.syllabus-photo img {
+  width: 100%;
+}
+
+.projects {
+  padding: 8rem 0;
+  background-color: tint($juno-sea-glass, 40%) !important;
+  .section-heading,
+  .description {
+    grid-column: 4 / -4;
+    text-align: center;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  .description {
+    margin: 1rem 0;
+  }
+  .project-carousel {
+    grid-column: 1 / -1;
+    margin-top: 3.5rem;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      margin-top: 0;
+    }
+  }
+}
+
+.student-experience {
+  background: linear-gradient(to right, transparent 5%, tint($juno-dark-violet, 10%) 5%),
+    linear-gradient(to bottom, white 24rem, tint($juno-almond-2, 80%) 24rem);
+  position: relative;
+  margin-top: 4rem;
+  padding: 6.5rem 0;
+  grid-template-rows: auto auto auto auto;
+  @include pageRipEffectBottom('rip-course-downloadcta-bg-introconed.svg', 4rem, 5%);
+}
+
+// This is applied if there's no FAQ section, to remove the overlap effect and prevent this section from crashing into the footer
+.student-experience-plain {
+  background: linear-gradient(to right, transparent 5%, tint($juno-dark-violet, 10%) 5%);
+  margin-bottom: 8rem;
+}
+
+.student-experience-container {
+  grid-column: 10 / 24;
+}
+.student-experience h2 {
+  color: $juno-custard-2;
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.25px;
+}
+.student-experience-content p,
+.student-experience-content ul {
+  color: white;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+  padding: 3rem 0 2rem 0;
+}
+.student-experience-content ul {
+  margin-left: 5rem;
+  margin-bottom: 1rem;
+  padding-top: 0;
+}
+.student-experience-content ul li {
+  margin-bottom: 10px;
+}
+.student-experience-content ul li::before {
+  content: '\2022';
+  color: $juno-custard-2;
+  width: 1em;
+  margin-left: -1em;
+  display: inline-block;
+}
+.student-experience a {
+  color: white;
+  background: $juno-red;
+  font-size: inherit;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 1.5rem;
+  font-family: 'NeurialGrotesk Medium';
+  text-decoration: none;
+  transition: background $default-duration ease, color $default-duration ease;
+}
+.student-experience a:hover,
+.student-experience a:focus {
+  background: $juno-custard-2;
+  color: $juno-red;
+}
+.student-experience-image {
+  grid-column: 26 / span 11;
+}
+.student-experience-image img {
+  width: 100%;
+}
+
+.course-faq {
+  background: tint($juno-almond-2, 80%);
+  padding: 10rem 0 6rem;
+}
+.course-faq .section-heading {
+  color: $juno-violet-grey;
+  font-size: 5rem;
+  font-family: $font-heading-regular;
+  line-height: 1.08;
+  letter-spacing: -0.25px;
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 1rem;
+  @include respond-to('tablet') {
+    font-size: 4.4rem;
+    line-height: 1.14;
+  }
+}
+.section-heading,
+.faq-blocks {
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+
+.review-section {
+  padding: 10rem 0 8rem;
+  .review-carousel {
+    grid-column: 1 / -1;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+}
+.headline {
+  font-size: 3.2rem;
+  font-family: $font-body-medium;
+  line-height: 1.25;
+  text-align: center;
+  width: 590px;
+  margin: 0 auto 2rem;
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    font-size: 2.8rem;
+    line-height: 1.21;
+  }
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+}
+
+@include respond-to('tablet') {
+  .cost > *,
+  .cost h2,
+  .syllabus h2,
+  .syllabus-topics,
+  .syllabus aside,
+  .reviews > *,
+  .course-faq h2,
+  .faq-redirect {
+    grid-column: 2 / -2;
+  }
+  .cost {
+    padding-top: 4rem;
+  }
+  .cost h2 {
+    color: $juno-dark-violet;
+    font-size: 5rem;
+    line-height: 5.4rem;
+    letter-spacing: -0.1px;
+    grid-row: 1;
+    padding-bottom: 0;
+  }
+  .intro-details {
+    grid-row: 3;
+  }
+  .intro-description {
+    grid-row: 2;
+    padding: 2.5rem 0;
+  }
+  .sessions {
+    background: tint($juno-blue-sky-2, 60%);
+    padding-top: 4rem;
+  }
+  .sessions::before {
+    left: 0;
+  }
+  .syllabus {
+    padding-top: 2rem;
+  }
+  .syllabus h2 {
+    font-size: 4rem;
+    line-height: 4.4rem;
+    letter-spacing: -0.25px;
+    color: $juno-violet-grey;
+  }
+  .syllabus-topics ul p {
+    color: $juno-violet-grey;
+    font-size: 2rem;
+    letter-spacing: -0.15px;
+  }
+  .syllabus aside {
+    max-width: inherit;
+    margin-top: 2rem;
+  }
+  .student-experience {
+    background: tint($juno-dark-violet, 10%);
+    padding-top: 4rem;
+  }
+  .student-experience::after {
+    left: 0;
+  }
+  .student-experience-container {
+    grid-column: 2 / -2;
+    grid-row: 2;
+  }
+  .student-experience-container ul li {
+    padding-left: 2rem;
+  }
+  .student-experience-container a {
+    padding: 1rem;
+  }
+  .student-experience-image {
+    grid-column: 2 / -2;
+    grid-row: 1;
+    padding-bottom: 3rem;
+    width: 55%;
+  }
+  .course-faq {
+    padding-top: 6rem;
+  }
+  .part-time-details {
+    grid-column: 2 / span 10;
+  }
+  .accelerated-details {
+    grid-column: 14 / span 10;
+  }
+  .price-container {
+    grid-column: 2 / span 14;
+  }
+  .pricing-subhead {
+    grid-column: 2 / -2;
+  }
+  .link-container {
+    grid-column: 18 / -2;
+  }
+}
+
+@include respond-to('mobile') {
+
+  .part-time-details,
+  .accelerated-details {
+    grid-column: 2 / -2;
+  }
+  .price-container {
+    grid-column: 2 / -2;
+  }
+  .link-container {
+    grid-column: 2 / -5;
+    margin-top: 4rem;
+  }
+  .student-experience-image {
+    grid-column: 2 / -2;
+    grid-row: 1;
+    width: 80%;
+  }
+}
+
+.career-pathway {
+  background-color: $juno-light-sand !important;
+}
+.banner {
+  background-color: $juno-light-sand !important;
+  padding-bottom: 10rem;
+}

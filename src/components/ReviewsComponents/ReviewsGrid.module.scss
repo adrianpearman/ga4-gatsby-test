@@ -1,0 +1,74 @@
+/* Reviews page - review grid component styles
+========================================================================== */
+
+.review-grid {
+  grid-column: 2 / -2;
+  margin: 6rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+  grid-auto-flow: dense;
+}
+
+@include respond-to('tablet') {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.review-grid > li {
+  position: relative;
+  background-color: tint($juno-almond-2, 70%);
+}
+.review-grid > li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 3rem;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/images/reviews/rip-reviews-card1.svg);
+}
+
+.review-grid > li:nth-of-type(3n+2) {
+  background-color: tint($juno-sea-glass, 40%);
+}
+.review-grid > li:nth-of-type(3n+2)::after {
+  background-image: url(../../assets/images/reviews/rip-reviews-card2.svg);
+}
+
+.review-grid > li:nth-of-type(3n+3) {
+  background-color: tint($juno-blue-sky-2, 70%);
+}
+.review-grid > li:nth-of-type(3n+3)::after {
+  background-image: url(../../assets/images/reviews/rip-reviews-card3.svg);
+}
+
+.load-more {
+  grid-column: 2 / -2;
+  margin-top: -3rem;
+  margin-bottom: 9rem;
+}
+.load-more button.load-more-button {
+  overflow-anchor: none;
+  appearance: none;
+  background-color: none;
+  background: url(../../assets/images/reviews/highlight-loadmore-bluesky.80.svg);
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  color: $juno-link-red;
+  font-family: $font-body-medium;
+  font-size: 6rem;
+  line-height: 6rem;
+  letter-spacing: -0.025rem;
+  text-align: left;
+  cursor: pointer;
+  @include respond-to('mobile') {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+}

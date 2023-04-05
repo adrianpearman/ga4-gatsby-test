@@ -1,0 +1,101 @@
+/* 404 page module styles
+========================================================================== */
+
+.top {
+  background-color: $juno-mauve-blue !important;
+  padding-top: 8rem;
+  position: relative;
+  @include respond-to('mobile') {
+    padding: 4rem 0;
+  }
+}
+.top::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: calc(100% - 1px);
+  left: 0;
+  right: 0;
+  height: 6.6rem;
+  background-image: url(../assets/images/notFound/rip-404-landing.svg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bottom {
+  background-color: tint($juno-peach, 40%) !important;
+  padding-bottom: 8rem;
+  @include respond-to('mobile') {
+    padding-bottom: 10rem;
+  }
+}
+.bottom h2.title {
+  color: $white;
+  font-family: $font-heading-light;
+  font-size: 25rem;
+  line-height: 25rem;
+  letter-spacing: -0.1rem;
+  grid-column: 14 / -2;
+  margin-top: -9rem;
+  z-index: 5;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    font-size: 11rem;
+    line-height: 11rem;
+    margin-top: -1rem;
+  }
+}
+.not-found-icon {
+  grid-column: 2 / 11;
+  grid-row: 1 / 2;
+  margin-bottom: 1rem;
+  @include respond-to('tablet') {
+    grid-column: -11 / -2;
+    margin-bottom: 10rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / 7;
+    margin-bottom: 2rem;
+  }
+}
+.not-found-icon img {
+  width: 100%;
+}
+.content {
+  grid-column: 14 / -6;
+  grid-row: 1 / 2;
+  @include respond-to('tablet') {
+    grid-column: 2 / 14;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+  }
+}
+.top h1.sur-title {
+  color: $white;
+  font-family: $font-body-medium;
+  margin: 4rem 0 2rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.01px;
+  text-transform: uppercase;
+}
+.top p {
+  color: $white;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.025rem;
+}
+.top p a {
+  color: $juno-custard;
+  font-size: inherit;
+  text-decoration: underline;
+  transition: color $default-duration ease;
+}
+.top p a:hover,
+.top p a:focus {
+  color: $juno-dark-violet;
+}

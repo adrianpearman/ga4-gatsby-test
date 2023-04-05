@@ -1,0 +1,140 @@
+.hero {
+  padding: 10rem 0;
+  position: relative;
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+  &.almond {
+    background-color: tint($juno-almond-2, 80%) !important;
+  }
+  &.sea-glass {
+    background-color: tint($juno-sea-glass, 40%) !important;
+  }
+  h1,
+  .subheading,
+  .section-content {
+    margin: 0 auto;
+    text-align: center;
+    grid-column: 4 / -4;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  h1 {
+    font-size: 7.4rem;
+    color: $juno-red;
+    font-family: $font-heading-regular;
+    line-height: 0.73;
+    letter-spacing: normal;
+    margin-bottom: 4rem;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+      line-height: 1.23;
+    }
+    @include respond-to('mobile') {
+      font-size: 5.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .subheading {
+    font-size: 2.4rem;
+    font-family: $font-body-medium;
+    line-height: 1.17;
+    letter-spacing: normal;
+    margin: 1rem 0 4rem;
+  }
+  .section-content {
+    grid-column: 9 / -9;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+    p {
+      font-size: 1.8rem;
+      line-height: 1.56;
+      letter-spacing: normal;
+      margin-bottom: 2rem;
+      a {
+        color: $juno-link-red;
+        font-size: inherit;
+        font-family: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 2rem;
+    grid-column: 2 / -2;
+    display: flex;
+    justify-content: center;
+
+    & > a {
+      margin-left: 1rem;
+    }
+    & > a:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+.calendly-section {
+  grid-column: 2 / -2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .headshot-overlap {
+    margin-bottom: -3.5rem;
+    display: flex;
+    justify-content: flex-start;
+
+    .headshot {
+      &:first-of-type {
+        left: 7.5px;
+      }
+
+      &:nth-of-type(2) {
+        z-index: 10;
+      }
+
+      &:last-of-type {
+        right: 15px;
+      }
+    }
+  }
+
+  .calendly-container {
+    width: 100%;
+    height: 650px;
+
+    &>div {
+      height: 650px !important;
+    }
+
+    @include respond-to('max-width: 1125px') {
+      height: 700px;
+
+      &>div {
+        height: 700px !important;
+      }
+    }
+
+    @include respond-to('max-width: 880px') {
+      height: 700px;
+    }
+
+    @include respond-to('mobile') {
+      height: 620px;
+      margin-top: 6rem;
+
+      &>div {
+        height: 620px !important;
+        min-width: 270px !important;
+        max-width: 575px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

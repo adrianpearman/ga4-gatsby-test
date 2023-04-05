@@ -1,0 +1,55 @@
+.form-design {
+  background-color: $juno-sand !important;
+
+  h3 {
+    padding: 4rem 4rem 0;
+    font-size: 4.4rem;
+    font-family: $font-heading-regular;
+    line-height: normal;
+    letter-spacing: normal;
+    @include respond-to('mobile-small') {
+      padding: 4rem 2rem 0;
+    }
+  }
+  p {
+    padding: 1rem 4rem 1.5rem;
+    line-height: 2.4rem;
+    @include respond-to('mobile-small') {
+      padding: 1rem 2rem 1.5rem;
+    }
+  }
+  label {
+    margin-bottom: 1.5rem !important;
+    input {
+      border: none;
+    }
+  }
+
+  .success-message {
+    margin-bottom: 3rem;
+  }
+
+  .retry-button {
+    margin-left: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  fieldset:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    border-bottom: none;
+  }
+  .form-end-design {
+    margin-bottom: 1rem;
+    button {
+      margin: 0;
+      align-self: start;
+      @include respond-to('mobile') {
+        margin-left: 2rem;
+      }
+      @include respond-to('mobile-small') {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.rating-group {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    display: block;
+    margin-top: 3rem;
+  }
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+    @include respond-to('mobile') {
+      margin: 2rem 0;
+      &:first-child {
+        margin-top: 4rem;
+      }
+    }
+    &:nth-child(2) {
+      margin: 1rem 4rem;
+      @include respond-to('mobile') {
+        margin: 0;
+      }
+    }
+    .rating-number {
+      font-size: 6.3rem;
+      font-family: $font-heading-regular;
+      line-height: 1;
+      font-variant-numeric: lining-nums;
+    }
+    .stars {
+      width: 235px;
+      color: $juno-red;
+    }
+    .logo {
+      width: 80px;
+    }
+  }
+}

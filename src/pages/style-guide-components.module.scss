@@ -1,0 +1,24 @@
+/* Style guide component module styles
+========================================================================== */
+
+.component {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.component-variation {
+  margin-right: 3.5rem;
+}
+
+.btn {
+  display: block;
+}
+
+.dark-background {
+  padding: 0 2rem 2rem 2rem;
+  background: $juno-violet-grey;
+
+  h4 {
+    color: $white;
+  }
+}

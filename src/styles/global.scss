@@ -1,0 +1,181 @@
+/* Global styles
+========================================================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+.inner-wrapper {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  @include respond-to('xlarge') {
+    padding: 0 5%;
+  }
+  @include respond-to('desktop') {
+    padding: 0 5%;
+  }
+  @include respond-to('tablet') {
+    padding: 0 5%;
+  }
+  @include respond-to('mobile') {
+    padding: 0 5%;
+    max-width: 749px;
+  }
+}
+
+.grid-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: $white;
+  display: grid;
+  grid-template-columns: 4% repeat(36, 1.527778%) 4%;
+  grid-column-gap: 1%;
+  @include respond-to('tablet') {
+    max-width: 1024px;
+    grid-template-columns: 4% repeat(24, 2.79591%) 4%;
+    grid-column-gap: 1%;
+  }
+  @include respond-to('mobile') {
+    max-width: 749px;
+    grid-template-columns: 3% repeat(12, 5.666%) 3%;
+    grid-column-gap: 2%;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.show-flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  background: #fcf9f7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(00 0 0);
+  overflow: hidden;
+}
+
+/* SVG Icons*/
+
+// applied to polygon
+.chevron-down {
+  fill: none;
+  stroke: #4a455c;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
+}
+
+em {
+  font-family: $font-body-italic;
+  font-style: normal;
+}
+
+.link-arrow {
+  display: flex;
+  align-items: center;
+}
+.link-arrow::after {
+  content: '';
+  display: inline-block;
+  min-width: 3rem;
+  width: 3rem;
+  min-height: 2.1rem;
+  height: 2.1rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../assets/images/link-arrow/arrow-link-linkred.svg);
+  @include respond-to('mobile') {
+    margin-left: 0;
+  }
+}
+.link-arrow-custard::after {
+  background-image: url(../assets/images/link-arrow/arrow-link-linkcustard.svg);
+}
+
+.link-arrow-white::after {
+  background-image: url(../assets/images/link-arrow/arrow-link-white.svg);
+}
+
+// this is for the blog posts that have student success link buttons
+span.button-link a {
+  background: $juno-red;
+  color: $white;
+  font-family: $font-body-medium;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  height: 4.4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  margin: 2rem 0;
+  // video grid placements for blog posts
+  grid-column: 4 / -3;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}

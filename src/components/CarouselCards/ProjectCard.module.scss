@@ -1,0 +1,62 @@
+.project-card {
+  margin: 0 6vw;
+  padding: 4rem;
+  background-color: $white;
+  position: relative;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include pageRipEffectBottom('project-carousel-card-rip.svg', $nested: true);
+  @include respond-to('mobile') {
+    padding: 4rem 2rem;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.image-wrapper {
+  max-width: 410px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .title {
+    font-size: 2.4rem;
+    font-family: $font-body-medium;
+    line-height: 1.33;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+  .project-link {
+    color: $juno-link-red;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    letter-spacing: 0;
+    img {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+    }
+    &.deactivated {
+      pointer-events: none;
+    }
+  }
+  .description {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .byline {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: $font-body-medium;
+    line-height: 1.83;
+    letter-spacing: normal;
+    text-transform: uppercase;
+  }
+}

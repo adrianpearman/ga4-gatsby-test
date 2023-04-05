@@ -1,0 +1,46 @@
+.hero {
+  margin-bottom: 10rem;
+}
+
+.following-accordions {
+  margin-top: -5rem !important;
+}
+
+.logos-section {
+  padding: 8rem 0 6rem;
+  h3 {
+    grid-column: 2 / -2;
+  }
+  ul {
+    grid-column: 2 / -2;
+
+    li {
+      min-width: 13rem;
+    }
+  }
+  div {
+    grid-column: 2 / -3;
+  }
+}
+
+.carousel-section {
+  padding: 10rem 0 !important;
+}
+
+.juno-blue-sky {
+  background-color: tint($juno-blue-sky, 40%) !important;
+}
+.juno-sand {
+  background-color: tint($juno-sand, 30%) !important;
+}
+.juno-sea-glass {
+  background-color: $juno-sea-glass !important;
+}
+.juno-light-sand {
+  background-color: tint($juno-almond-2, 80%) !important;
+}
+
+.section-image-aside {
+  background-color: $white !important;
+  padding-top: 14rem;
+}

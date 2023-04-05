@@ -1,0 +1,279 @@
+/* Campus Hero/overview section component styles
+========================================================================== */
+
+.hero {
+  background-color: $juno-violet-grey !important;
+  padding: 7rem 0 6rem;
+  position: relative;
+  margin-bottom: 4rem !important;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 4rem;
+  background-image: url(../assets/images/campuses/rip-campus-landing.svg);
+  background-color: #fff;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-content {
+  grid-column: 2 / 24;
+  @include respond-to('tablet') {
+    grid-column: 2 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.main-content h1.title {
+  color: $white;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.01rem;
+  margin-bottom: 4rem;
+  @include respond-to('mobile') {
+    font-size: 5rem;
+    line-height: 5.4rem;
+  }
+}
+.main-content p {
+  color: $white;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.015rem;
+}
+.main-content p a {
+  font-size: inherit;
+  color: $juno-custard;
+}
+
+.sidebar {
+  grid-column: -13 / -2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -6;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.sidebar .sidebar-title {
+  color: tint($juno-mauve-blue, 25%);
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  @include respond-to('tablet') {
+    margin-top: 5rem;
+  }
+}
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  @include respond-to('tablet') {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include respond-to('mobile') {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+.sidebar ul li {
+  flex-basis: 100%;
+  margin-bottom: 1rem;
+  @include respond-to('tablet') {
+    flex-basis: 45%;
+  }
+  @include respond-to('mobile') {
+    flex-basis: 100%;
+  }
+}
+.sidebar li a {
+  color: $juno-custard;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.015rem;
+}
+
+// campuses section
+.campuses {
+  background: #fff;
+  padding-top: 7.5rem;
+}
+.campuses h1 {
+  color: $juno-dark-violet;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.1px;
+  padding-left: 5%;
+  padding-bottom: 5rem;
+}
+.individual-campus {
+  margin-bottom: 15rem;
+  background: #fff;
+}
+
+.campus-content aside {
+  grid-column: 2 / span 10;
+  grid-row: 1;
+  height: 455px;
+  position: relative;
+  top: -15%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    top: 0;
+    height: 200px;
+  }
+}
+.campus-caption {
+  background-color: $juno-red;
+  padding-bottom: 2rem;
+  mask-image: url(../assets/images/campuses/rip-mask.svg);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+  @include respond-to('tablet') {
+    position: absolute;
+    width: 27.5%;
+    top: -35%;
+  }
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.campus-caption p {
+  padding: 1.5rem 2rem 0 2rem;
+}
+.campus-caption p:first-of-type {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: $font-body-medium;
+}
+
+.campus-caption p:last-of-type {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.campus-breakdown {
+  grid-column: 8 / -2;
+  padding: 3rem 5% 0 20.2%;
+  position: relative;
+  grid-row: 1;
+  background-color: tint($juno-almond-2, 70%) !important;
+  @include pageRipEffectBottom('rip-toronto.svg', $height: 5rem);
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    grid-row: 2;
+    padding: 3rem 5%;
+  }
+}
+
+.campus-breakdown h2 {
+  color: $juno-dark-violet;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.25px;
+  padding-bottom: 1.6rem;
+}
+
+.campus-location p {
+  color: $juno-violet-grey;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.15px;
+  font-style: normal;
+}
+
+.locational-links {
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  @include respond-to('mobile') {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.locational-links a {
+  border: 1px solid $juno-red;
+  padding: 1rem;
+  display: inline-block;
+  margin-right: 1rem;
+  @include respond-to('mobile') {
+    margin-bottom: 1rem;
+  }
+}
+.campus-overview {
+  padding: 2.5rem 0;
+}
+.campus-overview > p {
+  color: $juno-violet-grey;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.15px;
+  @include respond-to('mobile') {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.15px;
+  }
+}
+.campus-overview a {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding-top: 2.5rem;
+}
+
+.bullet-points {
+  margin-top: 2.5rem;
+
+  li {
+    position: relative;
+    margin-bottom: 1.5rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: -2.5px;
+      left: -2px;
+      background-image: url(../assets/images/campuses/icon-details-checklist.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  p {
+    color: $juno-dark-violet;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.15px;
+    padding-left: 30px;
+  }
+
+  span {
+    font-family: $font-body-medium;
+  }
+}

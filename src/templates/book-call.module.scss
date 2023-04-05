@@ -1,0 +1,106 @@
+.hero {
+  background-color: $juno-light-sand !important;
+  padding: 10rem 0;
+
+  @include respond-to('mobile') {
+    padding: 5rem 0;
+  }
+
+  .text-container {
+    grid-column: 4 / span 13;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+
+    .headshot-overlap {
+      display: flex;
+      justify-content: flex-start;
+
+      .headshot {
+        &:nth-of-type(2) {
+          right: 7.5px;
+          z-index: 10;
+        }
+        &:last-of-type {
+          right: 15px;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-family: $font-heading-regular;
+      line-height: 7.5rem;
+      letter-spacing: normal;
+      margin-top: 1rem;
+      @include respond-to('mobile') {
+        font-size: 5.4rem;
+      }
+    }
+    h2 {
+      font-size: 2.2rem;
+      font-family: $font-body-regular;
+      line-height: 1.41;
+      letter-spacing: normal;
+      @include respond-to('mobile') {
+        font-size: 1.8rem;
+      }
+    }
+    .intro-paragraph {
+      margin-top: 1rem;
+
+      & > p {
+        font-family: $font-body-medium;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+      }
+      & > ul {
+        margin-left: 3rem;
+
+        li {
+          margin-bottom: 2rem;
+          display: flex;
+          position: relative;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          &:before {
+            content: url(../assets/images/bullets/red-circle-checkmark-bullet-icon.svg);
+            position: relative;
+            right: 10px;
+            top: 1px;
+          }
+        }
+      }
+    }
+  }
+  .calendly-container {
+    grid-column: span 18 / -4;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+      height: 700px;
+      & > div {
+        height: 700px !important;
+      }
+    }
+    @include respond-to('max-width: 882px') {
+      margin-top: 6rem;
+      height: 600px;
+      & > div {
+        height: 600px !important;
+      }
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      & > div {
+        min-width: 270px !important;
+        max-width: 575px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

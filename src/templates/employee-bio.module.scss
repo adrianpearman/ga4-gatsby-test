@@ -1,0 +1,209 @@
+/* Employee Biography Styles
+========================================================================== */
+
+/* Main wrapper
+====================================================== */
+
+.employee {
+  padding: 6rem 0;
+  padding-bottom: 26rem;
+  background: $juno-mauve-blue !important;
+  @include respond-to('mobile') {
+    background: $white !important;
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
+}
+
+/* Meet the Team Link
+====================================================== */
+.link-container {
+  grid-column: 2 / -2;
+  margin-bottom: 2rem;
+}
+
+.team-link {
+  position: relative;
+  left: -16px;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.025rem;
+  color: $white;
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+  @include respond-to('mobile') {
+    color: $juno-link-red;
+  }
+  svg polyline, 
+  svg line,
+  &:hover svg polyline, 
+  &:hover svg line {
+    stroke: $white !important;
+    @include respond-to('mobile') {
+      stroke: $juno-link-red !important;
+    }
+  }
+}
+
+/* Header
+====================================================== */
+
+.header {
+  grid-column: 2 / -2;
+  background: tint($juno-custard, 40%);
+  position: relative;
+  min-height: 340px;
+  padding-right: 2rem;
+  @include respond-to('mobile') {
+    grid-column: 1 / -1;
+  }
+  @include pageRipEffectBottom('rip-employee-bio.svg');
+}
+.header .name {
+  color: $juno-violet-grey;
+  font-size: 7.4rem;
+  line-height: 8rem;
+  padding: 5rem 2rem 2rem 0;
+  margin-left: 310px;
+  max-width: 400px;
+  @include respond-to('tablet') {
+    font-size: 6.4rem;
+    max-width: 600px;
+  }
+  @include respond-to('mobile') {
+    padding-top: 1.5rem;
+    margin-left: 5%;
+  }
+  @include respond-to('mobile-small') {
+    font-size: 5.5rem;
+    line-height: 6.4rem;
+  }
+}
+.header .job-title {
+  margin-left: 310px;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  color: $juno-mauve;
+  letter-spacing: 0.025rem;
+  padding-bottom: 2rem;
+
+  @include respond-to('mobile') {
+    margin-left: 5%;
+  }
+  @include respond-to('mobile-small') {
+    font-size: 2.4rem;
+    max-width: 275px;
+  }
+}
+.header .currentCompany {
+  margin-left: 0;
+  color: $juno-link-red;
+}
+.header .pronouns {
+  margin-left: 310px;
+  font-size: 2.2rem;
+  line-height: 3.4rem;
+  color: $juno-mauve;
+  letter-spacing: 0.025rem;
+  padding-bottom: 4rem;
+  @include respond-to('tablet') {
+    padding-bottom: 1.5rem;
+  }
+  @include respond-to('mobile') {
+    margin-left: 5%;
+    padding-bottom: 1rem;
+  }
+  @include respond-to('mobile-small') {
+    padding-bottom: 2rem;
+  }
+}
+.header .social-links-header {
+  display: none;
+  margin-left: 6rem;
+  @include respond-to('tablet') {
+    display: flex;
+    margin-left: 308px;
+  }
+  @include respond-to('mobile') {
+    margin-left: 4.8%;
+  }
+}
+.header .social-links-header li:not(last-child) {
+  margin-right: 2rem;
+  @include respond-to('tablet') {
+    margin-bottom: 1rem;
+  }
+}
+.header .social-links-header img {
+  @include respond-to('tablet') {
+    width: 3rem;
+  }
+}
+.header .headshot {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  @include respond-to('mobile') {
+    position: relative;
+    top: 6%;
+    left: 5%;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Content
+====================================================== */
+
+.content {
+  background: linear-gradient(90deg, $juno-mauve-blue 10%, $white 0);
+  grid-column: 2 / -2;
+  padding: 10rem 0;
+  padding-top: 10rem;
+  display: flex;
+  @include respond-to('mobile') {
+    background: $white;
+    grid-column: 1 / -1;
+    padding-top: 8rem;
+  }
+}
+.content aside {
+  margin-left: 170px;
+  display: flex;
+  justify-content: center;
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+.content aside .social-links {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: $juno-evergreen;
+}
+.content aside .social-links img {
+  margin-right: 1rem;
+}
+
+.content .bio {
+  width: 65%;
+  margin-left: 50px;
+  margin-right: 5.05%;
+  @include respond-to('tablet') {
+    width: 100%;
+    margin-left: 14.5rem;
+  }
+  @include respond-to('mobile') {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.content .bio p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+
+  a {
+    font-size: 2rem;
+  }
+}

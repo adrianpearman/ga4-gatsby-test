@@ -1,0 +1,271 @@
+/* Corporate page styles
+========================================================================== */
+.testimonials {
+  padding: 14rem 0 0;
+  h2 {
+    font-size: 3.2rem;
+    font-family: $font-body-medium;
+    line-height: 40px;
+    text-align: center;
+    grid-column: 2 / -2;
+    justify-self: center;
+    max-width: 590px;
+  }
+  .carousel {
+    grid-column: 2 / -2;
+  }
+}
+
+.courses {
+  padding: 10rem 0;
+  background: #fff !important;
+  grid-column: 2 / -2;
+  @include respond-to('mobile-small') {
+    padding: 8rem 0;
+  }
+  &.no-carousel {
+    padding-top: 14rem;
+    @include respond-to('mobile-small') {
+      padding-top: 10rem;
+    }
+  }
+  .title {
+    grid-column: 4 / -4;
+    text-align: center;
+    font-family: $font-heading-regular;
+    letter-spacing: normal;
+  }
+  .subtitle {
+    grid-column: 4 / -4;
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: normal;
+  }
+}
+.product-cards-wrapper {
+  grid-column: 4 / -4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2.5rem;
+  grid-auto-flow: dense;
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+    row-gap: 2.5rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+  .product {
+    background: $juno-sea-glass;
+    display: grid;
+    grid-template-rows: 2fr .9fr;
+    align-content: stretch;
+    text-align: center;
+    text-decoration: none;
+    @include respond-to('tablet') {
+      grid-template-rows: 2fr 1fr;
+      grid-column: 1 / -1;
+    }
+    &:last-child {
+      grid-template-rows: 1fr;
+      a {
+        min-width: 165px;
+        margin-top: 2rem;
+      }
+    }
+    &:last-child:nth-last-child(odd) {
+      grid-column: auto / span 2;
+    }
+    &:first-child:nth-last-child(even),
+    &:first-child:nth-last-child(even) ~ .product {
+      grid-column: auto / span 1;
+    }
+    .product-info {
+      margin: 2.5rem 4.5rem;
+    }
+    h3 {
+      padding: 1rem 0;
+      font-size: 2.2rem;
+      line-height: 1.5;
+    }
+    p {
+      font-size: 1.5rem;
+      line-height: 1.73;
+      letter-spacing: normal;
+    }
+    .product-link {
+      font-size: 2.2rem;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: $juno-link-red;
+      justify-content: center;
+    }
+    .upcoming-session {
+      background: tint($juno-sea-glass, 50%);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+
+      .next-session, 
+      .no-sessions {
+        font-family: $font-body-medium;
+      }
+      .next-session {
+        text-transform: uppercase;
+      }
+      .no-sessions {
+        text-transform: none;
+      }
+    }
+  }
+}
+
+.partners {
+  background: #fafafa !important;
+  padding: 2rem 0;
+  .logo-wrapper {
+    grid-column: 4 / -4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 130px;
+  }
+  .logo-wrapper img {
+    width: 130px;
+    margin: 2rem 4rem;
+  }
+}
+
+.upskill {
+  padding: 10rem 0 16rem;
+  background: #faefe8 !important;
+  @include respond-to('mobile-small') {
+    padding: 8rem 0 14rem;
+  }
+  .title {
+    grid-column: 2 / -2;
+    text-align: center;
+    font-size: 4.2rem;
+    line-height: 0.67;
+    font-family: $font-heading-regular;
+    letter-spacing: normal;
+    margin-bottom: 4rem;
+  }
+  .skills {
+    grid-column: 4 / -4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    @include respond-to('tablet') {
+      flex-direction: column;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  .skill {
+    background: #f5dfd0;
+    padding: 3.5rem 3rem;
+    padding-bottom: 1rem;
+    width: calc(33.3% - 1.3rem);
+    margin-bottom: 2rem;
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 2rem;
+      @include respond-to('tablet') {
+        margin-right: 0;
+      }
+    }
+    @include pageRipEffectBottom('rip-upskill-1.svg');
+    @include respond-to('tablet') {
+      width: 100%;
+      margin-bottom: 2.5rem;
+      padding-bottom: 3.5rem;
+      &::after {
+        display: none;
+      }
+    }
+    &:nth-of-type(2)::after {
+      background-image: url(../assets/images/rips/rip-upskill-2.svg);
+    }
+    &:last-of-type::after {
+      background-image: url(../assets/images/rips/rip-upskill-3.svg);
+    }
+  }
+  .skill h3 {
+    font-size: 2.2rem;
+    line-height: 1.27;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+  }
+  .skill p {
+    font-size: 1.5rem;
+    line-height: 1.73;
+    letter-spacing: normal;
+  }
+}
+
+.upskillCta {
+  background: #4a455d !important;
+  background-image: url('../assets/images/corporate/dots.svg') !important;
+  background-position: right !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  padding: 10rem 0;
+  @include respond-to('mobile') {
+    background-size: cover !important;
+  }
+  @include respond-to('mobile-small') {
+    padding: 8rem 0;
+  }
+  h2 {
+    grid-column: 4 / -4;
+    color: $white;
+    font-family: $font-heading-regular;
+    font-size: 5.8rem;
+    line-height: 1.07;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+    @include respond-to('mobile-small') {
+      font-size: 5.2rem;
+    }
+  }
+  .banner-description {
+    grid-column: 4 / -4;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+  h3 {
+    color: $white;
+    font-family: $font-body-regular;
+    font-size: 2.6rem;
+    line-height: 1.23;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+  }
+  p {
+    max-width: 500px;
+    color: $white;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.47;
+    letter-spacing: normal;
+    @include respond-to('tablet') {
+      max-width: 100%;
+    }
+  }
+  .button-wrapper {
+    grid-column: 4 / -4;
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+}

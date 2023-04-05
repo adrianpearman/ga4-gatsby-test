@@ -1,0 +1,76 @@
+.value-card h3.value-subhead {
+  color: $juno-violet-grey;
+  font-family: $font-body-medium;
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.025rem;
+  margin-bottom: 2rem;
+}
+.value-card p {
+  color: $juno-dark-violet;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.015rem;
+  margin-bottom: 1rem;
+}
+.value-card p a {
+  font-size: inherit;
+}
+.title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.toggle {
+  cursor: pointer;
+  display: none;
+}
+
+.perks-card {
+  padding: 2rem 0;
+  break-inside: avoid;
+}
+.perks-card:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.perks-card h3.perk-subhead {
+  color: $juno-dark-violet;
+  font-family: $font-body-medium;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.015rem;
+  margin-bottom: 1rem;
+}
+.perks-card p {
+  color: $juno-dark-violet;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.015rem;
+}
+.perks-card p a {
+  font-size: inherit;
+}
+
+@include respond-to('mobile') {
+  .value-card h3.value-subhead {
+    color: $juno-dark-violet;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: -0.015rem;
+  }
+  .value-card:not(:last-of-type) {
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  .hide {
+    display: none;
+  }
+  .toggle {
+    display: block;
+    appearance: none;
+    background: transparent;
+    border: none;
+    margin-top: -1rem;
+    flex-shrink: 0;
+  }
+}

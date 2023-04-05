@@ -1,0 +1,80 @@
+/* Header module styles
+========================================================================== */
+@keyframes fading-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fading-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 10;
+  animation-name: fading-in;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  background: $white !important;
+}
+
+.site-nav-wrapper {
+  grid-column: 2 / -2;
+}
+
+.secondary-cta {
+  background: tint($juno-blue-sky-2, 75%);
+  font-weight: 600;
+  vertical-align: bottom;
+  transition: background $default-duration ease;
+  @include respond-to('mobile') {
+    padding: 0 1.5rem;
+  }
+}
+.secondary-cta:hover,
+.secondary-cta:focus {
+  background: tint($juno-blue-sky-2, 20%);
+}
+
+.fixed-nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 8rem;
+  padding: 0 5%;
+  top: -1px;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+  transition: opacity $slow-duration ease 4s, visibility $slow-duration ease 4s;
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+
+.fade-in {
+  animation: fading-in $default-duration;
+  a,
+  button {
+    pointer-events: auto;
+  }
+}
+.fade-out {
+  animation: fading-out $default-duration;
+}

@@ -1,0 +1,64 @@
+# please organize redirects based on ending location (group page templates together). context for redirect should be detailed in accompanying commit message
+
+/apply-con-ed                     /apply/    301!
+/apply-bootcamp                   /apply/    301!
+
+/alumni/current-students          /alumni/   301!
+/alumni/developers-for-hire       /alumni/   301!
+/alumni/data-analysts-for-hire    /alumni/   301!
+/alumni/available-for-hire        /alumni/   301!
+
+/bootcamp                         /bootcamp/web-development-toronto/   301!
+/bootcamp-apply                   /apply                               301!
+/bootcamp/web-development         /bootcamp/web-development-toronto/   302!
+/bootcamp/data-analytics          /course-retirement                   301!
+
+/ajsdhfiauebicoisaoiweoinsksallsjkd-blog-preview                            /blog/                                     301!
+/blog/the-bootcamp-acceptance-process                                       /blog/how-to-apply-to-coding-bootcamp/     301!
+/blog/junos-take-the-benefits-of-inperson-learning-                         /blog/inperson-vs-live-online-learning/    301!
+/blog/how-to-get-into-bootcamp-at-hackeryou-our-new-admissions-process-     /blog/how-to-apply-to-coding-bootcamp/     301!
+/admissions-process                                                         /blog/how-to-apply-to-coding-bootcamp/     301!
+/blog/bootcamp-application-guide-for-juno-alumni                            /blog/how-to-apply-to-coding-bootcamp/     301!
+
+/how-it-works       /career-pathway/web-development/   301!
+
+/corporate          /corporate-training/   301!
+
+/courses/*                                  /course/:splat/            301!
+/course/accelerated-web-development         /course/web-development/   301!
+/course/accelerated-javascript              /course/javascript/        301!
+/course/data-foundations                    /course/data-analytics/    301!
+/web-development-course                     /course/web-development/   301!
+
+/blog/general-application                                   /careers/general-application/                            301!
+/blog/were-looking-for-an-instructor                        /careers/were-looking-for-an-instructor/                 301!
+/blog/were-hiring-data-science-instructor                   /careers/were-hiring-data-science-instructor/            301!
+/blog/were-looking-for-a-senior-developer                   /careers/                                                301!
+/blog/were-looking-for-amazing-mentors                      /careers/were-looking-for-amazing-mentors/               301!
+/blog/parttime-instructors                                  /careers/parttime-instructors/                           301!
+/blog/career-booster-scholarship-data-analytics-bootcamp/   /blog/break-into-data-bootcamp-scholarship/              301!
+
+/career-pathway/data-analytics/             /course-retirement/ 301!
+/career-pathway/web-development/            /course-retirement/ 301!
+
+/careers/were-hiring-employer-relations-specialist-2        /careers/were-hiring-employer-partnerships-specialist/   301!
+
+/course/custom-theme-development            /course-retirement/    301!
+/course/full-stack-masterclass              /course-retirement/    301!
+/course/react                               /course-retirement/    301!
+/course/wordpress-and-shopify-development   /course-retirement/    301!
+/course/full-stack-development              /course-retirement/    301!
+
+/graduate-showcase/cohort-33                /web-developer-graduates/cohort-33/    301!
+/graduate-showcase/cohort-34                /web-developer-graduates/cohort-34/    301!
+/graduate-showcase/cohort-35                /web-developer-graduates/cohort-35/    301!
+/graduate-showcase/cohort-36                /web-developer-graduates/cohort-36/    301!
+
+/coding-workshops-thankyou                  /registration-confirmed/    301!
+
+# redirect to homepage
+/start-your-coding-journey-today      /     301!
+https://getstarted.junocollege.com/   /     301!
+
+# pardot endpoints
+/highschool    https://go.junocollege.com/highschool

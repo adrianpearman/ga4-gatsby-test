@@ -1,0 +1,145 @@
+/* Style guide typography module styles
+========================================================================== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+.element {
+  flex-basis: calc(100% / 4);
+  margin-right: 3rem;
+}
+.element code {
+  display: inline-block;
+  margin: 0.3rem 0;
+}
+.example {
+  flex-basis: calc((100% / 2) - 6rem);
+}
+.example span {
+  display: block;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $juno-dark-violet;
+}
+
+// label 2
+.h1 {
+  font-family: $font-heading-light;
+  font-variant-numeric: lining-nums;
+  font-size: 9rem;
+  line-height: 9.4rem;
+  letter-spacing: -0.09rem;
+}
+
+// label d
+.h2 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.1rem;
+}
+
+//label f
+.h3 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.065rem;
+  color: $juno-dark-violet;
+}
+
+// label h3
+.h4 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.055rem;
+  color: $juno-dark-violet;
+}
+
+// label I
+.h5 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.03rem;
+  color: $juno-dark-violet;
+}
+
+//label T
+.h6 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: $juno-dark-violet;
+  text-transform: uppercase;
+}
+
+//label L
+.p {
+  font-family: $font-body-regular;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.024rem;
+  color: $juno-dark-violet;
+}
+
+// label Q
+.link {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $juno-link-red;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+
+.btn {
+  border: 1px solid $juno-red;
+}
+
+.help-text {
+  font-size: 1.7rem !important;
+  margin-top: -2rem !important;
+}
+
+.example .transition-example {
+  background-color: $juno-red;
+  padding: 1.5rem 2rem;
+  color: $white;
+  display: inline;
+  cursor: pointer;
+
+  &.common {
+    transition: background-color $default-duration, color $default-duration;
+  }
+  &.fast {
+    transition: background-color $fast-duration, color $fast-duration;
+  }
+  &.slow {
+    transition: background-color $slow-duration, color $slow-duration;
+  }
+  &.nav {
+    transition: background-color $slowest-duration, color $slowest-duration;
+  }
+
+  &:hover {
+    background-color: $juno-custard;
+    color: $juno-red;
+  }
+}

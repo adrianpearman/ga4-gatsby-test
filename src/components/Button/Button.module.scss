@@ -1,0 +1,97 @@
+button {
+  appearance: none;
+  border: none;
+  text-decoration: none;
+}
+
+.primary {
+  background: $juno-red;
+  border: none;
+  color: $white;
+  font-family: $font-body-medium;
+  transition: background $default-duration ease, color $default-duration ease;
+}
+.primary:hover,
+.primary:focus {
+  background: $juno-custard;
+  color: $juno-red;
+}
+.primary:disabled,
+.primary:disabled:hover,
+.primary:disabled:focus {
+  background: tint($juno-custard, 70%);
+  color: tint($juno-custard, 30%);
+  cursor: default;
+}
+
+.secondary {
+  background: transparent;
+  color: $juno-red;
+  border: 1px solid $juno-red;
+  font-family: $font-body-medium;
+  transition: background $default-duration ease, color $default-duration ease;
+}
+.secondary:hover,
+.secondary:focus {
+  background: $juno-red;
+  color: $white;
+}
+
+.tertiary {
+  background: $white;
+  color: $juno-red;
+  border: 1px solid $white;
+  font-family: $font-body-medium;
+  transition: background $default-duration ease, color $default-duration ease;
+}
+.tertiary:hover,
+.tertiary:focus {
+  background: $juno-red;
+  border: 1px solid $white;
+  color: $white;
+}
+
+.secondaryviolet {
+  background: transparent;
+  color: $juno-dark-violet;
+  border: 1px solid $juno-dark-violet;
+  transition: background $default-duration ease, color $default-duration ease, border $default-duration ease;
+}
+.secondaryviolet:hover,
+.secondaryviolet:focus {
+  background: $juno-red;
+  border: 1px solid $juno-red;
+  color: $white;
+}
+
+.secondarywhite {
+  background: transparent;
+  color: $white;
+  border: 1px solid $white;
+  transition: background $default-duration ease, color $default-duration ease, border $default-duration ease;
+}
+.secondarywhite:hover,
+.secondarywhite:focus {
+  background: $juno-custard;
+  color: $juno-red;
+  border: 1px solid $juno-custard;
+}
+
+.previous {
+  background: transparent;
+  color: $juno-dark-violet;
+}
+
+.submit,
+.btn[type='submit'] {
+  color: $juno-dark-violet;
+  background: $juno-custard;
+  border: none;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  transition: background $default-duration ease;
+}
+.submit:hover,
+.submit:focus {
+  background: $juno-blue-sky-2;
+}

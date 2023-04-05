@@ -1,0 +1,16 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+  functions = "functions/"
+
+[context.production.environment]
+  GATSBY_NETLIFY_CONTEXT = 'production'
+
+[context.deploy-preview.environment]
+  GATSBY_NETLIFY_CONTEXT = 'deploy-preview'
+
+[context.branch-deploy.environment]
+  GATSBY_NETLIFY_CONTEXT = 'branch-deploy'
+
+[[plugins]]
+  package = "netlify-plugin-inline-functions-env"

@@ -1,0 +1,178 @@
+.banner {
+  position: relative;
+  padding: 6rem 4rem 5rem;
+  background-color: $juno-violet-grey;
+  background-image: url(../../assets/images/bg-dots/bg-squaredot-halfdiagonal-halfopacity.svg);
+  background-position: bottom 0px right 0px;
+  background-size: 750px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include respond-to('tablet') {
+    background-position: bottom 0px right -200px;
+  }
+  @include respond-to('mobile') {
+    background-position: bottom 0px right -350px;
+  }
+
+  &.full-width {
+    grid-column: 1 / -1;
+  }
+  &.half-width {
+    grid-column: 8 / -8;
+    background-size: 480px;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      background-position: bottom 0px right -120px;
+    }
+    p {
+      width: 100% !important;
+    }
+  }
+
+  .heading {
+    color: $white;
+    font-size: 5rem;
+    font-family: $font-heading-regular;
+    line-height: 1.08;
+    text-align: center;
+    margin-top: 1rem;
+    @include respond-to('tablet') {
+      font-size: 4.4rem;
+      line-height: 1.14;
+    }
+  }
+  .description {
+    color: $white;
+    text-align: center;
+    padding-top: 1.5rem;
+    line-height: 1.75;
+    padding-bottom: 2rem;
+    width: 70%;
+    @include respond-to('tablet') {
+      width: 90%;
+    }
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+  }
+}
+
+.portraits {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 98px;
+  margin: 0 auto;
+  top: calc(-95px / 2);
+  @include respond-to('mobile-small') {
+    top: calc(-90px / 2);
+    height: 93px;
+  }
+
+  .person {
+    width: 95px;
+    height: 95px;
+    @include respond-to('mobile-small') {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.total-portraits-2 {
+  .person1 {
+    right: -7.5px;
+  }
+  .person2 {
+    left: -7.5px;
+  }
+}
+
+.total-portraits-3 {
+  .person1 {
+    right: -15px;
+  }
+  .person2 {
+    z-index: 10;
+  }
+  .person3 {
+    left: -15px;
+  }
+}
+
+.total-portraits-4 {
+  @include respond-to('mobile-small') {
+    top: calc(-75px / 2);
+    height: 78px;
+    .person {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  .person1 {
+    right: -19px;
+  }
+  .person2 {
+    z-index: 20;
+    right: -7.5px;
+  }
+  .person3 {
+    z-index: 10;
+    left: -7.5px;
+  }
+  .person4 {
+    left: -19px;
+  }
+}
+
+.total-portraits-5 {
+  @include respond-to('mobile-small') {
+    top: calc(-60px / 2);
+    height: 63px;
+    .person {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .person1 {
+    right: -30px;
+  }
+  .person2 {
+    z-index: 10;
+    right: -15px;
+  }
+  .person3 {
+    z-index: 20;
+  }
+  .person4 {
+    z-index: 10;
+    left: -15px;
+  }
+  .person5 {
+    left: -30px;
+  }
+}
+
+.banner.with-calendly {
+  @include respond-to('mobile-small') {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    grid-column: 1 / -1;
+
+    .heading,
+    .description {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+.calendly-embed {
+  align-self: stretch;
+}

@@ -1,0 +1,91 @@
+/* Reviews page - small review card component styles
+========================================================================== */
+
+.review-card {
+  padding: 3.5rem 3rem;
+  margin-bottom: 8rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+.head a {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  @include respond-to('mobile') {
+    text-align: right;
+  }
+}
+.quotation {
+  margin-bottom: 3rem;
+}
+.quotation p {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+.quotation a {
+  font-size: inherit;
+}
+
+.reviewer-container {
+  display: flex;
+  align-items: flex-start;
+}
+.reviewer-headshot {
+  margin-right: 2rem;
+  top: -5px;
+}
+.reviewer-name {
+  margin-bottom: 2rem;
+}
+.reviewer-name p.name {
+  color: $juno-violet-grey;
+  font-family: $font-heading-regular;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  letter-spacing: -0.05rem;
+}
+.reviewer-career {
+  display: flex;
+  @include respond-to('mobile') {
+    flex-direction: column;
+  }
+}
+.reviewer-career > div:not(:last-of-type) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  @include respond-to('mobile') {
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.reviewer-courses {
+  margin-right: 2rem;
+  padding-right: 2rem;
+  @include respond-to('mobile') {
+    margin-right: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+.reviewer-career-details p,
+.reviewer-courses p {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+h6.course-subhead {
+  color: $juno-violet-grey;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}

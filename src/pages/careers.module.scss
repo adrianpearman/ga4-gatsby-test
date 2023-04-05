@@ -1,0 +1,388 @@
+/* Careers page module styles
+========================================================================== */
+
+.hero {
+  padding-bottom: 6rem;
+}
+.hero-image {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+.hero-text {
+  grid-column: 1 / 14;
+  grid-row: 1 / 2;
+  background-color: $juno-red;
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  padding: 4rem 4rem 2rem 15%;
+  @include respond-to('tablet') {
+    grid-column: 1 / 16;
+    padding-left: 10%;
+  }
+  @include respond-to('mobile') {
+    grid-column: 1 / -3;
+    grid-row: 2 / 3;
+    margin-top: -4rem;
+    padding: 4rem 5%;
+  }
+}
+.hero-text::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 4rem;
+  background-image: url(../assets/images/careers/rip-careers-landingcallout.svg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+.hero-text h1.page-title {
+  color: $white;
+  font-family: $font-body-medium;
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.025rem;
+  margin-bottom: 2rem;
+}
+.hero-text p {
+  color: $white;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.015rem;
+  margin-bottom: 2rem;
+}
+
+.values {
+  background: linear-gradient(to right, transparent 5%, tint($juno-sea-glass, 20%) 5%, tint($juno-sea-glass, 20%) 95%, transparent 5%);
+  @include respond-to('tablet') {
+    background: linear-gradient(to right, transparent 5%, tint($juno-sea-glass, 20%) 5%);
+  }
+  @include respond-to('mobile') {
+    background: linear-gradient(to right, tint($juno-sea-glass, 20%) 0%, tint($juno-sea-glass, 20%) 100%);
+  }
+}
+.values h2.values-title {
+  color: $white;
+  font-family: $font-heading-light;
+  font-size: 16rem;
+  line-height: 14rem;
+  letter-spacing: -0.01rem;
+  grid-column: 4 / 20;
+  grid-row: 1 / 2;
+  margin-top: 6rem;
+  @include respond-to('tablet') {
+    grid-column: 3 / 20;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    color: $juno-violet-grey;
+    font-size: 5rem;
+    line-height: 5.4rem;
+    letter-spacing: -0.01rem;
+    margin-bottom: 2rem;
+  }
+}
+.values-grid {
+  grid-column: 10 / -4;
+  grid-row: 1 / 3;
+  margin: 14rem 0 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8%;
+  grid-row-gap: 4rem;
+  @include respond-to('tablet') {
+    grid-column: 4 / -2;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+    grid-template-columns: 1fr;
+    margin: 2rem 0 4rem;
+  }
+}
+
+.quotes {
+  padding: 4rem 0;
+  @include respond-to('mobile') {
+    padding: 2rem 0;
+  }
+}
+
+.callout-even {
+  grid-column: 2 / -9;
+  grid-row: 1 / 2;
+  align-self: start;
+  background-color: $juno-evergreen;
+  padding: 4rem 47% 4rem 8%;
+  @include respond-to('tablet') {
+    grid-column: 2 / -3;
+    padding: 4rem 8% 8rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    padding: 4rem 5% 6rem;
+  }
+}
+.callout-even-image,
+.callout-odd-image {
+  margin-top: 4rem;
+  align-self: end;
+  mask-image: url(../assets/images/reviews/rip-reviews-mask-studentportrait.svg);
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+  mask-size: 100%;
+}
+.callout-even-image {
+  grid-column: 18 / -2;
+  grid-row: 1 / 2;
+  @include respond-to('tablet') {
+    grid-column: 5 / -1;
+    grid-row: 2 / 3;
+    margin-top: -4rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 3 / -1;
+    margin-top: -2rem;
+  }
+}
+.callout-odd {
+  grid-column: 9 / -2;
+  grid-row: 1 / 2;
+  align-self: start;
+  background-color: $juno-violet-grey;
+  padding: 4rem 8% 4rem 50%;
+  @include respond-to('tablet') {
+    grid-column: 3 / -2;
+    padding: 4rem 8% 8rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    padding: 4rem 5% 6rem;
+  }
+}
+.callout-odd-image {
+  grid-column: 2 / 22;
+  grid-row: 1 / 2;
+  @include respond-to('tablet') {
+    grid-row: 2 / 3;
+    margin-top: -4rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 1 / -3;
+    margin-top: -2rem;
+  }
+}
+.callout-even p,
+.callout-odd p {
+  font-family: $font-heading-regular;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.05rem;
+}
+.callout-even p a,
+.callout-odd p a {
+  font-size: inherit;
+  color: $white;
+}
+.callout-even p {
+  color: $juno-sand;
+}
+.callout-odd p {
+  color: $juno-custard-2;
+}
+.company-link {
+  color: $white;
+  margin-top: 4rem;
+}
+.pull-quote {
+  grid-column: 9 / -7;
+  display: block;
+  position: relative;
+  background: url(../assets/images/icons/quote-bg1-sand.svg) center center / contain no-repeat;
+  padding: 0 10%;
+  margin-bottom: 2rem;
+  min-height: 18rem;
+  @include respond-to('tablet') {
+    grid-column: 4 / -4;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    padding: 2rem 0;
+    background-position-y: 10%;
+  }
+}
+.pull-quote > p {
+  font: inherit;
+  color: inherit;
+  margin: 1.4rem 0;
+  position: relative;
+}
+.pull-quote > p:last-of-type::after {
+  content: '”';
+}
+.pull-quote > p:first-of-type::before {
+  content: '';
+  position: absolute;
+  left: -5rem;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url(../assets/images/icons/quote-mark1-tumeric.svg) center / 100% no-repeat;
+  @include respond-to('mobile') {
+    left: 0;
+    top: -3rem;
+  }
+}
+.pull-quote > cite {
+  font-style: normal;
+}
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  @include respond-to('mobile') {
+    margin-top: 4rem;
+  }
+  li:not(:last-child) {
+    margin-right: 2.5rem;
+  }
+}
+
+.perks {
+  background-color: tint($juno-almond-2, 70%) !important;
+  padding: 8rem 0 4rem;
+  position: relative;
+  margin-bottom: 6rem !important;
+}
+.perks::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 6rem;
+  background-image: url(../assets/images/careers/rip-careers-openpositions.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.perks-subhead {
+  grid-column: 2 / -2;
+  font-family: $font-heading-light;
+  color: $juno-dark-violet;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.01rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+  @include respond-to('mobile') {
+    font-size: 5rem;
+    line-height: 5.4rem;
+    letter-spacing: -0.01rem;
+  }
+}
+.perks-subhead::before{
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2rem;
+  height: 1em;
+  background-image: url(../assets/images/careers/highlight-perksbenefits.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  z-index: -1;
+}
+
+.perks aside {
+  grid-column: -11 / -2;
+  margin-top: 4rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+.perks aside h4.perks-sidebar-subhead {
+  color: $juno-violet-grey;
+  font-family: $font-heading-light;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.05rem;
+  margin-bottom: 2rem;
+}
+.perks aside ul {
+  @include respond-to('tablet') {
+    columns: 2;
+    column-gap: 8%;
+    margin-bottom: 6rem;
+  }
+  @include respond-to('mobile') {
+    columns: 1;
+    margin-bottom: 2rem;
+  }
+}
+.perks aside li {
+  color: $juno-violet-grey;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  letter-spacing: -0.025rem;
+  margin-bottom: 1.25rem;
+  margin-left: 5rem;
+  position: relative;
+}
+.perks aside li::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  left: -5rem;
+  top: -0.25rem;
+  background-image: url(../assets/images/curriculum/icon-details-checklist.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.perks-grid {
+  grid-column: 2 / -14;
+  columns: 2;
+  column-gap: 8%;
+  margin: 2rem 0 6rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    columns: 1;
+    margin-bottom: 2rem;
+  }
+}
+
+.perks-image-two-desktop {
+  grid-column: 2 / -2;
+  @include respond-to('mobile') {
+    display: none !important;
+  }
+}
+.perks-image-two-mobile {
+  display: none !important;
+  @include respond-to('mobile') {
+    display: inline-block !important;
+    grid-column: 2 / -2;
+  }
+}
+
+.gallery {
+  padding-top: 5rem;
+  padding-bottom: 1.5rem;
+}
+.gallery-image {
+  grid-column: 1 / -1;
+}

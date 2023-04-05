@@ -1,0 +1,223 @@
+.question,
+.long-text-response {
+  border: none;
+  border-bottom: 2px solid;
+  border-color: inherit;
+  padding: 0 4rem 2.5rem;
+  margin: 0 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  @include respond-to('mobile-small') {
+    padding: 0 2rem 2.5rem;
+  }
+  label,
+  legend,
+  .long-text-question {
+    font-size: 1.5rem;
+    color: $juno-dark-violet;
+    line-height: 1.53;
+    letter-spacing: normal;
+  }
+  legend,
+  .long-text-question {
+    font-family: $font-body-medium;
+    margin-bottom: 1.5rem;
+  }
+  &.error legend {
+    color: $juno-red;
+  }
+  label {
+    margin: 0 0 1.5rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    @include respond-to('mobile') {
+      margin: 0 0 1rem;
+    }
+  }
+  input {
+    margin: 0;
+    position: relative;
+    top: 5px;
+  }
+}
+.contact-info {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  label {
+    font-family: $font-body-medium;
+    width: calc(50% - 1.5rem);
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2.5rem;
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+  }
+  input {
+    border: 1px solid $juno-mauve-blue;
+    border-radius: 2px;
+    padding: 1.4rem 1rem;
+    margin: 3px 0 0;
+    color: inherit;
+    font-family: $font-body-regular;
+    position: static;
+    width: 100%;
+  }
+}
+
+.form-end {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 4rem 3.5rem;
+  @include respond-to('mobile') {
+    padding: 0 2rem 3.5rem;
+  }
+  .agreements {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 2rem 2rem;
+    position: relative;
+
+    color: $juno-dark-violet;
+    font-size: 1.5rem;
+    font-family: $font-body-italic;
+    line-height: 1.53;
+    letter-spacing: normal;
+    cursor: pointer;
+    @include respond-to('mobile-small') {
+      margin: 0;
+    }
+    input {
+      margin-right: 1rem;
+      position: relative;
+      top: 5px;
+    }
+    a {
+      line-height: inherit;
+    }
+  }
+  .submit-button {
+    margin: 2.5rem 0;
+    align-self: center;
+  }
+}
+
+.required::after {
+  content: '*';
+}
+
+.long-text-response {
+  padding-bottom: 4rem;
+}
+.long-text-response textarea {
+  font-size: 1.5rem;
+  font-family: $font-body-regular;
+  line-height: 1.8;
+  letter-spacing: normal;
+  resize: vertical;
+
+  padding: 1.2rem 2rem;
+  width: 100%;
+  height: 10rem;
+  border: 1px solid $juno-mauve-blue;
+  border-radius: 2px;
+  @include respond-to('mobile') {
+    height: 15rem;
+  }
+}
+
+.question-examples {
+  margin: -5px 0 1.5rem 2.5rem;
+
+  li {
+    line-height: normal;
+    margin-left: 1rem;
+    margin-bottom: 5px;
+    list-style-type: disc;
+    font-size: 1.5rem;
+  }
+}
+
+// custom checkbox designs
+.question input[type='checkbox'],
+.question input[type='radio'],
+.agreements input[type='checkbox'] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  // replacement input tab focus styles
+  &:focus + .custom-checkbox::before {
+    border: 2px solid $juno-red;
+  }
+  // replacement input selected styles
+  &:checked + .custom-checkbox::before {
+    content: '✓';
+    color: $white;
+    font-weight: 700;
+    background-color: $juno-mauve-blue;
+    padding-bottom: 1px;
+  }
+}
+.custom-checkbox {
+  position: relative;
+  padding-left: 2.5rem;
+  // replacement input styles, creates a custom box ready for a checkmark
+  &::before {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    content: '';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $white;
+    border-radius: 2px;
+    border: 1px solid $juno-mauve-blue;
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+}
+.question input[type='radio'] {
+  & + .custom-checkbox::before {
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  &:checked + .custom-checkbox::before {
+    content: '●';
+    font-size: 9px;
+    padding-top: 1px;
+  }
+}
+
+.error-message {
+  display: none;
+  visibility: hidden;
+  width: 100%;
+  margin-left: 2.5rem;
+  color: $juno-red;
+  margin-top: 5px;
+  a {
+    text-decoration: underline solid $juno-red;
+  }
+  &.show-error {
+    display: block;
+    visibility: visible;
+  }
+}

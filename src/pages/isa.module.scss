@@ -1,0 +1,233 @@
+.hero {
+  background: $juno-blue-sky !important;
+  padding: 8rem 0;
+  position: relative;
+  @include respond-to('tablet') {
+    padding-bottom: 0;
+  }
+  @include pageRipEffectBottom('isa-rip-pwyc.svg', $height: 8rem);
+}
+.hero-info {
+  grid-column: 4 / -16;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  .seo-heading {
+    @include seoHeadingTypography;
+  }
+  h2 {
+    font-size: 6.4rem;
+    font-family: $font-heading-regular;
+    line-height: 1.06;
+    margin-bottom: 2rem;
+    @include respond-to('mobile') {
+      font-size: 4.4rem;
+    }
+    span {
+      display: table;
+    }
+  }
+  h3 {
+    font-family: $font-body-regular;
+    font-size: 2.3rem;
+    line-height: 1.43;
+    margin-bottom: 1rem;
+  }
+  p {
+    line-height: 1.63;
+    margin-bottom: 2rem;
+  }
+  .package-form {
+    background: $juno-red;
+    border: none;
+    color: $white;
+    font-family: $font-body-medium;
+    transition: background $default-duration ease, color $default-duration ease;
+    margin-right: 2rem;
+    @include respond-to('tablet') {
+      margin-bottom: 3rem;
+    }
+    &:hover,
+    &:focus {
+      background: $juno-custard;
+      color: $juno-red;
+    }
+  }
+}
+.hero-right {
+  grid-column: 27 / -1;
+  width: 100%;
+  position: relative;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  p {
+    position: relative;
+    bottom: 6rem;
+    left: 4rem;
+    background: $juno-violet-grey;
+    padding: 2rem;
+    color: $white;
+    width: 100%;
+    max-width: 256px;
+  }
+}
+
+.info {
+  background: $white !important;
+  padding: 8rem 0;
+  padding-top: 12rem;
+}
+.infos {
+  grid-column: 4 / -4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  div {
+    width: calc((100% / 3) - 3rem);
+    margin-right: 3rem;
+    margin-bottom: 3rem;
+    @media (max-width: 1104px) {
+      width: 100%;
+    }
+    h2 {
+      font-size: 3.8rem;
+      line-height: 1.17;
+      font-family: $font-heading-regular;
+      color: $juno-red;
+      padding-bottom: 2rem;
+    }
+  }
+}
+.info-button-wrapper {
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}
+
+.process {
+  background: tint($juno-almond-2, 80%) !important;
+  padding: 8rem 0;
+  position: relative;
+  @include pageRipEffectBottom('isa-rip-process.svg', $height: 8rem)
+}
+.process-info {
+  grid-column: 4 / -16;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  h2 {
+    font-size: 4.8rem;
+    line-height: 1.08;
+    font-family: $font-heading-regular;
+    margin-bottom: 4rem;
+  }
+  .process-example h3 {
+    font-size: 2.2rem;
+    line-height: 1.27;
+    color: $juno-red;
+    margin-bottom: 1rem;
+  }
+  .process-example p {
+    margin-bottom: 3rem;
+    line-height: 1.63;
+  }
+}
+.process-download {
+  grid-column: 26 / -4;
+  background: $white;
+  align-self: flex-start;
+  padding: 3.5rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  h3 {
+    font-size: 2.2rem;
+    line-height: 1.27;
+    color: $juno-red;
+    margin-bottom: 1rem;
+  }
+  p {
+    line-height: 1.63;
+    margin-bottom: 2rem;
+  }
+}
+
+.isa {
+  background: $juno-violet-grey !important;
+  background-image: url('../assets/images/paywhatyoucan/dots.svg') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  padding: 8rem 0;
+  padding-top: 14rem;
+}
+.isa-info {
+  grid-column: 4 / -20;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  h2 {
+    font-family: $font-heading-regular;
+    font-size: 4.8rem;
+    line-height: 1.08;
+    color: $white;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    line-height: 1.63;
+    color: $white;
+    margin-bottom: 1rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
+  form label {
+    margin-bottom: 1rem;
+  }
+  form input {
+    width: 100%;
+    padding: 1.4rem 1rem;
+    border: 1px solid $juno-mauve-blue;
+    border-radius: 2px;
+  }
+  form input[type='submit'] {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    height: 4.4rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+    align-self: flex-start;
+    text-decoration: none;
+    background: $juno-red;
+    border: none;
+    color: $white;
+    font-family: $font-body-medium;
+    max-width: 210px;
+    transition: background $default-duration ease, color $default-duration ease;
+    &:hover,
+    &:focus {
+      background: $juno-custard;
+      color: $juno-red;
+    }
+  }
+  p.small-note {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+}
+.package-image-wrapper {
+  grid-column: 22 / -4;
+  @include respond-to('tablet') {
+    display: none;
+  }
+}

@@ -1,0 +1,692 @@
+.hero {
+  h1 {
+    margin-bottom: 0 !important;
+  }
+
+  @include respond-to('tablet') {
+    h1 {
+      font-size: 6.8rem !important;
+    }
+  }
+
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+    background: $juno-sea-glass  !important;
+
+    h1 {
+      font-size: 5rem !important;
+    }
+
+    &::after {
+      display: block !important;
+    }
+  }
+
+  &>div:first-of-type {
+    grid-column: 4 / span 15 !important;
+
+    @include respond-to('tablet') {
+      grid-column: 2 / span 11 !important;
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2 !important;
+    }
+  }
+
+  &>div:last-of-type {
+    position: relative !important;
+    top: unset;
+    grid-column: span 15 / -4;
+
+    @include respond-to('tablet') {
+      grid-column: span 12 / -2;
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      margin-top: 2.5rem;
+      justify-self: start;
+      max-width: 100%;
+    }
+  }
+}
+
+.grad-success-section {
+  padding: 8rem 0 10rem;
+
+  @include respond-to('mobile') {
+    padding: 4rem 0 6rem;
+  }
+
+  h2,
+  .content-wrapper,
+  .cta {
+    grid-column: 8 / -8;
+    text-align: center;
+
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  .content-wrapper {
+    margin: 1.5rem 0;
+
+    p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem 0;
+
+      li {
+        width: calc((100% / 3) - 2rem);
+        min-width: 200px;
+        margin: 1rem 1rem 7rem;
+        padding: 3rem 3rem 1rem;
+        line-height: 2.2rem;
+        background-color: tint($juno-yellow-peach, 60%);
+        border-top: solid 1rem $juno-tumeric;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        @include pageRipEffectBottom('homepage-middle-card-rip.svg');
+
+        &:first-of-type {
+          @include pageRipEffectBottom('homepage-left-card-rip.svg');
+        }
+
+        &:last-of-type {
+          @include pageRipEffectBottom('homepage-right-card-rip.svg');
+        }
+
+        @include respond-to('mobile') {
+          width: 100%;
+          min-width: auto;
+          max-width: 300px;
+        }
+      }
+
+      span {
+        font-size: 6.4rem;
+        line-height: 6.8rem;
+        font-family: $font-heading-regular;
+        font-variant-numeric: lining-nums;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .cta {
+    justify-self: center;
+  }
+}
+
+.photo-divider {
+  position: relative;
+  @include pageRipEffectTop('rip-course-immersive-opportunity.svg');
+
+  &::before {
+    bottom: 0;
+    z-index: 10;
+  }
+}
+
+.reviews {
+  padding: 8rem 0 10rem;
+
+  @include respond-to('tablet') {
+    padding: 8rem 0 10rem;
+  }
+
+  @include respond-to('mobile') {
+    padding: 4rem 0 6rem;
+  }
+
+  h2,
+  .reviews-cta {
+    grid-column: 4 / -4;
+    justify-self: center;
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  h2 {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .reviews-carousel {
+    grid-column: 1 / -1;
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  .reviews-cta {
+    margin-top: 6rem;
+  }
+}
+
+.career-support-section {
+  background-color: tint($juno-sand, 30%);
+  padding: 10rem 0 8rem;
+  position: relative;
+  @include pageRipEffectBottom('homepage-careers-rip.svg');
+
+  @include respond-to('mobile') {
+    padding: 6rem 0 3rem;
+  }
+
+  .content-wrapper {
+    grid-column: 4 / 20;
+    grid-row: 1;
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin: 1rem 0 1.5rem;
+
+      li {
+        margin-bottom: 5px;
+        margin-left: 2rem;
+        padding-left: 1rem;
+        line-height: 2.8rem;
+        color: $juno-dark-violet;
+      }
+    }
+  }
+
+  .cta {
+    grid-row: 2;
+    grid-column: 4 / 20;
+    justify-self: start;
+
+    @include respond-to('tablet') {
+      grid-row: 4;
+      grid-column: 4 / -4;
+    }
+
+    @include respond-to('mobile') {
+      justify-self: center;
+    }
+  }
+
+  .image {
+    grid-column: 20 / span 12;
+    grid-row: 1 / 3;
+
+    @include respond-to('tablet') {
+      grid-column: 4 / span 12;
+      grid-row: 2;
+      margin: 1.5rem 0 4rem;
+      max-height: 350px;
+
+      img {
+        object-position: top center;
+      }
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      margin-bottom: 0;
+    }
+  }
+
+  .aside-wrapper {
+    grid-column: span 6 / -2;
+    grid-row: 1 / 3;
+    position: relative;
+    align-self: center;
+    height: 238px;
+
+    @include respond-to('tablet') {
+      grid-column: 17 / span 6;
+      grid-row: 2;
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      grid-row: 3;
+      justify-self: center;
+      height: auto;
+      margin-bottom: 8rem;
+    }
+  }
+
+  aside {
+    background-color: $white;
+    padding: 3rem 3rem 1.5rem;
+    border-top: solid 5px $juno-custard;
+    text-align: center;
+    width: 310px;
+    position: absolute;
+    left: -140px;
+    @include pageRipEffectBottom('homepage-aside-rip-white.svg', $height: 3.6rem);
+
+    @include respond-to('mobile') {
+      position: relative;
+      left: 0;
+      top: -75px;
+      margin-bottom: -75px;
+      width: 100%;
+      max-width: 310px;
+    }
+
+    &>p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    span {
+      line-height: 2.2rem;
+    }
+
+    .rating {
+      font-size: 4.4rem;
+      font-family: $font-heading-regular;
+      line-height: 4.8rem;
+      letter-spacing: 0;
+      font-variant-numeric: lining-nums;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.logos {
+  padding: 14rem 0 10rem;
+  justify-items: center;
+
+  @include respond-to('tablet') {
+    padding: 12rem 0 8rem;
+  }
+
+  @include respond-to('mobile') {
+    padding: 10rem 0 6rem;
+  }
+
+  &>h3,
+  &>ul {
+    grid-column: 3 / -3;
+  }
+
+  &>h3 {
+    text-align: center;
+  }
+
+  &>ul {
+    justify-content: space-around;
+  }
+}
+
+.financing-options {
+  background-color: $juno-sea-glass  !important;
+  padding: 10rem 0 8rem;
+  margin-bottom: 2rem;
+  position: relative;
+  @include pageRipEffectBottom('bootcamp-financing-section-rip.svg');
+
+  @include respond-to('tablet') {
+    padding: 8rem 0 !important;
+
+    &>a {
+      margin-top: 4rem !important;
+    }
+  }
+
+  @include respond-to('mobile') {
+    padding: 6rem 0 !important;
+  }
+
+  &::after {
+    top: 98%;
+    z-index: 10;
+  }
+
+  @include respond-to('tablet') {
+    padding: 8rem 0 28rem;
+  }
+
+  @include respond-to('mobile') {
+    padding-top: 4rem;
+  }
+
+  h2,
+  .section-description,
+  .options-list {
+    grid-column: 4 / -4;
+
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  h2,
+  .section-description {
+    text-align: center;
+  }
+
+  .section-description {
+    margin-top: 5px;
+  }
+
+  .options-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    @include respond-to('tablet') {
+      flex-direction: column;
+    }
+  }
+
+  .option {
+    background-color: $white;
+    width: calc(100% / 3);
+    padding: 3rem 4rem;
+
+    @include respond-to('tablet') {
+      width: 70%;
+    }
+
+    @include respond-to('mobile') {
+      width: 100%;
+    }
+
+    h3 {
+      padding-bottom: 1rem;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .option:first-child {
+    h3 {
+      width: 84%;
+
+      @include respond-to('tablet') {
+        width: 100%;
+      }
+    }
+
+    @include respond-to('tablet') {
+      margin: 4rem 0;
+    }
+  }
+
+  .option:nth-child(2) {
+    margin: 0 4rem;
+    position: relative;
+    @include pageRipEffectBottom('bootcamp-financing-center-rip.svg');
+
+    @include respond-to('tablet') {
+      order: -1;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .option:last-child h3 {
+    width: 60%;
+
+    @include respond-to('tablet') {
+      width: 100%;
+    }
+  }
+
+  .cta {
+    grid-column: 4 / -4;
+    justify-self: center;
+    margin-top: 10rem;
+  }
+}
+
+.instructors-section {
+  padding: 12rem 0 10rem;
+
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+
+  .content-wrapper {
+    grid-column: 4 / span 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+  }
+
+  h2,
+  .section-description {
+    text-align: center;
+  }
+
+  .section-description {
+    margin: 1.5rem 0 2rem;
+  }
+
+  .all-scores {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to('mobile') {
+      display: block;
+    }
+  }
+
+  .csat-score {
+    background-color: tint($juno-yellow-peach, 60%);
+    border-top: solid 1rem $juno-custard;
+    text-align: center;
+    padding: 3rem 3rem 1rem;
+    width: calc(50% - 1rem);
+    position: relative;
+
+    @include respond-to('mobile') {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 8rem;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.375;
+
+      span {
+        color: $juno-dark-violet;
+
+        &.percentage {
+          font-size: 5.4rem;
+          line-height: 1.26;
+
+          @include respond-to('mobile') {
+            font-size: 4.8rem;
+          }
+        }
+      }
+    }
+
+    &:first-of-type {
+      margin-right: 1rem;
+      @include pageRipEffectBottom('homepage-csat-card-rip.svg');
+
+      &::after {
+        height: 5rem;
+      }
+
+      @include respond-to('mobile') {
+        margin-right: 0;
+      }
+    }
+
+    &:last-of-type {
+      margin-left: 1rem;
+      @include pageRipEffectBottom('homepage-csat-card-rip2.svg');
+
+      &::after {
+        height: 5rem;
+      }
+
+      @include respond-to('mobile') {
+        margin-left: 0;
+        margin-bottom: 2rem;
+
+        &::after {
+          height: 7rem;
+        }
+      }
+    }
+  }
+
+  .cta {
+    margin-top: 8rem;
+  }
+
+  .instructor-grid {
+    grid-column: span 16 / -4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 80px);
+    grid-template-rows: repeat(6, 1fr);
+    grid-auto-rows: 0;
+    column-gap: 5px;
+    overflow-y: hidden;
+    width: 100%;
+    justify-content: center;
+
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+      grid-template-rows: repeat(4, 1fr);
+      margin-top: 6rem;
+      justify-content: space-between;
+    }
+
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      grid-template-columns: repeat(auto-fit, 65px);
+    }
+
+    @include respond-to('mobile-small') {
+      grid-template-rows: repeat(5, 1fr);
+    }
+  }
+
+  .instructor .headshot {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
+
+    @include respond-to('mobile') {
+      width: 65px;
+      height: 65px;
+    }
+  }
+}
+
+.community-section {
+  background-color: tint($juno-blue-sky, 70%);
+  padding: 10rem 0;
+
+  @include respond-to('tablet') {
+    padding: 0 0 12rem;
+  }
+
+  @include respond-to('mobile') {
+    padding: 6rem 0;
+  }
+
+  // override section content wrapper styles
+  &>div:first-of-type {
+    align-self: center;
+
+    @include respond-to('tablet') {
+      margin-top: 4rem;
+    }
+
+    @include respond-to('mobile') {
+      margin-top: 0;
+    }
+
+    &>div {
+      ul {
+        list-style-type: disc;
+        margin: 1rem 0 1.5rem;
+
+        li {
+          margin-bottom: 5px;
+          margin-left: 2rem;
+          padding-left: 1rem;
+          line-height: 2.8rem;
+          color: $juno-dark-violet;
+        }
+      }
+    }
+  }
+
+  // override image grid styles
+  &>div:nth-of-type(2),
+  &>div:last-of-type {
+    &::before {
+      background-image: url('../assets/images/rips/homepage-image-grid-rip.svg');
+
+      @include respond-to('tablet') {
+        height: 8rem;
+      }
+    }
+  }
+
+  &>div:nth-of-type(2) {
+    grid-template-rows: 180px 90px 90px 180px;
+
+    @include respond-to('tablet') {
+      grid-template-rows: 270px 300px;
+    }
+
+    @include respond-to('mobile') {
+      display: none;
+    }
+
+    &>div img {
+      object-position: top center;
+    }
+  }
+
+  &>div:last-of-type {
+    display: none;
+  }
+}

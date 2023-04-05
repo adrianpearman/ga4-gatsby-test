@@ -1,0 +1,36 @@
+.cta, 
+.cta-purple {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+.cta {
+  background: #ea593e !important;
+}
+.cta-purple {
+  background: #4a455d !important;
+}
+
+.cta-container {
+  background: url('../../assets/images/homepage/dots.svg');
+  grid-column: 1 / -1;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: 100% 44%;
+  padding: 10rem 0;
+  @include respond-to('mobile') {
+    background: initial;
+    padding: 6rem 0;
+  }
+}
+.cta-container h2 {
+  color: #fff;
+  font-size: 6.4rem;
+  font-family: $font-heading-regular;
+  line-height: 0.84;
+  letter-spacing: normal;
+  margin-bottom: 4rem;
+  @include respond-to('mobile') {
+    font-size: 4.4rem;
+    padding: 0 5%;
+  }
+}

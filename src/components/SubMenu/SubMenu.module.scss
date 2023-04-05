@@ -1,0 +1,318 @@
+// Sub menu variables, for values that are inter-connected in the styles
+$left-section-width: 255px;
+$left-section-right-padding: 2rem;
+
+.sub-menu {
+  background-color: tint($juno-blue-sky, 70%);
+  padding: 2.7rem 4rem 1rem;
+  position: absolute;
+  left: calc((#{$left-section-width} + #{$left-section-right-padding}) * -1);
+  display: flex;
+  @include pageRipEffectBottom('submenu-full-length-rip.svg', $nested: true);
+  li a {
+    font-size: 1.6rem;
+    font-family: $font-body-regular;
+    color: $juno-dark-violet;
+    line-height: 28px;
+  }
+}
+
+.left-section,
+.right-section {
+  background-color: tint($juno-blue-sky, 70%);
+}
+
+.left-section {
+  padding: 3px $left-section-right-padding 0 0;
+  width: $left-section-width;
+}
+.marketing-sentence {
+  font-family: $font-heading-regular;
+  color: $juno-violet-grey;
+  font-size: 2.6rem;
+  line-height: 1.23;
+  margin-bottom: 1rem;
+}
+.marketing-link {
+  font-size: 1.5rem;
+  position: relative;
+  svg {
+    position: absolute;
+    top: -21px;
+    width: 21px;
+    polyline,
+    line {
+      stroke-width: 3px;
+      stroke: $juno-link-red;
+    }
+  }
+}
+
+.center-section {
+  background-color: tint($juno-blue-sky, 70%);
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: repeat(3, max-content);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  ul {
+    padding-right: 3rem;
+  }
+}
+.general-link-list,
+.center-section ul {
+  display: grid;
+  grid-auto-rows: 32px;
+  grid-auto-columns: max-content;
+}
+
+.right-section {
+  padding-left: 3rem;
+}
+
+button.heading {
+  display: none;
+}
+.heading {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: tint($juno-violet-grey, 20%);
+  letter-spacing: 0.77px;
+  font-family: $font-body-medium;
+  line-height: 2.6rem;
+  background: none;
+  padding: 3px 0;
+  text-align: left;
+}
+.mobile-inner-menu-toggle-icon {
+  display: none;
+}
+
+// Grid layout adjustments for the courses and bootcamps sub menu
+.courses {
+  .center-section {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-flow: row;
+    .topic:first-of-type {
+      grid-row-start: 1;
+      grid-row-end: 4;
+    }
+  }
+}
+.courses,
+.bootcamps {
+  .center-section {
+    border-right: 2px solid $juno-blue-sky-2;
+  }
+}
+.bootcamps {
+  .center-section {
+    display: block;
+
+    .topic li {
+      white-space: nowrap;
+    }
+  }
+
+  .topic ul {
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+}
+// ============================================== //
+// ========= DESKTOP TRANSITION STYLES ========== //
+.sub-menu {
+  visibility: hidden;
+  opacity: 0;
+  top: 50px;
+  transition: visibility $default-duration, opacity $slow-duration, top $slow-duration;
+  z-index: 0;
+}
+// ============================================== //
+// ================ TABLET STYLES =============== //
+@include respond-to('tablet') {
+  // remove the page rip from desktop styles
+  .sub-menu::after {
+    background-image: none;
+    display: none;
+  }
+
+  // set hover/focus transitions for backgrounds & underlines on headings & links
+  .sub-menu .heading,
+  .left-section a,
+  .center-section .topic li a,
+  .general-link-list li a {
+    background-color: transparent;
+    transition: text-decoration $slow-duration, background-color $slow-duration;
+    &:hover,
+    &:focus {
+      background-color: tint($juno-blue-sky, 20%);
+      transition: text-decoration $slow-duration, background-color $slow-duration;
+    }
+  }
+  .sub-menu .heading.clicked {
+    background-color: tint($juno-blue-sky, 20%);
+    transition: text-decoration $slow-duration, background-color $slow-duration;
+  }
+
+  .sub-menu {
+    background-color: tint($juno-blue-sky-2, 50%);
+    position: static;
+    padding: 0;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+    li a {
+      font-size: 2rem;
+    }
+
+    p.heading {
+      display: none;
+    }
+    button.heading {
+      display: block;
+    }
+    .heading {
+      font-size: 2rem;
+      text-transform: capitalize;
+      color: $juno-dark-violet;
+      letter-spacing: normal;
+      padding: 1.3rem 4rem;
+      font-family: $font-body-medium;
+      width: 100%;
+      position: relative;
+      z-index: 20;
+      cursor: pointer;
+      .mobile-inner-menu-toggle-icon {
+        display: block;
+        position: absolute;
+        right: 4rem;
+        top: 17px;
+        transition: transform $slowest-duration ease;
+        polyline {
+          stroke: $juno-violet-grey;
+        }
+      }
+      .mobile-inner-menu-toggle-icon-clicked {
+        transform: rotateX(180deg);
+        transition: transform $slowest-duration ease;
+      }
+    }
+  }
+  .left-section {
+    padding-top: 0;
+    padding-right: 0;
+  }
+  .left-section a {
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    width: 100%;
+  }
+  .left-section,
+  .about .left-section,
+  .for-companies .left-section {
+    position: static;
+    width: 100%;
+    background-color: tint($juno-blue-sky-2, 50%);
+    .marketing-sentence {
+      display: none;
+    }
+    .marketing-link {
+      color: $juno-dark-violet;
+      font-size: 2rem;
+      svg {
+        display: none;
+      }
+    }
+  }
+  .right-section {
+    padding: 0;
+    position: relative;
+    background-color: tint($juno-blue-sky-2, 50%);
+    left: 0;
+    .general-link-list {
+      display: none;
+    }
+  }
+  .center-section {
+    border-right: none;
+    display: block;
+    background-color: tint($juno-blue-sky-2, 50%);
+    max-height: unset !important;
+    padding: 0;
+    ul {
+      max-height: unset;
+      display: block;
+      padding-right: 0;
+    }
+    .topic {
+      position: relative;
+      ul {
+        display: none;
+      }
+    }
+  }
+  .general-link-list {
+    max-height: unset;
+  }
+  .center-section .topic ul li a,
+  .general-link-list li a {
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .courses .topic .heading:after {
+    content: ' Courses';
+  }
+  // Show Sub Menu classes added in when user clicks & reset padding to enable full width hovers
+  .center-section .topic .show-sub-menu {
+    display: block;
+    padding-right: 0;
+  }
+  .right-section .show-sub-menu {
+    display: block;
+    padding-right: 0;
+  }
+  .show-sub-menu {
+    display: block;
+  }
+}
+
+.flag-new {
+  position: relative;
+  margin-right: 35px;
+  &::after {
+    content: 'New!';
+    color: $juno-red;
+    text-transform: uppercase;
+    font-size: 11.2px;
+    font-family: $font-body-medium;
+    letter-spacing: 1px;
+    position: absolute;
+    top: -11px;
+    right: -35px;
+  }
+}
+
+// ============= MOBILE STYLES ================== //
+@include respond-to('mobile') {
+  .sub-menu {
+    right: 0;
+  }
+}
+@include respond-to('mobile-small') {
+  .sub-menu .heading .mobile-inner-menu-toggle-icon {
+    right: 3.5rem;
+  }
+  .left-section a,
+  .sub-menu .heading,
+  .general-link-list li a,
+  .center-section .topic li a,
+  .bootcamps .center-section .topic ul li a {
+    padding-left: 2.3rem;
+  }
+}
+// ============================================== //

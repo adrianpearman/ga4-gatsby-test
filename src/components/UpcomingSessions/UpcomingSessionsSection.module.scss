@@ -1,0 +1,58 @@
+/* Dates and Cost module styles
+========================================================================== */
+
+.dates-cost {
+  padding: 8rem 0 10rem;
+  position: relative;
+  background: tint($juno-blue-sky, 50%) !important;
+  @include respond-to('mobile') {
+    padding: 8rem 0;
+  }
+  @include pageRipEffectTop('rip-bootcamp-datescosts.svg', 5rem, $nested: true);
+}
+
+/* Title and description
+========================================================================== */
+.title {
+  grid-column: 4 / -4;
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1.08;
+  letter-spacing: 0.008rem;
+  font-family: $font-heading-regular;
+  margin-bottom: 1rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    font-size: 4.4rem;
+    line-height: 1.14;
+  }
+}
+
+.description {
+  grid-column: 4 / -4;
+  text-align: center;
+  font-size: 2.4rem;
+  line-height: 1.33;
+  margin: 0 0 5rem;
+  &.no-sessions {
+    margin-bottom: 1rem;
+  }
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    margin: 0 0 2rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    &.no-sessions {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.sessions-list {
+  grid-column: 4 / -4;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+}

@@ -1,0 +1,98 @@
+/* Campus Tour Gallery Styles
+========================================================================== */
+
+.wrapper {
+  padding-bottom: 7rem;
+  position: relative;
+  @include respond-to('mobile-small') {
+    padding-top: 5rem;
+  }
+}
+
+.image-container {
+  margin: 0;
+  grid-column: -2/2;
+  position: relative;
+  @include pageRipEffectTop('rip-campustour.svg', $nested: true, $position: after);
+  &::after {
+    bottom: 0;
+    @include respond-to('tablet') {
+    display: none;
+  }
+  }
+  @include respond-to('mobile') {
+    top: -5.5rem;
+    margin-top: 4rem;
+  }
+  @include respond-to('mobile-small') {
+    top: -10rem;
+  }
+}
+.image {
+  display: inline-block;
+  @include respond-to('tablet') {
+    display: none !important;
+  }
+}
+.image-square {
+  display: none !important;
+  @include respond-to('tablet') {
+    display: inline-block !important;
+  }
+}
+
+/* Visit our Campus Block
+========================================================================== */
+.visit {
+  grid-column: 25 / span 12;
+  background: tint($juno-custard, 70%);
+  padding: 3rem;
+  max-width: 375px;
+  position: absolute;
+  top: -4.5rem;
+  right: 0;
+  z-index: 1;
+  box-shadow: 13px 0 tint($juno-custard, 70%);
+  @include respond-to('tablet') {
+    grid-column: -2/2;
+    max-width: 100%;
+    right: 0;
+    bottom: 7rem;
+    top: auto;
+    box-shadow: none;
+    @include pageRipEffectTop('rip-campustour-custard.svg', $nested: true);
+  }
+}
+.visit h3 {
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: 0.065rem;
+  color: $juno-violet-grey;
+  margin-bottom: 2rem;
+}
+.visit p {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  margin-bottom: 2rem;
+}
+
+/* Stamp
+========================================================================== */
+.stamp-wrapper {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 3rem;
+  z-index: 2;
+  @include respond-to('tablet') {
+    bottom: 7.1rem;
+  }
+  @include respond-to('mobile') {
+    bottom: 1rem;
+    right: 0.8rem;
+  }
+  @include respond-to('mobile-small') {
+    bottom: -18rem;
+  }
+}

@@ -1,0 +1,46 @@
+.carousel-section {
+  background-color: tint($juno-blue-sky-2, 50%) !important;
+  padding: 0 0 6rem;
+  @include respond-to('mobile') {
+    padding-top: 8rem;
+  }
+}
+
+.carousel {
+  grid-column: 1 / -1;
+  @include respond-to('mobile') {
+    grid-row-start: 3;
+  }
+}
+
+.featured-image-caption {
+  grid-column: -12 / -2;
+  background-color: $juno-burnt-orange;
+  padding: 2rem;
+  margin-top: -7rem;
+  z-index: 1;
+  position: relative;
+  @include respond-to('tablet') {
+    grid-column: -13 / -2;
+  }
+  @include respond-to('mobile') {
+    grid-column: 4 / -2;
+    grid-row-start: 4;
+    margin-top: -3rem;
+  }
+  @include pageRipEffectBottom('company-caption1.svg', 3.5rem);
+}
+.featured-image-caption h2 {
+  color: $juno-dark-violet;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+.featured-image-caption p {
+  color: $white;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}

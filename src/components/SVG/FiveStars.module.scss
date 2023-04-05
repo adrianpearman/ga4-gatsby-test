@@ -1,0 +1,104 @@
+.interior-star-bg {
+  fill: none;
+}
+.interior-dots {
+  fill: currentColor;
+}
+
+.star-1,
+.star-2,
+.star-3,
+.star-4,
+.star-5 {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.star-1 {
+  fill: url(#_6_lpi_30_2-1);
+}
+
+.star-2 {
+  fill: url(#_6_lpi_30_2-3);
+}
+
+.star-3 {
+  fill: url(#_6_lpi_30_2-5);
+}
+
+.star-4 {
+  fill: url(#_6_lpi_30_2-7);
+}
+
+.star-5 {
+  fill: url(#_6_lpi_30_2-9);
+}
+
+// transition styles
+$base-delay-timing: 0.06s;
+
+.fade-in-stars polygon,
+.fade-out-stars polygon {
+  transition: opacity $default-duration, transform $default-duration;
+  &.star-2 {
+    transition-delay: $base-delay-timing;
+  }
+
+  &.star-3 {
+    transition-delay: calc(#{$base-delay-timing} * 2);
+  }
+
+  &.star-4 {
+    transition-delay: calc(#{$base-delay-timing} * 3);
+  }
+
+  &.star-5 {
+    transition-delay: calc(#{$base-delay-timing} * 4);
+  }
+}
+
+.page-load-delay.fade-in-stars polygon,
+.page-load-delay.fade-out-stars polygon {
+  transition-delay: 400ms;
+
+  &.star-2 {
+    transition-delay: calc(400ms + #{$base-delay-timing});
+  }
+
+  &.star-3 {
+    transition-delay: calc(400ms + (#{$base-delay-timing}) * 2);
+  }
+
+  &.star-4 {
+    transition-delay: calc(400ms + (#{$base-delay-timing}) * 3);
+  }
+
+  &.star-5 {
+    transition-delay: calc(400ms + (#{$base-delay-timing}) * 4);
+  }
+}
+
+.fade-in-stars {
+  polygon {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-out-stars {
+  polygon {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  // don't want stars to pop in and out, just stay on screen consistently
+  .fade-in-stars,
+  .fade-out-stars {
+    transform: scale(1);
+    opacity: 1;
+    transition: none;
+  }
+}

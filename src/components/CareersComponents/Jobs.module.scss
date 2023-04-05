@@ -1,0 +1,152 @@
+/* Jobs Component on Careers page
+========================================================================== */
+
+.positions {
+  padding-bottom: 6rem;
+}
+.positions .positions-title {
+  grid-column: 2 / -2;
+  color: $juno-dark-violet;
+  font-family: $font-heading-light;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.01rem;
+  margin: 2rem 0 4rem;
+  @include respond-to('mobile') {
+    font-size: 5rem;
+    line-height: 5.4rem;
+  }
+}
+
+.department {
+  grid-column: 2 / -2;
+  margin-bottom: 2rem;
+
+  h3 {
+    background-color: $juno-pale-mint-2;
+    font-size: 2rem;
+    width: 100%;
+    padding: 1.5rem 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    @include respond-to('mobile') {
+      padding: 1.5rem 2rem;
+    }
+  }
+}
+
+.job-card {
+  background-color: tint($juno-pale-mint-2, 70%);
+  padding: 3rem 3.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to('mobile') {
+    padding: 3rem 2rem;
+    display: block;
+  }
+}
+.job-title {
+  width: 45%;
+  flex-shrink: 1;
+  padding-right: 2rem;
+  @include respond-to('mobile') {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 5px;
+  }
+}
+.job-title-link {
+  color: $juno-violet-grey;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.015rem;
+}
+.job-location,
+.job-timeline {
+  color: $juno-dark-violet;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+.job-location {
+  width: 15%;
+  min-width: 110px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-right: 2rem;
+  @include respond-to('tablet') {
+    border-right: none;
+  }
+  @include respond-to('mobile') {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+.job-timeline {
+  width: 17%;
+  min-width: 150px;
+  flex-shrink: 0;
+  padding-right: 2rem;
+
+  @include respond-to('mobile') {
+    padding-right: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.job-link {
+  flex-shrink: 0;
+}
+.no-jobs {
+  color: $juno-dark-violet;
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.05rem;
+  grid-column: 2 / -2;
+  margin: 0 0 2rem;
+}
+.positions-banner {
+  grid-column: 2 / -2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  background: url(../../assets/images/careers/bg-polkalarge-0.3-palemint2.50-repeat.svg) top left
+    100% repeat;
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  & > h4 {
+    color: $juno-violet-grey;
+    font-family: $font-heading-regular;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.05rem;
+    margin-right: 4rem;
+    flex-basis: 25%;
+    @include respond-to('tablet') {
+      margin-bottom: 2rem;
+    }
+  }
+
+  & > p {
+    display: inline-block;
+    flex-basis: 75%;
+    color: $juno-dark-violet;
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: -0.015rem;
+    @include respond-to('mobile') {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+    a {
+      font-size: inherit;
+    }
+  }
+}

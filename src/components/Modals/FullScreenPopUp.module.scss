@@ -1,0 +1,136 @@
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.background-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  width: 100%;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation-fill-mode: forwards;
+
+  &.do-not-load {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  &.visible {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    animation-name: fade-in;
+    animation-timing-function: ease-out;
+    animation-delay: 1s;
+    animation-duration: 0.7s;
+  }
+  &.hidden {
+    display: flex;
+    animation-name: fade-out;
+    animation-delay: 0s;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in;
+  }
+  &.fast-load {
+    animation-delay: 0.5s;
+    animation-duration: 0.2s;
+  }
+}
+
+.modal {
+  background-color: $juno-sea-glass;
+  padding: 4rem;
+  position: relative;
+  max-width: 620px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  .heading {
+    font-size: 3.2rem;
+    line-height: 1.25;
+    margin-bottom: 5px;
+    margin-right: 2.3rem;
+  }
+  .subheading {
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-right: 2.3rem;
+  }
+  .description {
+    font-size: 1.4rem;
+    line-height: 2.3rem;
+    margin: 5px 0 2rem;
+  }
+}
+
+.sign-up-form {
+  .fieldset {
+    padding: 0;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+    label {
+      margin-bottom: 1rem !important;
+  
+      input {
+        border: none;
+      }
+    }
+    .full-width {
+      width: 100%;
+    }
+  }
+  .submit-button {
+    width: 100%;
+    height: 44px;
+  }
+}
+
+.close-modal {
+  width: 65px;
+  height: 65px;
+  background-color: transparent;
+  position: absolute;
+  right: 14px;
+  top: 17px;
+  cursor: pointer;
+
+  .svg line {
+    stroke: $juno-pale-mint-2 !important;
+  }
+  &:hover .svg line {
+    stroke: $juno-evergreen !important;
+  }
+}

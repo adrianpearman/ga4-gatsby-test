@@ -1,0 +1,98 @@
+.social-icon path {
+  fill: $juno-mauve;
+  transition: fill $default-duration ease;
+}
+.social-icon:hover path,
+.social-icon:focus path {
+  fill: $juno-burnt-orange;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 100%;
+  background: tint($juno-almond-2, 80%);
+}
+.card-white {
+  background: $white;
+}
+.headshot {
+  margin: 3rem 0 0 3rem;
+}
+.instructor-details {
+  padding: 3rem 3rem 0 3rem;
+  min-height: 21rem;
+}
+.instructor-name {
+  color: $juno-dark-violet;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  letter-spacing: -0.05px;
+  font-family: 'LyonDisplay Regular';
+}
+.pronouns {
+  text-transform: capitalize;
+}
+.instructor-job {
+  color: $juno-violet-grey;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  padding: 0 0 1.2rem;
+  width: 100%;
+}
+.instructor-links {
+  margin: 1.2rem 0;
+}
+.instructor-links a {
+  padding: 2.25rem 1rem 2rem 1rem;
+}
+.instructor-links a:first-of-type {
+  padding-left: 0;
+}
+
+@include respond-to('mobile') {
+  .card {
+    margin-right: 0;
+    flex-direction: row;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 5%,
+      tint($juno-almond-2, 85%) 5%,
+      tint($juno-almond-2, 85%) 100%
+    );
+  }
+  .card-white {
+      background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 5%,
+      $white 5%,
+      $white 100%
+    );
+  }
+  .headshot {
+    position: relative;
+    left: 14px;
+  }
+  .instructor-details {
+    flex-basis: 65%;
+  }
+  .instructor-job {
+    width: 100%;
+  }
+  .instructor-links a {
+    padding: 0.5rem;
+  }
+}
+
+@include respond-to('mobile-small') {
+  .card {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+  .headshot {
+    margin-left: 2rem;
+  }
+}

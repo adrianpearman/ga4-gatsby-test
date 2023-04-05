@@ -1,0 +1,108 @@
+/* By the Numbers - about page component styles
+========================================================================== */
+
+.numbers {
+  background-color: tint($juno-almond-2, 80%) !important;
+  padding: 4rem 0;
+}
+
+.numbers h6.section-title {
+  grid-column: 2 / -2;
+  margin-bottom: 6rem;
+}
+
+.stat-container {
+  grid-column: 2 / -2;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond-to('tablet') {
+    padding-right: 100px;
+  }
+  @include respond-to('mobile') {
+    padding-right: 0;
+  }
+}
+.stat-container .stat {
+  width: 25%;
+  margin-bottom: 6rem;
+  padding-right: 6rem;
+  @include respond-to('tablet') {
+    width: 50%;
+  }
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+}
+.stat-container .stat h1 {
+  color: $juno-red;
+  font-size: 8rem;
+  line-height: 8rem;
+  letter-spacing: 0.08rem;
+}
+.stat-container .stat p {
+  color: $juno-dark-violet;
+}
+
+.info-container {
+  grid-column: 2 / -2;
+  position: relative;
+  @include respond-to('tablet') {
+    grid-column: 2 / -1;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.info {
+  background: $white;
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+  padding: 5rem;
+  padding-right: 35rem;
+  padding-bottom: 14rem;
+  @include respond-to('tablet') {
+    padding-right: 25rem;
+  }
+  @include respond-to('mobile') {
+    margin-right: 0;
+    padding: 3rem;
+    padding-bottom: 0;
+  }
+
+  & > h3 {
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.0065rem;
+    color: $juno-dark-violet;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.0027rem;
+    color: $juno-violet-grey;
+  }
+
+  p:last-of-type a {
+    white-space: pre-wrap !important;
+  }
+}
+
+.info-image {
+  width: 392px;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  @include respond-to('tablet') {
+    width: 275px;
+  }
+  @include respond-to('mobile') {
+    width: 100%;
+    position: relative !important;
+  }
+}

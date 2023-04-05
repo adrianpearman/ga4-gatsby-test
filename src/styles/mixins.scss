@@ -1,0 +1,112 @@
+/* MEDIA QUERIES */
+@mixin respond-to($breakpoint) {
+  @if $breakpoint== 'mobile-xsmall' {
+    @media (max-width: 320px) {
+      @content;
+    }
+  } @else if $breakpoint== 'mobile-small' {
+    @media (max-width: 414px) {
+      @content;
+    }
+  } @else if $breakpoint== 'mobile' {
+    @media (max-width: 749px) {
+      @content;
+    }
+  } @else if $breakpoint== 'tablet' {
+    @media (max-width: 1029px) {
+      @content;
+    }
+  } @else if $breakpoint== 'desktop' {
+    @media (max-width: 1450px) {
+      @content;
+    }
+  } @else if $breakpoint== 'xlarge' {
+    @media (min-width: 1451px) {
+      @content;
+    }
+  } @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
+
+//! Example usage
+/* @include respond-to('mobile') {} */
+
+/* CENTERING */
+@mixin centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//! Example usage
+/*
+.parent {
+position: relative;
+}
+.child {
+@include centered;
+}
+*/
+
+/* SEO H1 HEADINGS */
+@mixin seoHeadingTypography($bottom: 2rem) {
+  font-size: 1.2rem;
+  font-family: $font-body-medium;
+  line-height: normal;
+  letter-spacing: normal;
+  color: inherit;
+  margin-bottom: $bottom;
+}
+//! Use on h1 tags that are are not the visually distinct title of the page and serve an SEO purpose instead 
+
+$ripFilePath: '../assets/images/rips/';
+$nestedRipFilePath: '../../assets/images/rips/';
+
+/* Ripped page effect mixin */
+@mixin pageRipEffectBottom($name, $height: 6.6rem, $left: 0, $nested: false, $position: 'after') {
+  &::#{$position} {
+    content: '';
+    position: absolute;
+    left: $left;
+    right: 0;
+    top: 99%;
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    @if $nested {
+      background-image: url(#{$nestedRipFilePath}#{$name})
+    } @else {
+      background-image: url(#{$ripFilePath}#{$name});
+    }
+  }
+  
+}
+//! use ELEMENT_NAME::after to place rip at the bottom of the element
+
+@mixin pageRipEffectTop($name, $height: 6.6rem, $left: 0, $nested: false, $position: 'before') {
+  &::#{$position} {
+    content: '';
+    position: absolute;
+    left: $left;
+    right: 0;
+    bottom: 100%;
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+  
+    @if $nested {
+      background-image: url(#{$nestedRipFilePath}#{$name})
+    } @else {
+      background-image: url(#{$ripFilePath}#{$name});
+    }
+  }
+  
+}
+//! use ELEMENT_NAME::before to place rip at the top of the element

@@ -1,0 +1,22 @@
+.icon {
+  line {
+    stroke: $juno-red;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+    transform: rotate(0deg);
+    transform-origin: center;
+    opacity: 1;
+    transition: transform $default-duration, stroke $default-duration;
+  }
+}
+.icon.minus {
+  line:first-child {
+    transform: rotate(90deg);
+    transition: transform $default-duration, stroke $default-duration;
+  }
+  line:last-child {
+    transform: rotate(180deg);
+    transition: transform $default-duration, stroke $default-duration, opacity $default-duration;
+    opacity: 0;
+  }
+}

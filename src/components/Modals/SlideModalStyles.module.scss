@@ -1,0 +1,100 @@
+@keyframes slide-in {
+  0% {
+    visibility: hidden;
+    bottom: -55%;
+  }
+  100% {
+    visibility: visible;
+    bottom: 0;
+  }
+}
+@keyframes slide-out {
+  0% {
+    visibility: visible;
+    bottom: 0;
+  }
+  100% {
+    visibility: hidden;
+    bottom: -55%;
+  }
+}
+
+.modal {
+  background-color: $juno-violet-grey;
+  background-image: url('../../assets/images/bg-dots/bg-squaredot-halfdiagonal-halfopacity.svg');
+  background-size: cover;
+  padding: 3rem;
+  border-radius: 2px;
+  position: fixed;
+  left: calc(1vw - 2px);
+  display: flex;
+  flex-direction: column;
+  max-width: 390px;
+  z-index: 999;
+
+  bottom: -55%;
+  animation-name: slide-in;
+  animation-duration: 1.5s;
+  animation-delay: 15s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+
+  &.hidden {
+    bottom: 0;
+    animation-name: slide-out;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+  }
+  &.do-not-load {
+    bottom: -55%;
+    animation-name: none;
+  }
+
+  @include respond-to('mobile') {
+    min-width: 250px;
+  }
+}
+
+.heading,
+.subheading {
+  color: $white;
+  font-size: 3.2rem;
+  font-family: $font-heading-regular;
+  font-variant-numeric: lining-nums;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  @include respond-to('mobile') {
+    font-size: 2.4rem;
+  }
+}
+
+.subheading {
+  font-family: $font-body-regular;
+  font-size: 2rem;
+  margin: -1rem 0 1rem;
+  text-transform: none;
+}
+
+.cta {
+  margin-top: 1rem;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  cursor: pointer;
+  padding: 0;
+
+  .svg {
+    line {
+      stroke: $white !important;
+    }
+  }
+}

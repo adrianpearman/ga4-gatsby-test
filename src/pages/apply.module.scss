@@ -1,0 +1,160 @@
+.page-header,
+.form-design {
+  background-color: tint($juno-sea-glass, 40%) !important;
+}
+
+.page-header {
+  padding: 10rem 0 3rem;
+  @include respond-to('mobile') {
+    padding: 6rem 0 3rem;
+  }
+  h1,
+  .form-intro {
+    margin: 0 auto;
+    text-align: center;
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+  h1 {
+    font-family: $font-heading-regular;
+    grid-column: 4 / -4;
+    font-size: 7.4rem;
+    color: $juno-red;
+    line-height: 0.73;
+    letter-spacing: normal;
+    @include respond-to('mobile') {
+      line-height: 1.23;
+      font-size: 5.4rem;
+      grid-column: 2 / -2;
+    }
+  }
+  .form-intro {
+    grid-column: 8 / -8;
+    font-size: 1.8rem;
+    line-height: 1.56;
+    letter-spacing: normal;
+    margin-top: 4rem;
+    @include respond-to('tablet') {
+      grid-column: 4 / -4;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+      margin-top: 3rem;
+      font-size: 1.5rem;
+    }
+    span {
+      font-size: 1.5rem;
+      display: block;
+      margin-top: 1rem;
+    }
+  }
+  .process {
+    padding: 4rem 0 12rem;
+    grid-column: 4 / -4;
+    display: flex;
+    justify-content: center;
+    @include respond-to('tablet') {
+      flex-wrap: wrap;
+    }
+    @include respond-to('mobile') {
+      grid-column: 2 / -2;
+    }
+
+    .process-step {
+      text-align: center;
+      background-color: $juno-blue-sky;
+      padding: 4rem 3rem 0;
+      width: calc((100% / 3) - (2rem + 25px));
+      position: relative;
+      z-index: 2;
+      @include respond-to('tablet') {
+        width: 100%;
+        text-align: left;
+        padding: 2rem 4rem 0;
+      }
+      h2 {
+        font-size: 1.8rem;
+        font-family: $font-body-medium;
+        line-height: 1.39;
+        letter-spacing: normal;
+        margin: 1rem 0;
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 1.47;
+      }
+      .icon-wrapper {
+        height: 50px;
+        width: 70px;
+        margin: 0 auto;
+        @include respond-to('tablet') {
+          display: none;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &:first-of-type {
+        @include pageRipEffectBottom('application-process-rip-1.svg', $height: 8.6rem);
+        @include respond-to('tablet') {
+        &::after {
+          display: none;
+        }
+      }
+      }
+      &:nth-of-type(3) {
+        @include pageRipEffectBottom('application-process-rip-2.svg', $height: 8.6rem);
+        @include respond-to('tablet') {
+        &::after {
+          display: none;
+        }
+      }
+      }
+      &:last-of-type {
+        @include pageRipEffectBottom('application-process-rip-3.svg', $height: 8.6rem);
+        @include respond-to('tablet') {
+          padding-bottom: 2rem;
+        &::after {
+          height: 16.6rem;
+          top: 60%;
+          z-index: -1;
+        }
+      }
+      }
+    }
+    .arrow {
+      flex-shrink: 0;
+      margin: auto 2rem;
+      position: relative;
+      top: 2rem;
+      @include respond-to('tablet') {
+        display: none;
+      }
+      img {
+        width: 25px;
+      }
+    }
+  }
+}
+
+.form-design {
+  padding-bottom: 10rem;
+  @include respond-to('mobile') {
+    padding-bottom: 6rem;
+  }
+  form {
+    grid-column: 7 / -7;
+    background: $white;
+    padding: 3.5rem 0;
+    border-color: tint($juno-sea-glass, 40%);
+    @include respond-to('tablet') {
+      grid-column: 2 / -2;
+    }
+  }
+}
+
+.deadline {
+  color: $juno-red;
+}

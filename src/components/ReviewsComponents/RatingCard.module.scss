@@ -1,0 +1,90 @@
+/* Reviews page - rating card component styles
+========================================================================== */
+
+.rating-card {
+  grid-column-end: span 7;
+  position: relative;
+}
+.rating-card:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  right: 8%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.rating-number {
+  color: $juno-dark-violet;
+  font-family: $font-heading-light;
+  font-size: 7.4rem;
+  font-variant-numeric: lining-nums;
+  line-height: 8.0rem;
+  letter-spacing: -0.01rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  margin: 3rem 0 1rem;
+}
+
+.submit-review-link {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+}
+
+@include respond-to('tablet') {
+  .rating-card {
+    grid-column-end: span 11;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    grid-template-rows: auto auto;
+    align-items: end;
+  }
+  .rating-card:nth-of-type(odd) {
+    grid-column-start: 1;
+  }
+  .rating-card:nth-of-type(even) {
+    grid-column-start: 14;
+  }
+  .rating-card:not(:last-of-type)::after {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    right: 0;
+    top: 100%;
+  }
+  .rating-number {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .submit-review-link {
+    padding-bottom: 0.25rem;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .read-review-link {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+@include respond-to('mobile') {
+  .rating-card,
+  .rating-card:nth-of-type(odd),
+  .rating-card:nth-of-type(even) {
+    grid-column: 1 / -1;
+  }
+  .rating-number {
+    font-size: 5.8rem;
+    line-height: 6.2rem;
+    letter-spacing: -0.01rem;
+  }
+}

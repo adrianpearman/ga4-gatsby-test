@@ -1,0 +1,534 @@
+/* Global Typography styles
+========================================================================== */
+
+@font-face {
+  font-family: 'LyonDisplay Regular';
+  font-style: normal;
+  font-display: swap;
+  src: local('LyonDisplay Regular'), local('LyonDisplay-Regular'),
+    url('/fonts/LyonDisplay-Regular-Web.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/LyonDisplay-Regular-Web.woff')
+      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'LyonDisplay Light';
+  font-style: normal;
+  font-display: swap;
+  src: local('LyonDisplay Light'), local('LyonDisplay-Light'),
+    url('/fonts/LyonDisplay-Light-Web.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/LyonDisplay-Light-Web.woff')
+      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'NeurialGrotesk Regular';
+  font-style: normal;
+  font-display: swap;
+  src: local('NeurialGrotesk Regular'), local('NeurialGrotesk-Regular'),
+    url('/fonts/NeurialGrotesk-Regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/NeurialGrotesk-Regular.woff')
+      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'NeurialGrotesk Medium';
+  font-style: normal;
+  font-display: swap;
+  src: local('NeurialGrotesk Medium'), local('NeurialGrotesk-Medium'),
+    url('/fonts/NeurialGrotesk-Medium.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/NeurialGrotesk-Medium.woff')
+      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'NeurialGrotesk Italic';
+  font-style: normal;
+  font-display: swap;
+  src: local('NeurialGrotesk Italic'), local('NeurialGrotesk-Italic'),
+    url('/fonts/NeurialGrotesk-Italic.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/NeurialGrotesk-Italic.woff')
+      format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-display: swap;
+  src: local('RobotoMono Regular'), local('RobotoMono-Regular'),
+    url('/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px, 3.5rem = 35px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-body-regular;
+  letter-spacing: -0.025rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.1rem;
+  margin: 0;
+  color: $juno-dark-violet;
+}
+
+p {
+  margin: 0;
+}
+
+// custom
+
+a, .btn-link {
+  display: inline;
+  text-decoration: solid underline 1px;
+  color: $juno-link-red;
+  font-size: inherit;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  text-decoration-color: transparent;
+  transition: text-decoration-color $default-duration ease;
+}
+
+button.btn-link {
+  background: none;
+  cursor: pointer;
+}
+
+button.btn-link:disabled,
+button.btn-link:disabled:hover,
+button.btn-link:disabled:focus {
+  cursor: default;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+.btn-link:hover,
+.btn-link:focus {
+  text-decoration-color: inherit;
+}
+
+// label 2
+h1 {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 9rem;
+  line-height: 9.4rem;
+  letter-spacing: -0.09rem;
+}
+
+// label d
+h2 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.1rem;
+}
+.section-heading {
+  font-size: 5rem;
+  font-family: $font-heading-regular;
+  line-height: 5.4rem;
+  letter-spacing: 0;
+  color: $juno-dark-violet;
+  font-variant-numeric: lining-nums;
+}
+
+.section-heading-simple {
+  font-size: 3.2rem;
+  font-family: $font-body-medium;
+  line-height: 4rem;
+  letter-spacing: normal;
+  color: $juno-dark-violet;
+  font-variant-numeric: lining-nums;
+}
+
+//label f
+h3 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.065rem;
+  color: $juno-dark-violet;
+}
+
+// label h3
+h4 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  letter-spacing: -0.055rem;
+  color: $juno-dark-violet;
+}
+
+// label I
+h5 {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.03rem;
+  color: $juno-dark-violet;
+}
+
+//label T
+h6,
+cite {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: $juno-dark-violet;
+  text-transform: uppercase;
+}
+
+// label L
+p {
+  font-family: $font-body-regular;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.024rem;
+  color: $juno-dark-violet;
+}
+
+code {
+  color: $juno-evergreen;
+  font-family: $font-code-regular;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: 0;
+  white-space: pre-wrap;
+  @include respond-to('mobile') {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    word-break: break-all;
+  }
+}
+
+// label 10
+blockquote {
+  font-size: 2.6rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.013rem;
+  font-family: $font-heading-regular;
+  color: $juno-evergreen;
+  margin: 0;
+}
+
+// label S2
+h1.sub-title {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  font-family: $font-body-medium;
+  font-weight: 400;
+  color: $juno-violet-grey;
+}
+
+// label 4
+.section-title-alternative,
+.title-student-name-story {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 7.4rem;
+  line-height: 8rem;
+  letter-spacing: -0.074rem;
+  color: $juno-dark-violet;
+}
+//alumni
+.title-student-name-story {
+  color: $juno-evergreen;
+}
+
+// label 4b
+.title-product-name,
+.title-location {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.074rem;
+  color: $juno-dark-violet;
+}
+//label 1
+.title-background {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 16rem;
+  line-height: 14rem;
+  letter-spacing: -0.16rem;
+  color: $juno-sea-glass;
+}
+//label 5
+.title-faq {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 5.8rem;
+  line-height: 6.2rem;
+  letter-spacing: -0.05rem;
+  @include respond-to('mobile') {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+}
+//label 6
+.title-blog-full {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 5rem;
+  line-height: 5.4rem;
+  letter-spacing: -0.05rem;
+  @include respond-to('mobile') {
+    font-size: 3.4rem;
+    line-height: 3.6rem;
+  }
+}
+
+//label 3
+.stat-individual {
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 8rem;
+  line-height: 8rem;
+  letter-spacing: -0.08rem;
+  color: $juno-red;
+}
+
+// label A
+.related-posts {
+  font-size: 12rem;
+  line-height: 10rem;
+  letter-spacing: -0.3rem;
+  @include respond-to('mobile') {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+}
+
+//label B
+.show-more-related {
+  font-size: 6rem;
+  line-height: 6rem;
+  letter-spacing: -0.15rem;
+}
+
+//label D (styles also applied to h2)
+.show-more-related-alternative {
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.1rem;
+}
+
+//label E
+.congratulations {
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.15rem;
+  margin-bottom: 2rem;
+}
+
+//label 8
+.faq-contact {
+  color: $juno-violet-grey;
+  font-family: $font-heading-regular;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 3.4rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.05rem;
+  @include respond-to('mobile') {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+  }
+}
+
+// DECORATIVE
+// label I
+.filter-btn,
+.filter-btn-alt {
+  background: none;
+  border: none;
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: -0.065rem;
+  padding: 1rem;
+  margin-right: 3rem;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+.filter-btn {
+  color: $juno-link-red;
+}
+.filter-btn-alt {
+  color: $white;
+}
+.filter-btn:hover,
+.filter-btn:focus,
+.filter-btn.active {
+  color: $juno-violet-grey;
+}
+.filter-btn-alt:hover,
+.filter-btn-alt:focus,
+.filter-btn-alt.active {
+  color: $juno-pale-mint;
+}
+.filter-btn.active,
+.filter-btn-alt.active {
+  position: relative;
+  z-index: 10;
+}
+.filter-btn.active::before {
+  background: url('../assets/images/icons/highlight-activefilter.svg');
+}
+.filter-btn-alt.active::before {
+  background: url('../assets/images/icons/highlight-activefilter-alt.svg');
+}
+.filter-btn.active::before,
+.filter-btn-alt.active::before {
+  content: '';
+  display: inline-block;
+  background-size: 101%;
+  background-position: 50% 90%;
+  width: calc(105% - 2rem);
+  height: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  z-index: -10;
+}
+
+.blog-post-title {
+  color: $juno-violet-grey;
+  display: inline;
+  font-family: $font-heading-light;
+  font-weight: 100;
+  font-variant-numeric: lining-nums;
+  font-size: 3.4rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.025rem;
+  overflow-wrap: anywhere;
+  @include respond-to('mobile') {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+}
+.blog-post-title-seaGlass {
+  color: $juno-violet-grey;
+}
+.blog-post-title-junoRed {
+  color: tint($juno-yellow-peach, 60%);
+}
+.blog-post-title-blueSky,
+.blog-post-title-sand {
+  color: $juno-evergreen;
+}
+.blog-post-title-evergreen {
+  color: $juno-sand;
+}
+.blog-post-title-violetGray {
+  color: $juno-custard-2;
+}
+
+// For application forms
+
+.form-subhead {
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+  color: $juno-dark-violet;
+  font-family: $font-body-regular;
+  margin: 0 0 1.4rem;
+}
+
+.form-subhead:not(:first-of-type) {
+  margin-top: 4rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  height: 4.4rem;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  &.allow-wrap {
+    @include respond-to('mobile-small') {
+      white-space: normal;
+      padding: 4rem 2rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Blog post button classes for anchor tags
+.redbg-white {
+  background: $juno-red;
+  border: none;
+  color: $white;
+  font-family: $font-body-medium;
+  transition: background $default-duration ease, color $default-duration ease;
+
+  &:hover, 
+  &:focus {
+    background: $juno-custard;
+    color: $juno-red;
+  }
+
+  &:disabled, 
+  &:disabled:hover,
+  &:disabled:focus {
+    background: tint($juno-custard, 70%);
+    color: tint($juno-custard, 30%);
+    cursor: default;
+  }
+}
+
+.transparent-red {
+  background: transparent;
+  color: $juno-red;
+  border: 1px solid $juno-red;
+  font-family: $font-body-medium;
+  transition: background $default-duration ease, color $default-duration ease;
+
+  &:hover,
+  &:focus {
+    background: $juno-red;
+    color: $white;
+  }
+}
+
+.transparent-violet {
+  background: transparent;
+  color: $juno-dark-violet;
+  border: 1px solid $juno-dark-violet;
+  transition: background $default-duration ease, color $default-duration ease, border $default-duration ease;
+
+  &:hover,
+  &:focus {
+    background: $juno-red;
+    border: 1px solid $juno-red;
+    color: $white;
+  }
+}
+
+

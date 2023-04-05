@@ -1,0 +1,9 @@
+<svg id="elements" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <title>bg-polkalarge-0.3-junored</title>
+  <rect class="cls-1" width="32" height="32" fill="#ea593e" />
+  <g class="cls-2" opacity="0.3">
+    <rect class="cls-3" width="32" height="32" fill="none" />
+    <rect class="cls-4" x="20.01" y="3.95" width="8" height="8" fill="#fff"/>
+    <rect class="cls-4" x="3.99" y="20.05" width="8" height="8" fill="#fff"/>
+  </g>
+</svg>

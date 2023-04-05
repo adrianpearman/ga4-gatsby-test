@@ -1,0 +1,171 @@
+/* Get Started for Free component styles
+========================================================================== */
+
+.start {
+  padding: 5rem 0;
+  padding-top: 10rem;
+
+  &.white {
+    background-color: $white !important;
+
+    .workshop-container {
+      background-color: tint($juno-sea-glass, 40%);
+    }
+  }
+  &.sea-glass {
+    background-color: tint($juno-sea-glass, 40%);
+
+    .workshop-container {
+      background-color: $white;
+    }
+  }
+}
+
+.info {
+  grid-column: 2 / span 10;
+  padding-right: 6rem;
+  @include respond-to('tablet') {
+    margin-bottom: 8rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / span 8;
+    padding-right: 0;
+  }
+  @include respond-to('mobile-small') {
+    grid-column: 2 / -2;
+  }
+
+  &.no-events {
+    grid-column: 2 / -2;
+  }
+}
+.info h2 {
+  color: $juno-violet-grey;
+  font-size: 5rem;
+  line-height: 5.2rem;
+  margin-bottom: 2rem;
+}
+.info p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+
+.workshops {
+  grid-column: 12 / -2;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    flex-direction: column;
+  }
+}
+
+.workshop-container {
+  background: $white;
+  position: relative;
+  margin-bottom: 5rem;
+  width: calc(50% - 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include respond-to('mobile') {
+    width: 100%;
+  }
+}
+.workshop-container:nth-of-type(odd) {
+  margin-right: 5rem;
+  @include respond-to('mobile') {
+    margin-right: 0;
+  }
+}
+
+.workshop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.workshop .date-location {
+  background: $juno-custard-2;
+  display: flex;
+  min-height: 70px;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.workshop .date {
+  background: $juno-violet-grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+.workshop .date p:first-child {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  color: $juno-sea-glass;
+  text-align: center;
+  font-family: $font-body-medium;
+  padding-top: 0.6rem;
+}
+.workshop .date p:last-child {
+  font-size: 4rem;
+  line-height: 4.4rem;
+  color: $juno-sea-glass;
+  font-family: $font-body-medium;
+}
+.workshop .location {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.workshop .location p:first-child {
+  color: $juno-violet-grey;
+  font-family: $font-body-medium;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  margin-bottom: 2px;
+}
+.workshop .location p:last-child {
+  color: $juno-violet-grey;
+  font-family: $font-body-medium;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.event-name,
+.event-button {
+  margin: 0 3rem 3rem;
+}
+
+.workshop-bottom .image {
+  width: 100%;
+}
+
+.load-more {
+  grid-column: 2 / -2;
+  text-align: right;
+
+  &.no-events {
+    text-align: left;
+    margin-top: 2rem;
+  }
+}
+.load-more a {
+  font-size: 2rem;
+  line-height: 3rem;
+  letter-spacing: 0.03rem;
+  font-family: $font-body-medium;
+  background: inherit;
+  color: $juno-link-red;
+  cursor: pointer;
+}

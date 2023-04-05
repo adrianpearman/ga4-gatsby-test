@@ -1,0 +1,46 @@
+.section-heading {
+  font-family: $font-heading-regular;
+  font-size: 5rem;
+  line-height: 54px;
+  letter-spacing: 0px;
+  @include respond-to('mobile') {
+    font-size: 4.8rem;
+  }
+}
+
+.section-description {
+  font-size: 2rem;
+  line-height: 30px;
+  letter-spacing: 0px;
+  @include respond-to('mobile') {
+    font-size: 1.8rem;
+  }
+}
+
+.primer {
+  padding: 14rem 0 8rem !important;
+  @include respond-to('mobile') {
+    padding: 10rem 0 8rem !important;
+  }
+
+  & > div > p {
+    font-size: 2rem;
+  }
+
+  & > figure > div {
+    height: 320px;
+  }
+}
+
+.accordion-section {
+  margin: 0 0 12rem !important;
+  @include respond-to('mobile') {
+    margin: 0 0 4rem !important;
+  }
+}
+
+.success-banner {
+  @include respond-to('mobile') {
+    margin-top: 5rem;
+  }
+}

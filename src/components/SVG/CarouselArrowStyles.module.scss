@@ -1,0 +1,96 @@
+// general styles applied to both arrows
+.general {
+  cursor: pointer;
+}
+
+.primary {
+  .rect {
+    fill: $juno-red;
+    transition: fill $fast-duration;
+  }
+  &:hover .rect,
+  &:focus .rect {
+    fill: $juno-custard;
+    transition: fill $fast-duration;
+  }
+  .polyline, .line {
+    stroke: $white;
+    transition: stroke $fast-duration;
+  }
+  &:hover .polyline,
+  &:hover .line,
+  &:focus .polyline, 
+  &:focus .line {
+    stroke: $juno-red;
+    transition: stroke $fast-duration;
+  }
+}
+button:focus .rect {
+  fill: $juno-custard;
+  transition: fill $fast-duration;
+}
+button:focus .polyline, 
+button:focus .line {
+  stroke: $juno-red;
+  transition: stroke $fast-duration;
+}
+
+.primaryviolet {
+  .rect {
+    fill: $juno-dark-violet;
+    transition: fill $fast-duration;
+  }
+  &:hover .rect,
+  &:focus .rect {
+    fill: $juno-custard;
+    transition: fill $fast-duration;
+  }
+  .polyline, .line {
+    stroke: $white;
+    transition: stroke $fast-duration;
+  }
+  &:hover .polyline,
+  &:hover .line,
+  &:focus .polyline, 
+  &:focus .line {
+    stroke: $juno-red;
+    transition: stroke $fast-duration;
+  }
+}
+button:focus .rect {
+  fill: $juno-custard;
+  transition: fill $fast-duration;
+}
+button:focus .polyline, 
+button:focus .line {
+  stroke: $juno-red;
+  transition: stroke $fast-duration;
+}
+
+.secondary {
+  .rect {
+    fill: $white;
+    transition: fill $fast-duration;
+  }
+  .polyline, .line {
+    stroke: $juno-link-red;
+    transition: stroke $fast-duration;
+  }
+  &:hover .polyline,
+  &:hover .line,
+  &:focus .polyline, 
+  &:focus .line {
+    stroke: $juno-dark-violet;
+    transition: stroke $fast-duration;
+  }
+}
+button:focus .polyline, 
+button:focus .line {
+  stroke: $juno-dark-violet;
+  transition: stroke $fast-duration;
+}
+
+// Optional prop that overrides the fill colour with a transparent background
+.transparent-background {
+  fill: none !important;
+}

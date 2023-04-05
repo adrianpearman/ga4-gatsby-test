@@ -1,0 +1,40 @@
+/* Events page workshops component styles
+========================================================================== */
+
+.workshops {
+  padding: 1rem 0 4rem;
+  @include respond-to('mobile') {
+    padding-top: 1rem;
+  }
+}
+
+.workshops h6.super-title,
+.workshops h2.title {
+  grid-column: 2 / -2;
+}
+.workshops > h3 {
+  grid-column: 2 / -2;
+  font-family: 'LyonDisplay Light';
+  color: #7c7d98;
+  font-size: 5rem;
+  line-height: 5.4rem;
+  letter-spacing: -0.1px;
+  grid-column: 2 / -2;
+  padding: 2rem 0;
+}
+.workshops h6.super-title {
+  color: tint($juno-mauve-blue, 25%);
+  margin-top: 1rem;
+}
+.workshops h2.title {
+  margin: 2rem 0 3rem;
+  color: $juno-dark-violet;
+  font-family: $font-heading-light;
+  font-size: 7.4rem;
+  line-height: 7.4rem;
+  letter-spacing: -0.01rem;
+}
+
+.no-events {
+  grid-column: 2 / -2;
+}

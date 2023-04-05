@@ -1,0 +1,271 @@
+/* Alumni page module styles
+========================================================================== */
+
+/* Hero
+====================================================== */
+.hero {
+  border-bottom: 10px solid tint($juno-almond-2, 30%);
+}
+.title {
+  grid-column: 2 / -18;
+  margin-top: 7rem;
+  color: $juno-evergreen !important;
+  font-size: 11rem !important;
+  line-height: 11rem;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    color: $juno-violet-grey !important;
+    font-size: 5rem !important;
+    line-height: 5.4rem !important;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+}
+.description {
+  grid-column: 2 / span 22;
+  font-size: 2.2rem;
+  letter-spacing: -0.055rem;
+  line-height: 3.2rem;
+  margin-bottom: 2rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+  }
+  @include respond-to('mobile') {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  a {
+    font-size: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+  }
+}
+
+.button-wrap {
+  grid-column: 2 / span 18;
+  margin-bottom: 10rem;
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+
+/* Recently Hired
+====================================================== */
+.hired {
+  grid-column: 26 / -2;
+  position: relative;
+  top: -30rem;
+  margin-bottom: -28rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / -2;
+    top: -2rem;
+    margin-bottom: 10rem;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+    margin-bottom: 0;
+    padding-bottom: 10rem;
+  }
+  @include respond-to('mobile-small') {
+    margin-bottom: 0;
+    padding-bottom: 5rem;
+  }
+}
+.hired-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.hired-top h3 {
+  margin-left: -1px;
+  @include respond-to('mobile-small') {
+    width: 110px;
+  }
+}
+.hired-top .nav {
+  display: flex;
+  align-items: center;
+}
+
+.hired-top .nav button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.next-arrow {
+  position: relative;
+  right: -16px;
+}
+
+.hired-bottom {
+  background-color: $juno-pale-mint;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem;
+  position: relative;
+  @include pageRipEffectBottom('rip-alumni-hired-combo1.svg');
+}
+.recently-hired-headshot {
+  margin-right: 1.5rem;
+}
+.hired-info {
+  background: $juno-pale-mint;
+  width: calc(100% - (65px + 1.5rem));
+  
+}
+.hired-info h3 {
+  font-size: 3.4rem;
+  line-height: 3.6rem;
+  letter-spacing: 0.002rem;
+  font-family: $font-heading-regular;
+  color: $juno-dark-violet;
+}
+.hired-info .job-title,
+.hired-info a {
+  font-size: 1.5rem;
+  font-family: $font-body-regular;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  color: $juno-dark-violet;
+  writing-mode: initial;
+  margin-top: 0;
+}
+.hired-info a {
+  font-family: $font-body-medium;
+}
+.cohort {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.05rem;
+  color: $juno-dark-violet;
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/* Alumni Cards
+====================================================== */
+.alumni-cards {
+  background: tint($juno-almond-2, 60%) !important;
+  padding-bottom: 6rem;
+}
+
+.alumni-cards-wrapper {
+  grid-column: 2 / -2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+  @include respond-to('mobile') {
+    grid-gap: 3rem;
+  }
+}
+
+.grad-showcase-banner {
+  background: tint($juno-almond-2, 30%);
+  grid-column: 2 / -2;
+  padding: 3rem 3rem 3.5rem;
+  margin-bottom: 5rem;
+  h2 {
+    font-size: 5rem;
+    font-family: $font-heading-light;
+    line-height: 1.08;
+    @include respond-to('tablet') {
+      font-size: 4.4rem;
+      line-height: 1.14;
+    }
+  }
+  p {
+    margin: 5px 0 1.5rem;
+  }
+  .showcase-button {
+    margin-left: 2rem;
+  }
+}
+
+.filter-bar {
+  grid-column: 2 / -2;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+  @include respond-to('mobile') {
+    flex-direction: column;
+  }
+}
+.filter-bar p {
+  margin-right: 6rem;
+  padding-left: 0;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  @include respond-to('mobile') {
+    align-self: flex-start;
+  }
+}
+.filter-bar p:last-of-type {
+  margin-right: 0;
+}
+
+.filter-bar-counter {
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: tint($juno-dark-violet, 25%);
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  left: 95%;
+}
+
+.chevron-container {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.load-more {
+  margin: 5rem 0 0;
+  grid-column: 2 / -2;
+  text-align: right;
+}
+.load-more button.load-more-button {
+  overflow-anchor: none;
+  appearance: none;
+  background-color: none;
+  background: url(../assets/images/blog/highlight-loadmoreposts.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+  color: $juno-link-red;
+  font-family: $font-body-medium;
+  font-size: 3.4rem;
+  line-height: 6rem;
+  letter-spacing: -0.025rem;
+  text-align: left;
+  cursor: pointer;
+  @include respond-to('mobile') {
+    font-size: 4rem;
+    line-height: 4.4rem;
+  }
+}
+
+.check-back-soon {
+  grid-column: 2 / -2;
+  padding: 3rem 2.4% 6rem;
+}
+
+.check-back-soon h4.check-back-header {
+  color: $juno-violet-grey;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+}

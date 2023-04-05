@@ -1,0 +1,217 @@
+/* Events page, individual workshop card styles
+========================================================================== */
+
+.card {
+  grid-column: 2 / -2;
+  background: tint($juno-sea-glass, 40%);
+  display: grid;
+  grid-template-columns: repeat(36, 1.527778fr);
+  grid-column-gap: 1%;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  @include respond-to('tablet') {
+    grid-template-columns: repeat(24, 2.79666fr);
+  }
+  @include respond-to('mobile') {
+    grid-template-columns: repeat(12, 5.666fr);
+    grid-column-gap: 2%;
+    background: linear-gradient(
+      to bottom,
+      $white 8rem,
+      tint($juno-sea-glass, 40%) 8rem,
+      tint($juno-sea-glass, 40%) 100%
+    );
+  }
+}
+.secondary {
+  background: $white;
+}
+.recording {
+  background: $juno-sea-glass;
+  .date-time {
+    background-color: $juno-dark-violet;
+  }
+}
+
+.date-time {
+  background-color: $juno-violet-grey;
+  padding: 3rem;
+  grid-column: 1 / 10;
+  grid-row: 1 / 2;
+  z-index: 10;
+  @include respond-to('tablet') {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(24, 2.79666fr);
+    grid-column-gap: 1%;
+    padding: 2rem 0;
+    align-items: end;
+  }
+  @include respond-to('mobile') {
+    grid-column: 1 / -3;
+    display: block;
+    padding: 2rem 10%;
+  }
+}
+
+.date-time h4.date {
+  color: $white;
+  font-size: 3rem;
+  line-height: 3.4rem;
+  letter-spacing: -0.025rem;
+  @include respond-to('tablet') {
+    grid-column: 2 / 11;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
+  }
+}
+.date span {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+}
+.time-address {
+  @include respond-to('tablet') {
+    grid-column: 11 / 19;
+  }
+}
+.date-time p {
+  color: $white;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  margin-top: 2rem;
+}
+.date-time p:last-of-type {
+  color: $white;
+  margin-top: 1rem;
+}
+
+.description-block .super-title,
+.date-time .super-title {
+  color: $white;
+  font-family: $font-body-medium;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: $juno-dark-violet;
+  text-transform: uppercase;
+}
+
+.instructor-block {
+  display: flex;
+  margin-top: 10rem;
+  @include respond-to('tablet') {
+    grid-column: 19 / -2;
+    margin-top: 0;
+  }
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+.instructor-block a {
+  color: $juno-custard;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  margin-top: 0;
+}
+.date-time .instructor-block .super-title {
+  margin-top: 1.5rem;
+}
+.instructor-photo {
+  align-self: flex-start;
+  margin-right: 2rem;
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+.instructor-block .instructor-photo img,
+.instructor-block .instructor-photo source {
+  width: 100%;
+  object-position: top center !important;
+}
+
+.image {
+  grid-column: 9 / 21;
+  grid-row: 1 / 2;
+  align-self: end;
+  @include respond-to('tablet') {
+    grid-column: 1 / 10;
+    grid-row: 2 / 3;
+    align-self: center;
+  }
+  @include respond-to('mobile') {
+    display: none;
+  }
+}
+
+.description-block {
+  padding: 3rem 0;
+  grid-column: 22 / -3;
+  @include respond-to('tablet') {
+    grid-column: 11 / -2;
+  }
+  @include respond-to('mobile') {
+    grid-column: 2 / -2;
+  }
+}
+.description-block .super-title {
+  color: $juno-burnt-orange;
+}
+.description-block h3.title {
+  color: $juno-dark-violet;
+  font-size: 4rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.025rem;
+  margin-top: 2rem;
+}
+.description-block p {
+  color: $juno-dark-violet;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  margin: 2rem 0;
+}
+.description-block a.ticket-link {
+  border: 1px solid $juno-link-red;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+  height: 4.4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background $default-duration ease, color $default-duration ease;
+}
+.description-block a.ticket-link:hover,
+.description-block a.ticket-link:focus {
+  background: $juno-link-red;
+  color: $white;
+}
+
+.category {
+  grid-column: -2 / -1;
+  background: $white;
+  margin-right: -1px;
+  align-self: stretch;
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+.category-white {
+  background: tint($juno-sand, 30%);
+}
+.category p {
+  color: $juno-evergreen;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  letter-spacing: 0;
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+}
+.category p::before {
+  content: '– ';
+}
