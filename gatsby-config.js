@@ -37,7 +37,7 @@ module.exports = {
       options: {
         trackingIds: [
           // 'YOUR GA-TRACKING_ID' // Google Analytics / GA
-          'G-3MYGM3GZ1J'
+          process.env.GA_TRACKING_ID
         ],
         pluginConfig: {
           // Puts tracking script in the head instead of the body
